@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43536EF061EAB2C022EE9F62C088D655 /* Pods-TacoMe!-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 010A5E6415DDAA921247EBD216B68CB0 /* Pods-TacoMe!-dummy.m */; };
+		46ECBF17D1919EDE98D72E490376565C /* RandomColorSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AA8574ABA12CE8AC28F0BE68E52E54 /* RandomColorSwift-dummy.m */; };
+		5DE10FB4376105DCAE7460889AB2AA70 /* Luminosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C83CD1E2A0D5F3B0049368D74053A /* Luminosity.swift */; };
+		84D19778CBADD5910E584DC0E4A6B8B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		925EE193E471ED57838DF8BB90A22CF3 /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B8EED062721CE4EF71FDE057512ED /* ColorDefinition.swift */; };
+		92A0F2C504F3D9FF128946F717230359 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B157B1EA3EBAE1F3B0B4817C912AAF8 /* Hue.swift */; };
+		A48079C10A5BFF5F44B665D44E53ABF4 /* RandomColorSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0158030CC89E3DFDBA906DF490D2E420 /* RandomColorSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEEDBBE0BDB6C4FFC2F1A89F2AB3B2C5 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94343978D8754AFCC0C894BAD0959310 /* RandomColor.swift */; };
+		F1C2BBB347DA3FBB5AF740E9195411BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		F3F0E58450893985EEB54E97FFC4F412 /* Pods-TacoMe!-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5106B3C82EA3E387CE4EC4142DB410E4 /* Pods-TacoMe!-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CACB06274BE22CD57D9F13DD27820330 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FE10618DCB09AE735591A4351320C85;
+			remoteInfo = RandomColorSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		010A5E6415DDAA921247EBD216B68CB0 /* Pods-TacoMe!-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TacoMe!-dummy.m"; sourceTree = "<group>"; };
+		0158030CC89E3DFDBA906DF490D2E420 /* RandomColorSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-umbrella.h"; sourceTree = "<group>"; };
+		0B157B1EA3EBAE1F3B0B4817C912AAF8 /* Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = RandomColor/Hue.swift; sourceTree = "<group>"; };
+		360490099F79B21DEA732333D7088CE6 /* Pods-TacoMe!-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TacoMe!-acknowledgements.plist"; sourceTree = "<group>"; };
+		36604D4DE6AC1376A0BE6DA55F4911C5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5106B3C82EA3E387CE4EC4142DB410E4 /* Pods-TacoMe!-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TacoMe!-umbrella.h"; sourceTree = "<group>"; };
+		52AA214272CB3F0D4709AEAE0C92988A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58B7C6621A6CB614818CF0D477EEA0E4 /* Pods-TacoMe!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TacoMe!.debug.xcconfig"; sourceTree = "<group>"; };
+		5FB92ECAE6A4B85E4C070FDA9B4DFE0A /* Pods-TacoMe!-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TacoMe!-resources.sh"; sourceTree = "<group>"; };
+		6015DDE60FBE0C887DCBFA53B0595B06 /* RandomColorSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RandomColorSwift.modulemap; sourceTree = "<group>"; };
+		8D6476496C09DF674D9EE1114BE81B4B /* Pods-TacoMe!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TacoMe!.release.xcconfig"; sourceTree = "<group>"; };
+		8D6B8EED062721CE4EF71FDE057512ED /* ColorDefinition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorDefinition.swift; path = RandomColor/ColorDefinition.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94343978D8754AFCC0C894BAD0959310 /* RandomColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomColor.swift; path = RandomColor/RandomColor.swift; sourceTree = "<group>"; };
+		A0BC80F25E557024CCA1EAA55BC2D96E /* RandomColorSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RandomColorSwift.xcconfig; sourceTree = "<group>"; };
+		A34454E2B8AFD16EF7067ABE3F97FB3F /* Pods-TacoMe!.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TacoMe!.modulemap"; sourceTree = "<group>"; };
+		A5AA8574ABA12CE8AC28F0BE68E52E54 /* RandomColorSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RandomColorSwift-dummy.m"; sourceTree = "<group>"; };
+		A6170F8EFF18CE640E3CDBBAF2F36ECA /* Pods-TacoMe!-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TacoMe!-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BA5EBBA244CD1BD2348C6F92B95F040B /* RandomColorSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-prefix.pch"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D07C83CD1E2A0D5F3B0049368D74053A /* Luminosity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Luminosity.swift; path = RandomColor/Luminosity.swift; sourceTree = "<group>"; };
+		EB69CA3BE2F7189014BB4357DA991F30 /* RandomColorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RandomColorSwift.framework; path = RandomColorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC99F851B8FE48FF8120FEABB0E49CDA /* Pods_TacoMe_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TacoMe_.framework; path = "Pods-TacoMe!.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8692CCC65382631862648401D7FA87B /* Pods-TacoMe!-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TacoMe!-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD010AAD336523945D93D639D696C3B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1C2BBB347DA3FBB5AF740E9195411BF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D609221F5065279338D11DCE51AA6971 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D19778CBADD5910E584DC0E4A6B8B4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B10091F06674E5320E8697621161C88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC99F851B8FE48FF8120FEABB0E49CDA /* Pods_TacoMe_.framework */,
+				EB69CA3BE2F7189014BB4357DA991F30 /* RandomColorSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B01210B3350B8B9CE207FE8028A2635 /* Pods-TacoMe! */ = {
+			isa = PBXGroup;
+			children = (
+				52AA214272CB3F0D4709AEAE0C92988A /* Info.plist */,
+				A34454E2B8AFD16EF7067ABE3F97FB3F /* Pods-TacoMe!.modulemap */,
+				A6170F8EFF18CE640E3CDBBAF2F36ECA /* Pods-TacoMe!-acknowledgements.markdown */,
+				360490099F79B21DEA732333D7088CE6 /* Pods-TacoMe!-acknowledgements.plist */,
+				010A5E6415DDAA921247EBD216B68CB0 /* Pods-TacoMe!-dummy.m */,
+				F8692CCC65382631862648401D7FA87B /* Pods-TacoMe!-frameworks.sh */,
+				5FB92ECAE6A4B85E4C070FDA9B4DFE0A /* Pods-TacoMe!-resources.sh */,
+				5106B3C82EA3E387CE4EC4142DB410E4 /* Pods-TacoMe!-umbrella.h */,
+				58B7C6621A6CB614818CF0D477EEA0E4 /* Pods-TacoMe!.debug.xcconfig */,
+				8D6476496C09DF674D9EE1114BE81B4B /* Pods-TacoMe!.release.xcconfig */,
+			);
+			name = "Pods-TacoMe!";
+			path = "Target Support Files/Pods-TacoMe!";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				8719A227D0757E8FCDFA0FF6DFA30512 /* Pods */,
+				1B10091F06674E5320E8697621161C88 /* Products */,
+				8B0D54CB5A46039C9B84A75DE4AC51DD /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8719A227D0757E8FCDFA0FF6DFA30512 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7941A3B1778CF3137117BF45E290D /* RandomColorSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B0D54CB5A46039C9B84A75DE4AC51DD /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B01210B3350B8B9CE207FE8028A2635 /* Pods-TacoMe! */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		94B0BF7094120FBF3629C8BC8EF32B0E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				36604D4DE6AC1376A0BE6DA55F4911C5 /* Info.plist */,
+				6015DDE60FBE0C887DCBFA53B0595B06 /* RandomColorSwift.modulemap */,
+				A0BC80F25E557024CCA1EAA55BC2D96E /* RandomColorSwift.xcconfig */,
+				A5AA8574ABA12CE8AC28F0BE68E52E54 /* RandomColorSwift-dummy.m */,
+				BA5EBBA244CD1BD2348C6F92B95F040B /* RandomColorSwift-prefix.pch */,
+				0158030CC89E3DFDBA906DF490D2E420 /* RandomColorSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RandomColorSwift";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5D7941A3B1778CF3137117BF45E290D /* RandomColorSwift */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B8EED062721CE4EF71FDE057512ED /* ColorDefinition.swift */,
+				0B157B1EA3EBAE1F3B0B4817C912AAF8 /* Hue.swift */,
+				D07C83CD1E2A0D5F3B0049368D74053A /* Luminosity.swift */,
+				94343978D8754AFCC0C894BAD0959310 /* RandomColor.swift */,
+				94B0BF7094120FBF3629C8BC8EF32B0E /* Support Files */,
+			);
+			name = RandomColorSwift;
+			path = RandomColorSwift;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4364FBD64D656D14896EFBF9556EE6B0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A48079C10A5BFF5F44B665D44E53ABF4 /* RandomColorSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9CE9DC314450D8EFAF2608F9DB62460 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3F0E58450893985EEB54E97FFC4F412 /* Pods-TacoMe!-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5FE10618DCB09AE735591A4351320C85 /* RandomColorSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D2BF191EF3F13BF7DF11A31885168C0 /* Build configuration list for PBXNativeTarget "RandomColorSwift" */;
+			buildPhases = (
+				2D2F151493B6425A05DBC500E95B4AE5 /* Sources */,
+				AD010AAD336523945D93D639D696C3B1 /* Frameworks */,
+				4364FBD64D656D14896EFBF9556EE6B0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RandomColorSwift;
+			productName = RandomColorSwift;
+			productReference = EB69CA3BE2F7189014BB4357DA991F30 /* RandomColorSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		938A1D28E8B0917AD0500EAC33862901 /* Pods-TacoMe! */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 385CE05C2C2ED768791FF2037D30AC78 /* Build configuration list for PBXNativeTarget "Pods-TacoMe!" */;
+			buildPhases = (
+				4042B931F98CAFC0A45C8F2AF4D15A92 /* Sources */,
+				D609221F5065279338D11DCE51AA6971 /* Frameworks */,
+				E9CE9DC314450D8EFAF2608F9DB62460 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				232E418EF68CE1C56140F0FDFC1B08D9 /* PBXTargetDependency */,
+			);
+			name = "Pods-TacoMe!";
+			productName = "Pods-TacoMe!";
+			productReference = EC99F851B8FE48FF8120FEABB0E49CDA /* Pods_TacoMe_.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 1B10091F06674E5320E8697621161C88 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				938A1D28E8B0917AD0500EAC33862901 /* Pods-TacoMe! */,
+				5FE10618DCB09AE735591A4351320C85 /* RandomColorSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D2F151493B6425A05DBC500E95B4AE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				925EE193E471ED57838DF8BB90A22CF3 /* ColorDefinition.swift in Sources */,
+				92A0F2C504F3D9FF128946F717230359 /* Hue.swift in Sources */,
+				5DE10FB4376105DCAE7460889AB2AA70 /* Luminosity.swift in Sources */,
+				CEEDBBE0BDB6C4FFC2F1A89F2AB3B2C5 /* RandomColor.swift in Sources */,
+				46ECBF17D1919EDE98D72E490376565C /* RandomColorSwift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4042B931F98CAFC0A45C8F2AF4D15A92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43536EF061EAB2C022EE9F62C088D655 /* Pods-TacoMe!-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		232E418EF68CE1C56140F0FDFC1B08D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RandomColorSwift;
+			target = 5FE10618DCB09AE735591A4351320C85 /* RandomColorSwift */;
+			targetProxy = CACB06274BE22CD57D9F13DD27820330 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		673254EEAF0B5BF4596080C749645884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7392EBB9EA956B4621A56740B8AADB90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0BC80F25E557024CCA1EAA55BC2D96E /* RandomColorSwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RandomColorSwift/RandomColorSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RandomColorSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RandomColorSwift/RandomColorSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = RandomColorSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7BE4DBBEF85652188B4D1D76DB348671 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58B7C6621A6CB614818CF0D477EEA0E4 /* Pods-TacoMe!.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TacoMe!/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TacoMe!/Pods-TacoMe!.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TacoMe_;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9C8F6B76853BEB90093503C5CA947359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D6476496C09DF674D9EE1114BE81B4B /* Pods-TacoMe!.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TacoMe!/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TacoMe!/Pods-TacoMe!.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TacoMe_;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		FE7864BE515FE12239BC31A5F5FF8214 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0BC80F25E557024CCA1EAA55BC2D96E /* RandomColorSwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RandomColorSwift/RandomColorSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RandomColorSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RandomColorSwift/RandomColorSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = RandomColorSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */,
+				673254EEAF0B5BF4596080C749645884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		385CE05C2C2ED768791FF2037D30AC78 /* Build configuration list for PBXNativeTarget "Pods-TacoMe!" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BE4DBBEF85652188B4D1D76DB348671 /* Debug */,
+				9C8F6B76853BEB90093503C5CA947359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D2BF191EF3F13BF7DF11A31885168C0 /* Build configuration list for PBXNativeTarget "RandomColorSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE7864BE515FE12239BC31A5F5FF8214 /* Debug */,
+				7392EBB9EA956B4621A56740B8AADB90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
