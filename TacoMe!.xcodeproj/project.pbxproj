@@ -372,7 +372,7 @@
 				DEVELOPMENT_TEAM = 5UN8LHXK2J;
 				INFOPLIST_FILE = "TacoMe!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "haydengoldman.TacoMe-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haydengoldman.TacoMe-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -386,7 +386,7 @@
 				DEVELOPMENT_TEAM = 5UN8LHXK2J;
 				INFOPLIST_FILE = "TacoMe!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "haydengoldman.TacoMe-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haydengoldman.TacoMe-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -411,6 +411,7 @@
 				C62061071E80820600102C1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

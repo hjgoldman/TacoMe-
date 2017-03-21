@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33p-Mh-Sr3">
-                                <rect key="frame" x="100.5" y="280.5" width="174" height="106"/>
+                                <rect key="frame" x="100" y="280" width="174" height="106"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="106" id="Li6-BY-yFb"/>
                                     <constraint firstAttribute="width" constant="174" id="RNv-EM-sOu"/>
@@ -32,14 +32,21 @@
                                     <action selector="getTacoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tuZ-9a-Tru"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="tAf-HU-u8Z">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.96047013998031616" green="0.89431089162826538" blue="0.97426563501358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="33p-Mh-Sr3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zs3-vf-h5u"/>
+                            <constraint firstItem="tAf-HU-u8Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m8d-z1-yQb"/>
+                            <constraint firstItem="tAf-HU-u8Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qR3-LD-uh6"/>
                             <constraint firstItem="33p-Mh-Sr3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rh4-GB-AX9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="indicatorView" destination="tAf-HU-u8Z" id="uYn-iz-scd"/>
                         <segue destination="wRK-gj-PZF" kind="show" identifier="MapSegue" id="qzE-db-gsm"/>
                     </connections>
                 </viewController>
