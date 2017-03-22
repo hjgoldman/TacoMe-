@@ -34,6 +34,10 @@
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="tAf-HU-u8Z">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="XeD-go-Yrd"/>
+                                    <constraint firstAttribute="height" constant="37" id="dPe-4V-hQM"/>
+                                </constraints>
                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                         </subviews>
@@ -42,7 +46,9 @@
                             <constraint firstItem="33p-Mh-Sr3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zs3-vf-h5u"/>
                             <constraint firstItem="tAf-HU-u8Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m8d-z1-yQb"/>
                             <constraint firstItem="tAf-HU-u8Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qR3-LD-uh6"/>
+                            <constraint firstItem="tAf-HU-u8Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rEw-dP-0c4"/>
                             <constraint firstItem="33p-Mh-Sr3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rh4-GB-AX9"/>
+                            <constraint firstItem="tAf-HU-u8Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vcv-xk-XXW"/>
                         </constraints>
                     </view>
                     <connections>
