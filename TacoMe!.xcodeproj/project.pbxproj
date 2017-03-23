@@ -16,6 +16,7 @@
 		C620610F1E8082B700102C1E /* TacoMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C620610E1E8082B700102C1E /* TacoMeViewController.swift */; };
 		C62061111E8082DF00102C1E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62061101E8082DF00102C1E /* MapViewController.swift */; };
 		C62061131E8082F900102C1E /* TacoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62061121E8082F900102C1E /* TacoLocation.swift */; };
+		C68BE0771E84326400C3E643 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BE0761E84326400C3E643 /* FadeTransition.swift */; };
 		F0DCF3A89B1204CB25CC8F05 /* Pods_TacoMe_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDD39B0CCE270A6209DDE72 /* Pods_TacoMe_.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		C620610E1E8082B700102C1E /* TacoMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TacoMeViewController.swift; sourceTree = "<group>"; };
 		C62061101E8082DF00102C1E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C62061121E8082F900102C1E /* TacoLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TacoLocation.swift; sourceTree = "<group>"; };
+		C68BE0761E84326400C3E643 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		E06BEC2D0EC97E7145529F3B /* Pods-TacoMe!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TacoMe!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TacoMe!/Pods-TacoMe!.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				C62060FF1E80820600102C1E /* LaunchScreen.storyboard */,
 				C62061021E80820600102C1E /* Info.plist */,
 				C62061121E8082F900102C1E /* TacoLocation.swift */,
+				C68BE0761E84326400C3E643 /* FadeTransition.swift */,
 			);
 			path = "TacoMe!";
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C62060F71E80820600102C1E /* AppDelegate.swift in Sources */,
+				C68BE0771E84326400C3E643 /* FadeTransition.swift in Sources */,
 				C62061131E8082F900102C1E /* TacoLocation.swift in Sources */,
 				C62061111E8082DF00102C1E /* MapViewController.swift in Sources */,
 				C620610F1E8082B700102C1E /* TacoMeViewController.swift in Sources */,

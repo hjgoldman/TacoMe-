@@ -10,12 +10,13 @@ import UIKit
 import MapKit
 import RandomColorSwift
 
-class TacoMeViewController: UIViewController, CLLocationManagerDelegate {
+class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate {
     
     @IBOutlet weak var indicatorView :UIActivityIndicatorView!
     var locationManager = CLLocationManager()
     var tacoLocations = [TacoLocation]()
     var closestTaco = TacoLocation()
+    var fadeTransition = FadeTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -158,7 +159,24 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    //Custom segue 
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return nil
+    }
     
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return self.fadeTransition
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let mapVC = segue.destination as! MapViewController
+        mapVC.transitioningDelegate = self
+        
+    }
     
     
     
