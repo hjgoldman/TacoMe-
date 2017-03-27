@@ -9,11 +9,11 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, TacoLocationsDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
-    
+    var tacoLocations = [TacoLocation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +90,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 self.mapView.addAnnotation(annotation)
             }
         }
+    }
+    
+    func tacoLocations(tacoLocations :[TacoLocation]) {
+        self.tacoLocations = tacoLocations
+        print("hello World")
     }
     
     
