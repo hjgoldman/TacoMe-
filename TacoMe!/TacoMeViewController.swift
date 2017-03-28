@@ -10,10 +10,6 @@ import UIKit
 import MapKit
 import RandomColorSwift
 
-protocol TacoLocationsDelegate {
-    func tacoLocations(tacoLocations :[TacoLocation])
-}
-
 class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate {
     
     @IBOutlet weak var indicatorView :UIActivityIndicatorView!
@@ -22,7 +18,6 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
     var closestTaco = TacoLocation()
     var fadeTransition = FadeTransition()
     var accessToken = String()
-    var delegate :TacoLocationsDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +64,6 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
             let json = try! JSONSerialization.jsonObject(with: data!, options: []) as! [String:Any]
             
             self.accessToken = json["access_token"] as! String!
-            
         })
         
         dataTask.resume()
@@ -83,7 +77,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
             "cache-control": "no-cache",
             ]
         
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api.yelp.com/v3/businesses/search?term=mexican&radius=8100&latitude=\((self.locationManager.location?.coordinate.latitude)!)&longitude=\((self.locationManager.location?.coordinate.longitude)!)")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://api.yelp.com/v3/businesses/search?term=mexican&latitude=\((self.locationManager.location?.coordinate.latitude)!)&longitude=\((self.locationManager.location?.coordinate.longitude)!)")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -131,6 +125,9 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 let isClosed = business["is_closed"] as! Bool
                 tacoLocation.isClosed = isClosed
                 
+                let yelpUrl = business["url"] as! String
+                tacoLocation.yelpUrl = yelpUrl
+                
                 self.tacoLocations.append(tacoLocation)
             }
             
@@ -138,78 +135,54 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         
         dataTask.resume()
     }
-
     
     
-    
-    private func launchTimerToLetEverythingLoad() {
-        
-        self.getYelpLocations()
-        sleep(2)
-        self.findClosestTaco()
-
-        
-    }
     
     @IBAction func getTacoButtonPressed(_ sender: Any) {
-
-        self.indicatorView.isHidden = false
-        self.indicatorView.startAnimating()
         
-        // background // lane for time consuming tasks
-        DispatchQueue.global().async {
+        self.getYelpLocations()
+        self.findClosestTaco()
+        
+        guard let distance = self.closestTaco.distance else {
+            return
+        }
+        
+        let distanceInMiles = String(format: "%.2f", distance / 1609.34)
+        
+        
+        // Create the alert controller
+        let alertController = UIAlertController(title: "Taco Found!", message:  "\(self.closestTaco.name!): \(distanceInMiles) miles away", preferredStyle: .alert)
+        
+        // Create the actions
+        let getTacoAction = UIAlertAction(title: "Get Directions", style: UIAlertActionStyle.default) {
+            UIAlertAction in
             
-            self.launchTimerToLetEverythingLoad()
+            let url  = NSURL(string: "http://maps.apple.com/?q=\(self.closestTaco.coordinate.coordinate.latitude),\(self.closestTaco.coordinate.coordinate.longitude)")
             
-            // switch to the main thread to run UI specific tasks
-            DispatchQueue.main.async {
-                self.indicatorView.stopAnimating()
-                self.indicatorView.isHidden = true
-
-                
-                guard let distance = self.closestTaco.distance else {
-                    return
-                }
-                
-                let distanceInMiles = String(format: "%.2f", distance / 1609.34)
-                
-                
-                // Create the alert controller
-                let alertController = UIAlertController(title: "Taco Found!", message:  "\(self.closestTaco.name!): \(distanceInMiles) miles away", preferredStyle: .alert)
-                
-                // Create the actions
-                let getTacoAction = UIAlertAction(title: "Get Directions", style: UIAlertActionStyle.default) {
-                    UIAlertAction in
-                    //self.performSegue(withIdentifier: "MapSegue", sender: self)
-                    
-                    let url  = NSURL(string: "http://maps.apple.com/?q=\(self.closestTaco.coordinate.coordinate.latitude),\(self.closestTaco.coordinate.coordinate.longitude)")
-                    
-                    if UIApplication.shared.canOpenURL(url! as URL) == true {
-                        UIApplication.shared.open(url as! URL)
-                        
-                    }
-                }
-                let moreTacoAction = UIAlertAction(title: "More Tacos", style: UIAlertActionStyle.default) {
-                    UIAlertAction in
-                    self.performSegue(withIdentifier: "MapSegue", sender: self)
-                    
-                }
-                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
-                    UIAlertAction in
-                    
-                }
-                
-                // Add the actions
-                alertController.addAction(getTacoAction)
-                alertController.addAction(moreTacoAction)
-                alertController.addAction(cancelAction)
-                
-                // Present the controller
-                self.present(alertController, animated: true, completion: nil)
-                
+            if UIApplication.shared.canOpenURL(url! as URL) == true {
+                UIApplication.shared.open(url as! URL)
                 
             }
         }
+        let moreTacoAction = UIAlertAction(title: "More Tacos", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            
+            self.performSegue(withIdentifier: "MapSegue", sender: self)
+            
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            UIAlertAction in
+            
+        }
+        
+        // Add the actions
+        alertController.addAction(getTacoAction)
+        alertController.addAction(moreTacoAction)
+        alertController.addAction(cancelAction)
+        
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
+        
 
  
     }
@@ -253,10 +226,14 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-//        self.delegate.tacoLocations(tacoLocations: self.tacoLocations)
-        let mapVC = segue.destination as! MapViewController
-        mapVC.tacoLocations = self.tacoLocations
-        mapVC.transitioningDelegate = self
+        if segue.identifier == "MapSegue" {
+            
+            let mapVC = segue.destination as! MapViewController
+            mapVC.tacoLocations = self.tacoLocations
+            
+            mapVC.transitioningDelegate = self
+            
+        }
         
     }
     

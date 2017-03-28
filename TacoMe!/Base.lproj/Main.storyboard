@@ -64,7 +64,7 @@
         <!--Map View Controller-->
         <scene sceneID="Q5O-l2-NqU">
             <objects>
-                <viewController id="wRK-gj-PZF" customClass="MapViewController" customModule="TacoMe_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="wRK-gj-PZF" customClass="MapViewController" customModule="TacoMe_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GpN-e4-OoC"/>
                         <viewControllerLayoutGuide type="bottom" id="bIi-hn-BJa"/>
@@ -93,12 +93,21 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="pkc-Ws-qqw"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yelp_trademark_RGB_outline.png" translatesAutoresizingMaskIntoConstraints="NO" id="UpH-YD-eTn">
+                                <rect key="frame" x="0.0" y="608" width="60" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="BmS-p3-beQ"/>
+                                    <constraint firstAttribute="height" constant="38" id="CfA-sW-1TE"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="cFV-nJ-Csa" secondAttribute="trailing" id="L5b-fn-Lfp"/>
+                            <constraint firstItem="bIi-hn-BJa" firstAttribute="top" secondItem="UpH-YD-eTn" secondAttribute="bottom" constant="21" id="MUw-o4-fLc"/>
                             <constraint firstItem="cFV-nJ-Csa" firstAttribute="top" secondItem="NoL-MW-TQy" secondAttribute="top" id="QSc-p1-uVx"/>
                             <constraint firstItem="cFV-nJ-Csa" firstAttribute="leading" secondItem="NoL-MW-TQy" secondAttribute="leading" id="Ug2-rY-P6v"/>
+                            <constraint firstItem="UpH-YD-eTn" firstAttribute="leading" secondItem="NoL-MW-TQy" secondAttribute="leading" id="Y4q-QF-fCB"/>
                             <constraint firstItem="0zG-5b-rO9" firstAttribute="top" secondItem="GpN-e4-OoC" secondAttribute="bottom" id="cZ7-X6-p2v"/>
                             <constraint firstItem="bIi-hn-BJa" firstAttribute="top" secondItem="cFV-nJ-Csa" secondAttribute="bottom" id="ssr-Mb-KRp"/>
                             <constraint firstItem="0zG-5b-rO9" firstAttribute="leading" secondItem="NoL-MW-TQy" secondAttribute="leadingMargin" id="tgc-KF-ncT"/>
@@ -114,6 +123,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Yelp_trademark_RGB_outline.png" width="1000" height="640"/>
         <image name="taco_me.png" width="408" height="269"/>
     </resources>
 </document>
