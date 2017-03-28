@@ -13,7 +13,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
-    
+    var tacoLocations = [TacoLocation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.mapView.showsUserLocation = true
         mapView.setUserTrackingMode(.follow, animated: true)
         
-        self.getTacoLocations()
+        self.populateMap()
+        
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -68,30 +69,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
     }
     
-    
-    func getTacoLocations() {
+    func populateMap() {
         
-        let request = MKLocalSearchRequest()
-        request.naturalLanguageQuery = "taco"
-        
-        let region = MKCoordinateRegionMakeWithDistance((self.locationManager.location?.coordinate)!, 250, 250)
-        
-        request.region = region
-        
-        let search = MKLocalSearch(request: request)
-        search.start { (response :MKLocalSearchResponse?, error: Error?) in
+        for location in self.tacoLocations {
             
-            for mapItem in (response?.mapItems)! {
-                
-                let annotation = MKPointAnnotation()
-                annotation.title = mapItem.name
-                annotation.coordinate = CLLocationCoordinate2D(latitude: mapItem.placemark.coordinate.latitude, longitude: mapItem.placemark.coordinate.longitude)
-                
-                self.mapView.addAnnotation(annotation)
-            }
+            let annotation = MKPointAnnotation()
+            
+            annotation.title = location.name
+        
+            annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.coordinate.latitude, longitude: location.coordinate.coordinate.longitude)
+            
+            self.mapView.addAnnotation(annotation)
+            
         }
+        
     }
-    
     
     
 }

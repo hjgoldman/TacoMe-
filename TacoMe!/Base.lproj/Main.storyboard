@@ -33,27 +33,14 @@
                                     <action selector="getTacoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tuZ-9a-Tru"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="tAf-HU-u8Z">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="37" id="XeD-go-Yrd"/>
-                                    <constraint firstAttribute="height" constant="37" id="dPe-4V-hQM"/>
-                                </constraints>
-                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.96047013998031616" green="0.89431089162826538" blue="0.97426563501358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="33p-Mh-Sr3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zs3-vf-h5u"/>
-                            <constraint firstItem="tAf-HU-u8Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m8d-z1-yQb"/>
-                            <constraint firstItem="tAf-HU-u8Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qR3-LD-uh6"/>
-                            <constraint firstItem="tAf-HU-u8Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rEw-dP-0c4"/>
                             <constraint firstItem="33p-Mh-Sr3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rh4-GB-AX9"/>
-                            <constraint firstItem="tAf-HU-u8Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vcv-xk-XXW"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="indicatorView" destination="tAf-HU-u8Z" id="uYn-iz-scd"/>
                         <segue destination="wRK-gj-PZF" kind="show" identifier="MapSegue" id="qzE-db-gsm"/>
                     </connections>
                 </viewController>
@@ -64,7 +51,7 @@
         <!--Map View Controller-->
         <scene sceneID="Q5O-l2-NqU">
             <objects>
-                <viewController id="wRK-gj-PZF" customClass="MapViewController" customModule="TacoMe_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="wRK-gj-PZF" customClass="MapViewController" customModule="TacoMe_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GpN-e4-OoC"/>
                         <viewControllerLayoutGuide type="bottom" id="bIi-hn-BJa"/>
@@ -93,12 +80,21 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="pkc-Ws-qqw"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yelp_trademark_RGB_outline.png" translatesAutoresizingMaskIntoConstraints="NO" id="UpH-YD-eTn">
+                                <rect key="frame" x="0.0" y="608" width="60" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="BmS-p3-beQ"/>
+                                    <constraint firstAttribute="height" constant="38" id="CfA-sW-1TE"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="cFV-nJ-Csa" secondAttribute="trailing" id="L5b-fn-Lfp"/>
+                            <constraint firstItem="bIi-hn-BJa" firstAttribute="top" secondItem="UpH-YD-eTn" secondAttribute="bottom" constant="21" id="MUw-o4-fLc"/>
                             <constraint firstItem="cFV-nJ-Csa" firstAttribute="top" secondItem="NoL-MW-TQy" secondAttribute="top" id="QSc-p1-uVx"/>
                             <constraint firstItem="cFV-nJ-Csa" firstAttribute="leading" secondItem="NoL-MW-TQy" secondAttribute="leading" id="Ug2-rY-P6v"/>
+                            <constraint firstItem="UpH-YD-eTn" firstAttribute="leading" secondItem="NoL-MW-TQy" secondAttribute="leading" id="Y4q-QF-fCB"/>
                             <constraint firstItem="0zG-5b-rO9" firstAttribute="top" secondItem="GpN-e4-OoC" secondAttribute="bottom" id="cZ7-X6-p2v"/>
                             <constraint firstItem="bIi-hn-BJa" firstAttribute="top" secondItem="cFV-nJ-Csa" secondAttribute="bottom" id="ssr-Mb-KRp"/>
                             <constraint firstItem="0zG-5b-rO9" firstAttribute="leading" secondItem="NoL-MW-TQy" secondAttribute="leadingMargin" id="tgc-KF-ncT"/>
@@ -114,6 +110,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Yelp_trademark_RGB_outline.png" width="1000" height="640"/>
         <image name="taco_me.png" width="408" height="269"/>
     </resources>
 </document>

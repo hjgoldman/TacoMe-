@@ -13,11 +13,10 @@ class TacoLocation {
     
     var coordinate :CLLocation!
     var name :String!
-    var street :String!
-    var city :String!
-    var state :String!
-    var zip :String!
     var address :[String]!
-    var distanceFromUser :Double!
-    
+    var distance :Double!
+    var rating :Double!
+    var price :String!
+    var isClosed :Bool!
+    var yelpUrl :String!
 }
