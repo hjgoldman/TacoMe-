@@ -12,7 +12,6 @@ import RandomColorSwift
 
 class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate {
     
-    @IBOutlet weak var indicatorView :UIActivityIndicatorView!
     var locationManager = CLLocationManager()
     var tacoLocations = [TacoLocation]()
     var closestTaco = TacoLocation()
@@ -29,7 +28,6 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         self.locationManager.startUpdatingLocation()
         
         self.view.backgroundColor = randomColor(hue: .random, luminosity: .light)
-        self.indicatorView.isHidden = true
         
         self.getAuthToken()
     }
