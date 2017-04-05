@@ -155,8 +155,9 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 let id = item["id"] as! String //capture this
                 let name = item["name"] as! String // capture this
                 
-                let opening_hours = item["opening_hours"] as! [String:Any]
-                let open_now = opening_hours["open_now"] as! Bool // capture this
+//                let opening_hours = item["opening_hours"] as! [String:Any]
+//                let open_now = opening_hours["open_now"] as! Bool // capture this
+
                 
                 let place_id = item["place_id"] as! String // capture this
                 let price_level = item["price_level"] as? Int //capture this **THIS CAN BE NIL*
@@ -173,7 +174,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 tacoLocation.icon = icon
                 tacoLocation.id = id
                 tacoLocation.name = name
-                tacoLocation.open_now = open_now
+//                tacoLocation.open_now = open_now
                 tacoLocation.place_id = place_id
                 tacoLocation.price_level = price_level
                 tacoLocation.rating = rating

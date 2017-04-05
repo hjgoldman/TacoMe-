@@ -6,9 +6,10 @@ target 'TacoMe!' do
   use_frameworks!
 
   # Pods for TacoMe!
-pod 'RandomColorSwift'
+  pod 'RandomColorSwift'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
 
 
 end

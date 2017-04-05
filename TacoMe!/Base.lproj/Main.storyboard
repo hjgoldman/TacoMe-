@@ -114,10 +114,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="cLC-Dg-55n" kind="show" identifier="MoreInfoSegue" id="Kfb-jl-nRm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybU-Nb-3g2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2495.1999999999998" y="136.28185907046478"/>
+            <point key="canvasLocation" x="2284" y="137"/>
+        </scene>
+        <!--More Info View Controller-->
+        <scene sceneID="jz0-UI-A8U">
+            <objects>
+                <viewController id="cLC-Dg-55n" customClass="MoreInfoViewController" customModule="TacoMe_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T8c-aU-Tu2"/>
+                        <viewControllerLayoutGuide type="bottom" id="HYw-MX-543"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kXV-fm-Sct">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLZ-FB-8zL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3374" y="136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aHZ-ak-xXj">
