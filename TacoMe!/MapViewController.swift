@@ -4,13 +4,13 @@
 //
 //  Created by Hayden Goldman on 3/20/17.
 //  Copyright © 2017 Hayden Goldman. All rights reserved.
-//
+
 
 import UIKit
 import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-    
+
     @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
     var tacoLocations = [TacoLocation]()
@@ -63,7 +63,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let url  = NSURL(string: "http://maps.apple.com/?q=\(lat!),\(lng!)")
         
         if UIApplication.shared.canOpenURL(url! as URL) == true {
-            UIApplication.shared.open(url as! URL)
+            UIApplication.shared.open(url! as URL)
             
         }
         
@@ -73,14 +73,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         for location in self.tacoLocations {
             
-            let annotation = MKPointAnnotation()
-            
-            annotation.title = location.name
-        
-            annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.coordinate.latitude, longitude: location.coordinate.coordinate.longitude)
-            
-            self.mapView.addAnnotation(annotation)
-            
+//            let annotation = MKPointAnnotation()
+//            
+//            annotation.title = location.name
+//        
+//            annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.coordinate.latitude, longitude: location.coordinate.coordinate.longitude)
+//            
+//            self.mapView.addAnnotation(annotation)
+//            
         }
         
     }

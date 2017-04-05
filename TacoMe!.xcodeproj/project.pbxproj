@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C610224B1E89F92B002C56A2 /* Yelp_trademark_RGB_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = C610224A1E89F92B002C56A2 /* Yelp_trademark_RGB_outline.png */; };
 		C62060F71E80820600102C1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62060F61E80820600102C1E /* AppDelegate.swift */; };
 		C62060FC1E80820600102C1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62060FA1E80820600102C1E /* Main.storyboard */; };
 		C62060FE1E80820600102C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C62060FD1E80820600102C1E /* Assets.xcassets */; };
@@ -24,7 +23,6 @@
 /* Begin PBXFileReference section */
 		1DDD39B0CCE270A6209DDE72 /* Pods_TacoMe_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TacoMe_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43368252F8BD1F7D00FB61F2 /* Pods-TacoMe!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TacoMe!.release.xcconfig"; path = "Pods/Target Support Files/Pods-TacoMe!/Pods-TacoMe!.release.xcconfig"; sourceTree = "<group>"; };
-		C610224A1E89F92B002C56A2 /* Yelp_trademark_RGB_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yelp_trademark_RGB_outline.png; path = "../../../../Desktop/Yelp Logo Trademark/Screen/Yelp_trademark_RGB_outline.png"; sourceTree = "<group>"; };
 		C62060F31E80820600102C1E /* TacoMe!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TacoMe!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62060F61E80820600102C1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C62060FB1E80820600102C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +58,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C616D6C91E8C2CC900EECE4B /* Taco Annotation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Taco Annotation";
+			sourceTree = "<group>";
+		};
 		C62060EA1E80820600102C1E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +86,7 @@
 		C62060F51E80820600102C1E /* TacoMe! */ = {
 			isa = PBXGroup;
 			children = (
+				C616D6C91E8C2CC900EECE4B /* Taco Annotation */,
 				C62061091E80821C00102C1E /* ViewControllers */,
 				C62061081E80821600102C1E /* Images */,
 				C62060F61E80820600102C1E /* AppDelegate.swift */,
@@ -97,7 +103,6 @@
 		C62061081E80821600102C1E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C610224A1E89F92B002C56A2 /* Yelp_trademark_RGB_outline.png */,
 				C620610A1E80824000102C1E /* taco_me.png */,
 				C620610B1E80824000102C1E /* taco_annotation.png */,
 			);
@@ -187,7 +192,6 @@
 			files = (
 				C62061011E80820600102C1E /* LaunchScreen.storyboard in Resources */,
 				C62060FE1E80820600102C1E /* Assets.xcassets in Resources */,
-				C610224B1E89F92B002C56A2 /* Yelp_trademark_RGB_outline.png in Resources */,
 				C620610D1E80824000102C1E /* taco_annotation.png in Resources */,
 				C620610C1E80824000102C1E /* taco_me.png in Resources */,
 				C62060FC1E80820600102C1E /* Main.storyboard in Resources */,

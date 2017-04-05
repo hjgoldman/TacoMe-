@@ -11,12 +11,33 @@ import MapKit
 
 class TacoLocation {
     
-    var coordinate :CLLocation!
-    var name :String!
-    var address :[String]!
-    var distance :Double!
-    var rating :Double!
-    var price :String!
-    var isClosed :Bool!
-    var yelpUrl :String!
+//    var coordinate :CLLocation!
+//    var name :String!
+//    var address :[String]!
+//    var distance :Double!
+//    var rating :Double!
+//    var price :String!
+//    var isClosed :Bool!
+//    var yelpUrl :String!
+    
+    
+    
+    var locationLat :Double?
+    var locationLng :Double?
+    var viewportNorthEastLat :Double?
+    var viewportNorthEastLng :Double?
+    var viewportSouthWestLat :Double?
+    var viewportSouthWestLng :Double?
+    var icon :String?
+    var id :String?
+    var name :String?
+    var open_now :Bool?
+    var place_id :String?
+    var price_level :Int?
+    var rating :Double?
+    var vicinity :String?
+    
+    var distanceFromUser :Double?
+    
+    
 }
