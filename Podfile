@@ -7,6 +7,8 @@ target 'TacoMe!' do
 
   # Pods for TacoMe!
 pod 'RandomColorSwift'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 
 
 end

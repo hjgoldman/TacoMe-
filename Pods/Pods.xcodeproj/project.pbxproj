@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		43536EF061EAB2C022EE9F62C088D655 /* Pods-TacoMe!-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 010A5E6415DDAA921247EBD216B68CB0 /* Pods-TacoMe!-dummy.m */; };
-		46ECBF17D1919EDE98D72E490376565C /* RandomColorSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AA8574ABA12CE8AC28F0BE68E52E54 /* RandomColorSwift-dummy.m */; };
-		5DE10FB4376105DCAE7460889AB2AA70 /* Luminosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C83CD1E2A0D5F3B0049368D74053A /* Luminosity.swift */; };
+		46ECBF17D1919EDE98D72E490376565C /* RandomColorSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DD2BBA101A16501CC4B874A79B5E57 /* RandomColorSwift-dummy.m */; };
+		5DE10FB4376105DCAE7460889AB2AA70 /* Luminosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D19AA49EE1CB5DD6F0157AB9E9B44 /* Luminosity.swift */; };
 		84D19778CBADD5910E584DC0E4A6B8B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		925EE193E471ED57838DF8BB90A22CF3 /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B8EED062721CE4EF71FDE057512ED /* ColorDefinition.swift */; };
-		92A0F2C504F3D9FF128946F717230359 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B157B1EA3EBAE1F3B0B4817C912AAF8 /* Hue.swift */; };
-		A48079C10A5BFF5F44B665D44E53ABF4 /* RandomColorSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0158030CC89E3DFDBA906DF490D2E420 /* RandomColorSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CEEDBBE0BDB6C4FFC2F1A89F2AB3B2C5 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94343978D8754AFCC0C894BAD0959310 /* RandomColor.swift */; };
+		925EE193E471ED57838DF8BB90A22CF3 /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33C45E6A0A82D295C0972BC786321D9 /* ColorDefinition.swift */; };
+		92A0F2C504F3D9FF128946F717230359 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF338069BFF5CC422402D01569F84CFC /* Hue.swift */; };
+		A48079C10A5BFF5F44B665D44E53ABF4 /* RandomColorSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A1DB7ABA917FB686061DEE3DF333232 /* RandomColorSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEEDBBE0BDB6C4FFC2F1A89F2AB3B2C5 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D02A7B7123088E1DDE0A7988B87B74 /* RandomColor.swift */; };
 		F1C2BBB347DA3FBB5AF740E9195411BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		F3F0E58450893985EEB54E97FFC4F412 /* Pods-TacoMe!-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5106B3C82EA3E387CE4EC4142DB410E4 /* Pods-TacoMe!-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -30,29 +30,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00655C2B53EA0C159A1FD1C3A8542FF8 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
 		010A5E6415DDAA921247EBD216B68CB0 /* Pods-TacoMe!-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TacoMe!-dummy.m"; sourceTree = "<group>"; };
-		0158030CC89E3DFDBA906DF490D2E420 /* RandomColorSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-umbrella.h"; sourceTree = "<group>"; };
-		0B157B1EA3EBAE1F3B0B4817C912AAF8 /* Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = RandomColor/Hue.swift; sourceTree = "<group>"; };
+		141D19AA49EE1CB5DD6F0157AB9E9B44 /* Luminosity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Luminosity.swift; path = RandomColor/Luminosity.swift; sourceTree = "<group>"; };
+		18DE34F5DA660699EACB90151726DA6F /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		1CA7A5B42774AAF142CC96329D26A552 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		360490099F79B21DEA732333D7088CE6 /* Pods-TacoMe!-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TacoMe!-acknowledgements.plist"; sourceTree = "<group>"; };
-		36604D4DE6AC1376A0BE6DA55F4911C5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		360E8A7251AB610BE372621E8FD973DC /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		3DEDED125F6FFA7F38988D0E35531A24 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		5106B3C82EA3E387CE4EC4142DB410E4 /* Pods-TacoMe!-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TacoMe!-umbrella.h"; sourceTree = "<group>"; };
 		52AA214272CB3F0D4709AEAE0C92988A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58B7C6621A6CB614818CF0D477EEA0E4 /* Pods-TacoMe!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TacoMe!.debug.xcconfig"; sourceTree = "<group>"; };
+		5A1DB7ABA917FB686061DEE3DF333232 /* RandomColorSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-umbrella.h"; sourceTree = "<group>"; };
 		5FB92ECAE6A4B85E4C070FDA9B4DFE0A /* Pods-TacoMe!-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TacoMe!-resources.sh"; sourceTree = "<group>"; };
-		6015DDE60FBE0C887DCBFA53B0595B06 /* RandomColorSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RandomColorSwift.modulemap; sourceTree = "<group>"; };
+		8B8262DD6E585C8C92B39E1FDB7F1FC7 /* RandomColorSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-prefix.pch"; sourceTree = "<group>"; };
 		8D6476496C09DF674D9EE1114BE81B4B /* Pods-TacoMe!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TacoMe!.release.xcconfig"; sourceTree = "<group>"; };
-		8D6B8EED062721CE4EF71FDE057512ED /* ColorDefinition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorDefinition.swift; path = RandomColor/ColorDefinition.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94343978D8754AFCC0C894BAD0959310 /* RandomColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomColor.swift; path = RandomColor/RandomColor.swift; sourceTree = "<group>"; };
-		A0BC80F25E557024CCA1EAA55BC2D96E /* RandomColorSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RandomColorSwift.xcconfig; sourceTree = "<group>"; };
 		A34454E2B8AFD16EF7067ABE3F97FB3F /* Pods-TacoMe!.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TacoMe!.modulemap"; sourceTree = "<group>"; };
-		A5AA8574ABA12CE8AC28F0BE68E52E54 /* RandomColorSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RandomColorSwift-dummy.m"; sourceTree = "<group>"; };
 		A6170F8EFF18CE640E3CDBBAF2F36ECA /* Pods-TacoMe!-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TacoMe!-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BA5EBBA244CD1BD2348C6F92B95F040B /* RandomColorSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-prefix.pch"; sourceTree = "<group>"; };
+		AF338069BFF5CC422402D01569F84CFC /* Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = RandomColor/Hue.swift; sourceTree = "<group>"; };
+		BD111E433725F636182BDF812228A674 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D07C83CD1E2A0D5F3B0049368D74053A /* Luminosity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Luminosity.swift; path = RandomColor/Luminosity.swift; sourceTree = "<group>"; };
+		D0DD2BBA101A16501CC4B874A79B5E57 /* RandomColorSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RandomColorSwift-dummy.m"; sourceTree = "<group>"; };
+		D3198693D6B1F368CC6290F8AE2CF139 /* RandomColorSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RandomColorSwift.modulemap; sourceTree = "<group>"; };
+		E8D02A7B7123088E1DDE0A7988B87B74 /* RandomColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomColor.swift; path = RandomColor/RandomColor.swift; sourceTree = "<group>"; };
 		EB69CA3BE2F7189014BB4357DA991F30 /* RandomColorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RandomColorSwift.framework; path = RandomColorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC236E69F1F2ED6079C18486DBC56618 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		EC99F851B8FE48FF8120FEABB0E49CDA /* Pods_TacoMe_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TacoMe_.framework; path = "Pods-TacoMe!.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F33C45E6A0A82D295C0972BC786321D9 /* ColorDefinition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorDefinition.swift; path = RandomColor/ColorDefinition.swift; sourceTree = "<group>"; };
+		F6357C99C44F8201570FA5115D29BFEC /* RandomColorSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RandomColorSwift.xcconfig; sourceTree = "<group>"; };
 		F8692CCC65382631862648401D7FA87B /* Pods-TacoMe!-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TacoMe!-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CABED0546EA52F2AF19C3C20C2FCBD8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0F5DDCE8AC984EB86192B8F7E2F906A1 /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		0F5DDCE8AC984EB86192B8F7E2F906A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC236E69F1F2ED6079C18486DBC56618 /* GoogleMapsBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1B10091F06674E5320E8697621161C88 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +105,25 @@
 				EB69CA3BE2F7189014BB4357DA991F30 /* RandomColorSwift.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		28276E19BAE5935BAA1B54337A9EBDA8 /* GooglePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				C3AC8872B94E97FE61F8101E8C604586 /* Frameworks */,
+				94E9C437AD5BFD92E3B78C2D2C04A361 /* Resources */,
+			);
+			name = GooglePlaces;
+			path = GooglePlaces;
+			sourceTree = "<group>";
+		};
+		480244791CEF3F4410FF0B734C900CAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD111E433725F636182BDF812228A674 /* GoogleMaps.framework */,
+				00655C2B53EA0C159A1FD1C3A8542FF8 /* GoogleMapsCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		6B01210B3350B8B9CE207FE8028A2635 /* Pods-TacoMe! */ = {
@@ -116,18 +157,10 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				8719A227D0757E8FCDFA0FF6DFA30512 /* Pods */,
+				8CD41EC198B039FED2F9DD15E11D7802 /* Pods */,
 				1B10091F06674E5320E8697621161C88 /* Products */,
 				8B0D54CB5A46039C9B84A75DE4AC51DD /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		8719A227D0757E8FCDFA0FF6DFA30512 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E5D7941A3B1778CF3137117BF45E290D /* RandomColorSwift */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		8B0D54CB5A46039C9B84A75DE4AC51DD /* Targets Support Files */ = {
@@ -138,18 +171,66 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		94B0BF7094120FBF3629C8BC8EF32B0E /* Support Files */ = {
+		8CD41EC198B039FED2F9DD15E11D7802 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				36604D4DE6AC1376A0BE6DA55F4911C5 /* Info.plist */,
-				6015DDE60FBE0C887DCBFA53B0595B06 /* RandomColorSwift.modulemap */,
-				A0BC80F25E557024CCA1EAA55BC2D96E /* RandomColorSwift.xcconfig */,
-				A5AA8574ABA12CE8AC28F0BE68E52E54 /* RandomColorSwift-dummy.m */,
-				BA5EBBA244CD1BD2348C6F92B95F040B /* RandomColorSwift-prefix.pch */,
-				0158030CC89E3DFDBA906DF490D2E420 /* RandomColorSwift-umbrella.h */,
+				CF623CFE92140D6978C0F133181229BD /* GoogleMaps */,
+				28276E19BAE5935BAA1B54337A9EBDA8 /* GooglePlaces */,
+				AB7BFD52937C0DE34E16B9B3A2A340CF /* RandomColorSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		94E9C437AD5BFD92E3B78C2D2C04A361 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				360E8A7251AB610BE372621E8FD973DC /* GooglePlaces.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9C7BD769116AE8C9FD81785062871DBC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1CA7A5B42774AAF142CC96329D26A552 /* Info.plist */,
+				D3198693D6B1F368CC6290F8AE2CF139 /* RandomColorSwift.modulemap */,
+				F6357C99C44F8201570FA5115D29BFEC /* RandomColorSwift.xcconfig */,
+				D0DD2BBA101A16501CC4B874A79B5E57 /* RandomColorSwift-dummy.m */,
+				8B8262DD6E585C8C92B39E1FDB7F1FC7 /* RandomColorSwift-prefix.pch */,
+				5A1DB7ABA917FB686061DEE3DF333232 /* RandomColorSwift-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/RandomColorSwift";
+			sourceTree = "<group>";
+		};
+		9D36C3C976BA3DF0BF25B67D6E3C5795 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3DEDED125F6FFA7F38988D0E35531A24 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AB7BFD52937C0DE34E16B9B3A2A340CF /* RandomColorSwift */ = {
+			isa = PBXGroup;
+			children = (
+				F33C45E6A0A82D295C0972BC786321D9 /* ColorDefinition.swift */,
+				AF338069BFF5CC422402D01569F84CFC /* Hue.swift */,
+				141D19AA49EE1CB5DD6F0157AB9E9B44 /* Luminosity.swift */,
+				E8D02A7B7123088E1DDE0A7988B87B74 /* RandomColor.swift */,
+				9C7BD769116AE8C9FD81785062871DBC /* Support Files */,
+			);
+			name = RandomColorSwift;
+			path = RandomColorSwift;
+			sourceTree = "<group>";
+		};
+		B40E683A36235DE06E4FEADD9D0B6450 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				480244791CEF3F4410FF0B734C900CAE /* Frameworks */,
+				9D36C3C976BA3DF0BF25B67D6E3C5795 /* Resources */,
+			);
+			name = Maps;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -160,17 +241,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E5D7941A3B1778CF3137117BF45E290D /* RandomColorSwift */ = {
+		C3AC8872B94E97FE61F8101E8C604586 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8D6B8EED062721CE4EF71FDE057512ED /* ColorDefinition.swift */,
-				0B157B1EA3EBAE1F3B0B4817C912AAF8 /* Hue.swift */,
-				D07C83CD1E2A0D5F3B0049368D74053A /* Luminosity.swift */,
-				94343978D8754AFCC0C894BAD0959310 /* RandomColor.swift */,
-				94B0BF7094120FBF3629C8BC8EF32B0E /* Support Files */,
+				18DE34F5DA660699EACB90151726DA6F /* GooglePlaces.framework */,
 			);
-			name = RandomColorSwift;
-			path = RandomColorSwift;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF623CFE92140D6978C0F133181229BD /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				0CABED0546EA52F2AF19C3C20C2FCBD8 /* Base */,
+				B40E683A36235DE06E4FEADD9D0B6450 /* Maps */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,7 +418,7 @@
 		};
 		7392EBB9EA956B4621A56740B8AADB90 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0BC80F25E557024CCA1EAA55BC2D96E /* RandomColorSwift.xcconfig */;
+			baseConfigurationReference = F6357C99C44F8201570FA5115D29BFEC /* RandomColorSwift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -479,7 +565,7 @@
 		};
 		FE7864BE515FE12239BC31A5F5FF8214 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0BC80F25E557024CCA1EAA55BC2D96E /* RandomColorSwift.xcconfig */;
+			baseConfigurationReference = F6357C99C44F8201570FA5115D29BFEC /* RandomColorSwift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

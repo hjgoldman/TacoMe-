@@ -62,7 +62,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         let moreTacoAction = UIAlertAction(title: "More Tacos", style: UIAlertActionStyle.default) {
             UIAlertAction in
             
-            self.performSegue(withIdentifier: "MapSegue", sender: self)
+            self.performSegue(withIdentifier: "GoogleMapsSegue", sender: self)
             
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
@@ -97,9 +97,9 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "MapSegue" {
+        if segue.identifier == "GoogleMapsSegue" {
             
-            let mapVC = segue.destination as! MapViewController
+            let mapVC = segue.destination as! GoogleMapsViewController
             mapVC.tacoLocations = self.tacoLocations
             
             mapVC.transitioningDelegate = self
@@ -115,7 +115,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
             "cache-control": "no-cache",
             ]
         
-        let request = NSMutableURLRequest(url: NSURL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\((self.locationManager.location?.coordinate.latitude)!)%2C\((self.locationManager.location?.coordinate.longitude)!)%0A&radius=5000&keyword=mexican&pagetoken&key=AIzaSyBbvw_RKKdzBigdZGjXTJZjgC3IMJVV6rU")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\((self.locationManager.location?.coordinate.latitude)!)%2C\((self.locationManager.location?.coordinate.longitude)!)%0A&radius=3218.69&keyword=mexican&pagetoken&key=AIzaSyBbvw_RKKdzBigdZGjXTJZjgC3IMJVV6rU")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
         request.httpMethod = "GET"

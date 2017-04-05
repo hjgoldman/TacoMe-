@@ -1,12 +1,23 @@
 PODS:
+  - GoogleMaps (2.2.0):
+    - GoogleMaps/Maps (= 2.2.0)
+  - GoogleMaps/Base (2.2.0)
+  - GoogleMaps/Maps (2.2.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.2.0):
+    - GoogleMaps/Base (= 2.2.0)
   - RandomColorSwift (1.0.0)
 
 DEPENDENCIES:
+  - GoogleMaps
+  - GooglePlaces
   - RandomColorSwift
 
 SPEC CHECKSUMS:
+  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
+  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   RandomColorSwift: 9f85058b721665d52d239ca166a913e083506444
 
-PODFILE CHECKSUM: 65cebc61c6b4ce5f3f24be7d18449136a8b4a609
+PODFILE CHECKSUM: 4de14483ffb289854a6d3fbb2b9cf5f8df4321f3
 
 COCOAPODS: 1.2.0
