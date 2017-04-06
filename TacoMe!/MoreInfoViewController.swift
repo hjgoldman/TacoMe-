@@ -47,6 +47,32 @@ class MoreInfoViewController: UIViewController {
             self.isOpenLabel.text = ""
         }
         
+        if self.tacoLocationDetail.rating! >= 0.0 && self.tacoLocationDetail.rating! < 0.5 {
+            self.imageView.image = UIImage(named: "0_stars.png")
+        } else if self.tacoLocationDetail.rating! >= 0.5 && self.tacoLocationDetail.rating! < 1.0 {
+            self.imageView.image = UIImage(named: "0_5_stars.png")
+        } else if self.tacoLocationDetail.rating! >= 1.0 && self.tacoLocationDetail.rating! < 1.5 {
+            self.imageView.image = UIImage(named: "1_stars.png")
+        } else if self.tacoLocationDetail.rating! >= 1.5 && self.tacoLocationDetail.rating! < 2.0 {
+            self.imageView.image = UIImage(named: "1_5_stars.png")
+        } else if self.tacoLocationDetail.rating! >= 2.0 && self.tacoLocationDetail.rating! < 2.5 {
+            self.imageView.image = UIImage(named: "2_stars.png")
+        } else if self.tacoLocationDetail.rating! >= 2.5 && self.tacoLocationDetail.rating! < 3.0 {
+            self.imageView.image = UIImage(named: "2_5_stars.png")
+        } else if self.tacoLocationDetail.rating! >= 3.0 && self.tacoLocationDetail.rating! < 3.5 {
+            self.imageView.image = UIImage(named: "3_stars.png")
+        } else if self.tacoLocationDetail.rating! >= 3.5 && self.tacoLocationDetail.rating! < 4.0 {
+            self.imageView.image = UIImage(named: "3_5_stars.png")
+        } else if self.tacoLocationDetail.rating! >= 4.0 && self.tacoLocationDetail.rating! < 4.5 {
+            self.imageView.image = UIImage(named: "4_stars.png")
+        } else if self.tacoLocationDetail.rating! >= 4.5 && self.tacoLocationDetail.rating! < 5.0 {
+            self.imageView.image = UIImage(named: "4_5_stars.png")
+        } else if self.tacoLocationDetail.rating! == 5.0 {
+            self.imageView.image = UIImage(named: "5_stars.png")
+        } else if self.tacoLocationDetail.rating == nil {
+            
+        }
+    
         
     }
 
@@ -85,11 +111,8 @@ class MoreInfoViewController: UIViewController {
                 let lng = location["lng"] as? Double,
                 let name = result["name"] as? String,
                 let weekday_text = opening_hours["weekday_text"] as? [String],
-//                let price_level = result["price_level"] as? Double,
                 let rating = result["rating"] as? Double,
                 let url = result["url"] as? String
-               // let open_now = opening_hours["open_now"] as? Bool,
-               // let website = result["website"] as? String
                 else {
                     return
             }
@@ -115,11 +138,8 @@ class MoreInfoViewController: UIViewController {
             self.tacoLocationDetail.name = name
            
             self.tacoLocationDetail.weekday_text = weekday_text
-         //   self.tacoLocationDetail.price_level = price_level
             self.tacoLocationDetail.rating = rating
             self.tacoLocationDetail.url = url
-          //  self.tacoLocationDetail.open_now = open_now
-          //  self.tacoLocationDetail.website = website
             
             DispatchQueue.main.async {
                 self.populateView()

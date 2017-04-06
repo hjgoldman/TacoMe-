@@ -12,57 +12,44 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomInfoWindow" customModule="TacoMe_" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="190" height="83"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9h-xg-igW">
-                    <rect key="frame" x="0.0" y="70" width="200" height="30"/>
-                    <color key="backgroundColor" red="0.61326209460511882" green="1" blue="0.69975672601111416" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="iTf-3F-Dne"/>
-                    </constraints>
-                    <state key="normal" title="More Info"/>
-                    <connections>
-                        <action selector="moreInfoButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="cVl-w0-3zk"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0a-k2-ftx">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_marker_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="TwQ-od-6ER">
+                    <rect key="frame" x="0.0" y="0.0" width="190" height="83"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvv-TH-DaN">
+                    <rect key="frame" x="14" y="38" width="163" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="10"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03k-bQ-Lb6">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="53"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="53" id="jCP-lP-Rha"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnj-zB-N2a">
+                    <rect key="frame" x="16" y="11" width="163" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="C9h-xg-igW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4tQ-Dd-fHC"/>
-                <constraint firstAttribute="trailing" secondItem="C9h-xg-igW" secondAttribute="trailing" id="AqQ-fg-jfe"/>
-                <constraint firstAttribute="trailing" secondItem="03k-bQ-Lb6" secondAttribute="trailing" id="LZW-9o-nWJ"/>
-                <constraint firstAttribute="trailing" secondItem="m0a-k2-ftx" secondAttribute="trailing" id="Pkn-nc-gs0"/>
-                <constraint firstItem="m0a-k2-ftx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PvB-IU-dUW"/>
-                <constraint firstItem="m0a-k2-ftx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ULo-gx-DUI"/>
-                <constraint firstItem="03k-bQ-Lb6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZpO-vF-y1g"/>
-                <constraint firstAttribute="bottom" secondItem="m0a-k2-ftx" secondAttribute="bottom" id="i1q-wn-4Jc"/>
-                <constraint firstAttribute="bottom" secondItem="C9h-xg-igW" secondAttribute="bottom" id="pmP-ne-d91"/>
-                <constraint firstItem="03k-bQ-Lb6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yM4-nu-8s9"/>
+                <constraint firstAttribute="bottom" secondItem="TwQ-od-6ER" secondAttribute="bottom" id="B60-cS-ZEV"/>
+                <constraint firstItem="TwQ-od-6ER" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bAq-ht-cw8"/>
+                <constraint firstAttribute="trailing" secondItem="TwQ-od-6ER" secondAttribute="trailing" id="dbp-dd-ed3"/>
+                <constraint firstItem="TwQ-od-6ER" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ovL-tq-34z"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="addressLabel" destination="m0a-k2-ftx" id="j4g-JE-TFs"/>
-                <outlet property="moreInfoButton" destination="C9h-xg-igW" id="PiF-oT-uP2"/>
-                <outlet property="nameLabel" destination="03k-bQ-Lb6" id="03i-8J-nvf"/>
+                <outlet property="addressLabel" destination="uvv-TH-DaN" id="lDS-iZ-e8d"/>
+                <outlet property="nameLabel" destination="Qnj-zB-N2a" id="AEp-2X-Uaw"/>
             </connections>
-            <point key="canvasLocation" x="416" y="363"/>
+            <point key="canvasLocation" x="299" y="314.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="test_marker_background.png" width="258" height="158"/>
+    </resources>
 </document>

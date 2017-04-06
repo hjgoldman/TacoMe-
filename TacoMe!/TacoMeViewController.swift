@@ -26,15 +26,17 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         self.locationManager.startUpdatingLocation()
         
         self.view.backgroundColor = randomColor(hue: .random, luminosity: .light)
-        
         self.getGoogleData()
         
+        //
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     
     @IBAction func getTacoButtonPressed(_ sender: Any) {
         
-//        self.getGoogleData()
         
         let closestTaco = self.tacoLocations[0]
         
@@ -46,7 +48,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         
         
         // Create the alert controller
-        let alertController = UIAlertController(title: "Taco Found!", message:  "\(closestTaco.name!): \(distanceInMiles) miles away", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Taco Found! 🌮", message:  "\(closestTaco.name!): \(distanceInMiles) miles away", preferredStyle: .alert)
         
         // Create the actions
         let getTacoAction = UIAlertAction(title: "Get Directions", style: UIAlertActionStyle.default) {
