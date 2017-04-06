@@ -139,49 +139,31 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 
                 let geometry = item["geometry"] as! [String:Any]
                 let location = geometry["location"] as! [String:Any]
-                let locationLat = location["lat"] as! Double // capture this
-                let locationLng = location["lng"] as! Double // capture this
+                let opening_hours = item["opening_hours"] as! [String:Any]
                 
-                let viewport = geometry["viewport"] as! [String:Any]
-                let northeast = viewport["northeast"] as! [String:Any]
-                let viewportNorthEastLat = northeast["lat"] as! Double //capture this
-                let viewportNorthEastLng = northeast["lng"] as! Double //capture this
-                
-                let southwest = viewport["southwest"] as! [String:Any]
-                let viewportSouthWestLat = southwest["lat"] as! Double //capture this
-                let viewportSouthWestLng = southwest["lng"] as! Double //capture this
-                
-                let icon = item["icon"] as! String //capture this
-                let id = item["id"] as! String //capture this
-                let name = item["name"] as! String // capture this
-                
-//                let opening_hours = item["opening_hours"] as! [String:Any]
-//                let open_now = opening_hours["open_now"] as! Bool // capture this
-
-                
-                let place_id = item["place_id"] as! String // capture this
-                let price_level = item["price_level"] as? Int //capture this **THIS CAN BE NIL*
-                let rating = item["rating"] as! Double // capture this
-                let vicinity = item["vicinity"] as! String // capture this
+                let name = item["name"] as? String
+                let locationLat = location["lat"] as? Double
+                let locationLng = location["lng"] as? Double
+                let place_id = item["place_id"] as? String
+                let price_level = item["price_level"] as? Int
+                let rating = item["rating"] as? Double
+                let vicinity = item["vicinity"] as? String
                 
                 let tacoLocation = TacoLocation()
+
+                if let open_now = opening_hours["open_now"] {
+                    tacoLocation.open_now = open_now as? Bool
+                }
+                
                 tacoLocation.locationLat = locationLat
                 tacoLocation.locationLng = locationLng
-                tacoLocation.viewportNorthEastLat = viewportNorthEastLat
-                tacoLocation.viewportNorthEastLng = viewportNorthEastLng
-                tacoLocation.viewportSouthWestLat = viewportSouthWestLat
-                tacoLocation.viewportSouthWestLng = viewportSouthWestLng
-                tacoLocation.icon = icon
-                tacoLocation.id = id
                 tacoLocation.name = name
-//                tacoLocation.open_now = open_now
                 tacoLocation.place_id = place_id
                 tacoLocation.price_level = price_level
                 tacoLocation.rating = rating
                 tacoLocation.vicinity = vicinity
                 
                 self.tacoLocations.append(tacoLocation)
-                print(name)
                 
             }
             

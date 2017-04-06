@@ -7,18 +7,47 @@
 //
 
 import UIKit
+import RandomColorSwift
 
 class MoreInfoViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var isOpenLabel: UILabel!
+    
+    var tacoLocationDetail = TacoLocationDetail()
     var tacoLocationPlace_id :String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = randomColor(hue: .random, luminosity: .light)
         
         print(self.tacoLocationPlace_id)
         self.getLocationDetails()
+        
+    }
 
+    
+    func populateView() {
+        
+        self.nameLabel.text = self.tacoLocationDetail.name
+        self.addressLabel.text = self.tacoLocationDetail.formatted_address
+        self.phoneLabel.text = self.tacoLocationDetail.formatted_phone_number
+        
+        if self.tacoLocationDetail.open_now == true {
+            self.isOpenLabel.text = "Open"
+            self.isOpenLabel.textColor = UIColor.green
+        } else if self.tacoLocationDetail.open_now == false {
+            self.isOpenLabel.text = "Closed"
+            self.isOpenLabel.textColor = UIColor.red
+        } else {
+            self.isOpenLabel.text = ""
+        }
+        
+        
     }
 
 
@@ -41,17 +70,62 @@ class MoreInfoViewController: UIViewController {
             
             let result = json["result"] as! [String:Any]
             
-            let formatted_address = result["formatted_address"] // capture this
+            print(result)
+            
+            let geometry = result["geometry"] as! [String:Any]
+            let location = geometry["location"] as! [String:Any]
+            let opening_hours = result["opening_hours"] as! [String:Any]
             
             
             
             
+            guard let formatted_address = result["formatted_address"] as? String,
+                let formatted_phone_number = result["formatted_phone_number"] as? String,
+                let lat = location["lat"] as? Double,
+                let lng = location["lng"] as? Double,
+                let name = result["name"] as? String,
+                let weekday_text = opening_hours["weekday_text"] as? [String],
+//                let price_level = result["price_level"] as? Double,
+                let rating = result["rating"] as? Double,
+                let url = result["url"] as? String
+               // let open_now = opening_hours["open_now"] as? Bool,
+               // let website = result["website"] as? String
+                else {
+                    return
+            }
             
-
+            
+            if let open_now = opening_hours["open_now"] {
+                 self.tacoLocationDetail.open_now = open_now as? Bool 
+            }
+            
+            if let website = result["website"] {
+                self.tacoLocationDetail.website = website as? String
+            }
+            
+            if let price_level = result["price_level"] {
+                self.tacoLocationDetail.price_level = price_level as? Double
+            }
+            
+            
+            self.tacoLocationDetail.formatted_address = formatted_address
+            self.tacoLocationDetail.formatted_phone_number = formatted_phone_number
+            self.tacoLocationDetail.lat = lat
+            self.tacoLocationDetail.lng = lng
+            self.tacoLocationDetail.name = name
+           
+            self.tacoLocationDetail.weekday_text = weekday_text
+         //   self.tacoLocationDetail.price_level = price_level
+            self.tacoLocationDetail.rating = rating
+            self.tacoLocationDetail.url = url
+          //  self.tacoLocationDetail.open_now = open_now
+          //  self.tacoLocationDetail.website = website
+            
+            DispatchQueue.main.async {
+                self.populateView()
+            }
         })
-        
         dataTask.resume()
-        
         
     }
 

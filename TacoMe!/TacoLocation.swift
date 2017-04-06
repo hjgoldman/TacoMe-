@@ -11,17 +11,6 @@ import MapKit
 
 class TacoLocation {
     
-//    var coordinate :CLLocation!
-//    var name :String!
-//    var address :[String]!
-//    var distance :Double!
-//    var rating :Double!
-//    var price :String!
-//    var isClosed :Bool!
-//    var yelpUrl :String!
-    
-    
-    
     var locationLat :Double?
     var locationLng :Double?
     var viewportNorthEastLat :Double?
@@ -37,7 +26,10 @@ class TacoLocation {
     var rating :Double?
     var vicinity :String?
     
+    
     var distanceFromUser :Double?
     
+
+
     
 }

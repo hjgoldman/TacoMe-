@@ -18,9 +18,10 @@ class TacoLocationDetail {
     var name :String?
     var open_now :Bool?
     var weekday_text :[String]?
-    var price_level :Int?
+    var price_level :Double?
     var rating :Double?
     var website :String?
+    var url :String?
     
     
 }
