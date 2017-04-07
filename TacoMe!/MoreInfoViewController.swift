@@ -19,6 +19,7 @@ class MoreInfoViewController: UIViewController {
     
     var tacoLocationDetail = TacoLocationDetail()
     var tacoLocationPlace_id :String!
+    var reviews = [Review]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +74,6 @@ class MoreInfoViewController: UIViewController {
             
         }
     
-        
     }
 
 
@@ -102,9 +102,6 @@ class MoreInfoViewController: UIViewController {
             let location = geometry["location"] as! [String:Any]
             let opening_hours = result["opening_hours"] as! [String:Any]
             
-            
-            
-            
             guard let formatted_address = result["formatted_address"] as? String,
                 let formatted_phone_number = result["formatted_phone_number"] as? String,
                 let lat = location["lat"] as? Double,
@@ -116,7 +113,6 @@ class MoreInfoViewController: UIViewController {
                 else {
                     return
             }
-            
             
             if let open_now = opening_hours["open_now"] {
                  self.tacoLocationDetail.open_now = open_now as? Bool 
@@ -130,7 +126,6 @@ class MoreInfoViewController: UIViewController {
                 self.tacoLocationDetail.price_level = price_level as? Double
             }
             
-            
             self.tacoLocationDetail.formatted_address = formatted_address
             self.tacoLocationDetail.formatted_phone_number = formatted_phone_number
             self.tacoLocationDetail.lat = lat
@@ -140,6 +135,27 @@ class MoreInfoViewController: UIViewController {
             self.tacoLocationDetail.weekday_text = weekday_text
             self.tacoLocationDetail.rating = rating
             self.tacoLocationDetail.url = url
+            
+            // Save the rewivew into my review object
+            
+            let reviews = result["reviews"] as! [[String:Any]]
+            
+            for item in reviews {
+                
+                let author_name = item["author_name"] as! String
+                let rating = item["rating"] as! Int
+                let relative_time_description = item["relative_time_description"] as! String
+                let text = item["text"] as! String
+                
+                let review = Review()
+                review.author_name = author_name
+                review.rating = rating
+                review.relative_time_description = relative_time_description
+                review.text = text
+                
+                self.reviews.append(review)
+                
+            }
             
             DispatchQueue.main.async {
                 self.populateView()

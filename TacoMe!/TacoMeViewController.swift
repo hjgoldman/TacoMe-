@@ -36,9 +36,8 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
     
     
     @IBAction func getTacoButtonPressed(_ sender: Any) {
-        
-        
-        let closestTaco = self.tacoLocations[0]
+
+        let closestTaco = self.tacoLocations[0] 
         
         guard let distance = closestTaco.distanceFromUser else {
             return
@@ -117,20 +116,10 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
     func getGoogleData() {
         
         guard let lat = self.locationManager.location?.coordinate.latitude else {
-            let alertController = UIAlertController(title: "yikes...", message:  "Cannot find your location.", preferredStyle: .alert)
-            let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) {
-                UIAlertAction in
-            }
-            alertController.addAction(dismissAction)
             return
         }
         
         guard let lng = self.locationManager.location?.coordinate.longitude else {
-            let alertController = UIAlertController(title: "yikes...", message:  "Cannot find your location.", preferredStyle: .alert)
-            let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) {
-                UIAlertAction in
-            }
-            alertController.addAction(dismissAction)
             return
         }
         
