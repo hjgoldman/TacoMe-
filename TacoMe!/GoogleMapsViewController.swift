@@ -53,7 +53,6 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
             marker.map = mapView
             
         }
-        
         // enable my location dot
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
@@ -77,11 +76,8 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         
         let tacoLocation = marker.userData as! TacoLocation
-        
         self.tacoLocationPlace_id = tacoLocation.place_id
-        
         self.performSegue(withIdentifier: "MoreInfoSegue", sender: self)
-
         
     }
     

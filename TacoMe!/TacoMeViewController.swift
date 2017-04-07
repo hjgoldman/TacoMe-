@@ -100,18 +100,17 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         
         if segue.identifier == "GoogleMapsSegue" {
             
-            let mapVC = segue.destination as! GoogleMapsViewController
+            let navController = segue.destination as! UINavigationController
+            let mapVC = navController.topViewController as! GoogleMapsViewController
             mapVC.tacoLocations = self.tacoLocations
             
-            mapVC.transitioningDelegate = self
+            navController.transitioningDelegate = self
             
         }
         
     }
     
-    //Getting taco locating using Google Search API
-    
-
+    //Mark: API GET request
    
     func getGoogleData() {
         

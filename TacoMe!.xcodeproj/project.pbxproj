@@ -36,6 +36,9 @@
 		C6C05C1C1E96F8F9006D7141 /* 1_5_stars.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05C171E96F8F9006D7141 /* 1_5_stars.png */; };
 		C6C05C1D1E96F8F9006D7141 /* 3_5_stars.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05C181E96F8F9006D7141 /* 3_5_stars.png */; };
 		C6C05C1F1E97DBCC006D7141 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C05C1E1E97DBCC006D7141 /* Review.swift */; };
+		C6C05C231E97F996006D7141 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C05C221E97F996006D7141 /* ReviewTableViewCell.swift */; };
+		C6C05C261E980E19006D7141 /* powered_by_google_on_non_white.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05C241E980E19006D7141 /* powered_by_google_on_non_white.png */; };
+		C6C05C271E980E19006D7141 /* powered_by_google_on_non_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05C251E980E19006D7141 /* powered_by_google_on_non_white@2x.png */; };
 		F0DCF3A89B1204CB25CC8F05 /* Pods_TacoMe_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDD39B0CCE270A6209DDE72 /* Pods_TacoMe_.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,9 @@
 		C6C05C171E96F8F9006D7141 /* 1_5_stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_5_stars.png; sourceTree = "<group>"; };
 		C6C05C181E96F8F9006D7141 /* 3_5_stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_5_stars.png; sourceTree = "<group>"; };
 		C6C05C1E1E97DBCC006D7141 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		C6C05C221E97F996006D7141 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		C6C05C241E980E19006D7141 /* powered_by_google_on_non_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powered_by_google_on_non_white.png; sourceTree = "<group>"; };
+		C6C05C251E980E19006D7141 /* powered_by_google_on_non_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powered_by_google_on_non_white@2x.png"; sourceTree = "<group>"; };
 		E06BEC2D0EC97E7145529F3B /* Pods-TacoMe!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TacoMe!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TacoMe!/Pods-TacoMe!.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +132,7 @@
 		C62060F51E80820600102C1E /* TacoMe! */ = {
 			isa = PBXGroup;
 			children = (
+				C6C05C211E97F97A006D7141 /* Custom Cell */,
 				C6C05C201E97DBDA006D7141 /* Objects */,
 				C616D6C91E8C2CC900EECE4B /* Taco Custom Marker */,
 				C62061091E80821C00102C1E /* ViewControllers */,
@@ -143,6 +150,8 @@
 		C62061081E80821600102C1E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C6C05C241E980E19006D7141 /* powered_by_google_on_non_white.png */,
+				C6C05C251E980E19006D7141 /* powered_by_google_on_non_white@2x.png */,
 				C6C05C141E96F8F9006D7141 /* 2_5_stars.png */,
 				C6C05C151E96F8F9006D7141 /* 4_5_stars.png */,
 				C6C05C161E96F8F9006D7141 /* 0_5_stars.png */,
@@ -181,6 +190,14 @@
 				C6C05C1E1E97DBCC006D7141 /* Review.swift */,
 			);
 			name = Objects;
+			sourceTree = "<group>";
+		};
+		C6C05C211E97F97A006D7141 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C6C05C221E97F996006D7141 /* ReviewTableViewCell.swift */,
+			);
+			name = "Custom Cell";
 			sourceTree = "<group>";
 		};
 		DCC2B40F29257506170F5090 /* Pods */ = {
@@ -266,10 +283,12 @@
 				C6C05C0E1E96F326006D7141 /* 0_stars.png in Resources */,
 				C6C05C121E96F326006D7141 /* 3_stars.png in Resources */,
 				C6C05C101E96F326006D7141 /* 1_stars.png in Resources */,
+				C6C05C261E980E19006D7141 /* powered_by_google_on_non_white.png in Resources */,
 				C6C05C1B1E96F8F9006D7141 /* 0_5_stars.png in Resources */,
 				C6C05C131E96F326006D7141 /* 5_stars.png in Resources */,
 				C620610D1E80824000102C1E /* taco_annotation.png in Resources */,
 				C620610C1E80824000102C1E /* taco_me.png in Resources */,
+				C6C05C271E980E19006D7141 /* powered_by_google_on_non_white@2x.png in Resources */,
 				C6C05BFF1E957D2A006D7141 /* CustomInfoWindow.xib in Resources */,
 				C6C05C071E96E491006D7141 /* test_marker_background.png in Resources */,
 				C6C05BF71E955C35006D7141 /* taco_marker.png in Resources */,
@@ -338,6 +357,7 @@
 				C6C05BF31E955598006D7141 /* GoogleMapsViewController.swift in Sources */,
 				C6C05C011E957ED1006D7141 /* CustomInfoWindow.swift in Sources */,
 				C6C05C1F1E97DBCC006D7141 /* Review.swift in Sources */,
+				C6C05C231E97F996006D7141 /* ReviewTableViewCell.swift in Sources */,
 				C62061131E8082F900102C1E /* TacoLocation.swift in Sources */,
 				C6C05C031E9591E5006D7141 /* MoreInfoViewController.swift in Sources */,
 				C62061111E8082DF00102C1E /* MapViewController.swift in Sources */,

@@ -7,15 +7,18 @@
 //
 
 import UIKit
-import RandomColorSwift
 
-class MoreInfoViewController: UIViewController {
+class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource   {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var isOpenLabel: UILabel!
+//    @IBOutlet weak var reviewTableView: UITableView!
+    @IBOutlet weak var ratingLabel: UILabel!
+//    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var hoursLabel: UILabel!
     
     var tacoLocationDetail = TacoLocationDetail()
     var tacoLocationPlace_id :String!
@@ -23,11 +26,11 @@ class MoreInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.backgroundColor = randomColor(hue: .random, luminosity: .light)
         
         print(self.tacoLocationPlace_id)
         self.getLocationDetails()
+        
+        //MARK: Table View stuff
         
     }
 
@@ -37,6 +40,12 @@ class MoreInfoViewController: UIViewController {
         self.nameLabel.text = self.tacoLocationDetail.name
         self.addressLabel.text = self.tacoLocationDetail.formatted_address
         self.phoneLabel.text = self.tacoLocationDetail.formatted_phone_number
+        self.ratingLabel.text = String(describing: self.tacoLocationDetail.rating!)
+ //       self.priceLabel.text = String(describing: self.tacoLocationDetail.price_level!)
+        
+        let hours = self.tacoLocationDetail.weekday_text?.joined(separator: "\n")
+        self.hoursLabel.text = hours!
+        
         
         if self.tacoLocationDetail.open_now == true {
             self.isOpenLabel.text = "Open"
@@ -139,7 +148,6 @@ class MoreInfoViewController: UIViewController {
             // Save the rewivew into my review object
             
             let reviews = result["reviews"] as! [[String:Any]]
-            
             for item in reviews {
                 
                 let author_name = item["author_name"] as! String
@@ -159,10 +167,46 @@ class MoreInfoViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.populateView()
+//                self.reviewTableView.reloadData()
             }
         })
         dataTask.resume()
         
+    }
+    
+    //MARK: TableView
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.reviews.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewTableViewCell
+        
+        let review = reviews[indexPath.row]
+        
+        cell.nameLabel?.text = review.author_name
+        
+        if review.rating == 1 {
+            cell.ratingLabel?.text = "\(review.rating!) star"
+            cell.reviewTextLabel?.text = review.text
+            cell.reviewTextLabel?.sizeToFit()
+            cell.timeLabel?.text = review.relative_time_description
+        } else {
+            cell.ratingLabel?.text = "\(review.rating!) stars"
+            cell.reviewTextLabel?.text = review.text
+            cell.reviewTextLabel?.sizeToFit()
+            cell.timeLabel?.text = review.relative_time_description
+        }
+        
+        return cell
     }
 
 }
