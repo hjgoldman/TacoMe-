@@ -111,13 +111,34 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
     }
     
     //Getting taco locating using Google Search API
+    
+
+   
     func getGoogleData() {
+        
+        guard let lat = self.locationManager.location?.coordinate.latitude else {
+            let alertController = UIAlertController(title: "yikes...", message:  "Cannot find your location.", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) {
+                UIAlertAction in
+            }
+            alertController.addAction(dismissAction)
+            return
+        }
+        
+        guard let lng = self.locationManager.location?.coordinate.longitude else {
+            let alertController = UIAlertController(title: "yikes...", message:  "Cannot find your location.", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) {
+                UIAlertAction in
+            }
+            alertController.addAction(dismissAction)
+            return
+        }
         
         let headers = [
             "cache-control": "no-cache",
             ]
         
-        let request = NSMutableURLRequest(url: NSURL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\((self.locationManager.location?.coordinate.latitude)!)%2C\((self.locationManager.location?.coordinate.longitude)!)%0A&radius=3218.69&keyword=mexican&pagetoken&key=AIzaSyBbvw_RKKdzBigdZGjXTJZjgC3IMJVV6rU")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat)%2C\(lng)%0A&radius=3218.69&keyword=mexican&pagetoken&key=AIzaSyBbvw_RKKdzBigdZGjXTJZjgC3IMJVV6rU")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -141,7 +162,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 
                 let geometry = item["geometry"] as! [String:Any]
                 let location = geometry["location"] as! [String:Any]
-                let opening_hours = item["opening_hours"] as! [String:Any]
+ //               let opening_hours = item["opening_hours"] as! [String:Any]
                 
                 let name = item["name"] as? String
                 let locationLat = location["lat"] as? Double
@@ -152,10 +173,17 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 let vicinity = item["vicinity"] as? String
                 
                 let tacoLocation = TacoLocation()
-
-                if let open_now = opening_hours["open_now"] {
-                    tacoLocation.open_now = open_now as? Bool
+                
+                if let opening_hours = item["opening_hours"] {
+                    let openingHours = opening_hours as! [String:Any]
+                    if let open_now = openingHours["open_now"] {
+                        tacoLocation.open_now = open_now as? Bool
+                    }
                 }
+
+//                if let open_now = opening_hours["open_now"] {
+//                    tacoLocation.open_now = open_now as? Bool
+//                }
                 
                 tacoLocation.locationLat = locationLat
                 tacoLocation.locationLng = locationLng
