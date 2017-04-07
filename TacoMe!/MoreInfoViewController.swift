@@ -13,12 +13,10 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var isOpenLabel: UILabel!
-//    @IBOutlet weak var reviewTableView: UITableView!
     @IBOutlet weak var ratingLabel: UILabel!
-//    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var phoneButtonOutlet: UIButton!
     
     var tacoLocationDetail = TacoLocationDetail()
     var tacoLocationPlace_id :String!
@@ -39,9 +37,8 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.nameLabel.text = self.tacoLocationDetail.name
         self.addressLabel.text = self.tacoLocationDetail.formatted_address
-        self.phoneLabel.text = self.tacoLocationDetail.formatted_phone_number
+        self.phoneButtonOutlet.setTitle(self.tacoLocationDetail.formatted_phone_number, for: .normal)
         self.ratingLabel.text = String(describing: self.tacoLocationDetail.rating!)
- //       self.priceLabel.text = String(describing: self.tacoLocationDetail.price_level!)
         
         let hours = self.tacoLocationDetail.weekday_text?.joined(separator: "\n")
         self.hoursLabel.text = hours!
@@ -118,7 +115,8 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
                 let name = result["name"] as? String,
                 let weekday_text = opening_hours["weekday_text"] as? [String],
                 let rating = result["rating"] as? Double,
-                let url = result["url"] as? String
+                let url = result["url"] as? String,
+                let international_phone_number = result["international_phone_number"] as? String
                 else {
                     return
             }
@@ -140,10 +138,10 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
             self.tacoLocationDetail.lat = lat
             self.tacoLocationDetail.lng = lng
             self.tacoLocationDetail.name = name
-           
             self.tacoLocationDetail.weekday_text = weekday_text
             self.tacoLocationDetail.rating = rating
             self.tacoLocationDetail.url = url
+            self.tacoLocationDetail.international_phone_number = international_phone_number
             
             // Save the rewivew into my review object
             
@@ -208,5 +206,21 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
         
         return cell
     }
+    
+    //MARK: Buttons
+    
+    @IBAction func phoneButtonPressed(_ sender: Any) {
+        
+        let formattedPhoneNumber = self.tacoLocationDetail.international_phone_number?.replacingOccurrences(of: " ", with: "")
+        
+        if let phoneCallURL = URL(string: "tel://\(String(describing: formattedPhoneNumber!))") {
+            
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                application.open(phoneCallURL, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
 
 }

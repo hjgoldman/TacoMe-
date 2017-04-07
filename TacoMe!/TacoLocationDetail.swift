@@ -13,6 +13,7 @@ class TacoLocationDetail {
     
     var formatted_address :String?
     var formatted_phone_number :String?
+    var international_phone_number :String?
     var lat :Double?
     var lng :Double?
     var name :String?
