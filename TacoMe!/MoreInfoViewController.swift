@@ -222,5 +222,33 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    @IBAction func directionsButtonPressed(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Directions", message:  "\(self.tacoLocationDetail.name!)", preferredStyle: .alert)
+        
+        let directionsAction = UIAlertAction(title: "Lets do it", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            
+            let url  = NSURL(string: "\(self.tacoLocationDetail.url!)")
+            
+            if UIApplication.shared.canOpenURL(url! as URL) == true {
+                UIApplication.shared.open(url! as URL)
+                
+            }
+            
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            UIAlertAction in
+        }
+        
+        alertController.addAction(directionsAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+
+        
+    }
+    
 
 }
