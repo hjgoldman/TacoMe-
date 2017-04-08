@@ -40,8 +40,14 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
         self.phoneButtonOutlet.setTitle(self.tacoLocationDetail.formatted_phone_number, for: .normal)
         self.ratingLabel.text = String(describing: self.tacoLocationDetail.rating!)
         
-        let hours = self.tacoLocationDetail.weekday_text?.joined(separator: "\n")
-        self.hoursLabel.text = hours!
+        if self.tacoLocationDetail.weekday_text == nil {
+            self.hoursLabel.text = "Opening Hours Not Provided"
+        } else {
+            
+            let hours = self.tacoLocationDetail.weekday_text?.joined(separator: "\n")
+            self.hoursLabel.text = hours!
+
+        }
         
         
         if self.tacoLocationDetail.open_now == true {
@@ -79,9 +85,7 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
         } else if self.tacoLocationDetail.rating == nil {
             
         }
-    
     }
-
 
     func getLocationDetails() {
         
@@ -106,14 +110,25 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
             
             let geometry = result["geometry"] as! [String:Any]
             let location = geometry["location"] as! [String:Any]
-            let opening_hours = result["opening_hours"] as! [String:Any]
+            //let opening_hours = result["opening_hours"] as! [String:Any]
+            
+            if let opening_hours = result["opening_hours"] as? [String:Any] {
+                
+                let weekday_text = opening_hours["weekday_text"] as? [String]
+                self.tacoLocationDetail.weekday_text = weekday_text
+
+                if let open_now = opening_hours["open_now"] {
+                    self.tacoLocationDetail.open_now = open_now as? Bool
+                }
+                
+                
+            }
             
             guard let formatted_address = result["formatted_address"] as? String,
                 let formatted_phone_number = result["formatted_phone_number"] as? String,
                 let lat = location["lat"] as? Double,
                 let lng = location["lng"] as? Double,
                 let name = result["name"] as? String,
-                let weekday_text = opening_hours["weekday_text"] as? [String],
                 let rating = result["rating"] as? Double,
                 let url = result["url"] as? String,
                 let international_phone_number = result["international_phone_number"] as? String
@@ -121,9 +136,7 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
                     return
             }
             
-            if let open_now = opening_hours["open_now"] {
-                 self.tacoLocationDetail.open_now = open_now as? Bool 
-            }
+           
             
             if let website = result["website"] {
                 self.tacoLocationDetail.website = website as? String
@@ -138,7 +151,6 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
             self.tacoLocationDetail.lat = lat
             self.tacoLocationDetail.lng = lng
             self.tacoLocationDetail.name = name
-            self.tacoLocationDetail.weekday_text = weekday_text
             self.tacoLocationDetail.rating = rating
             self.tacoLocationDetail.url = url
             self.tacoLocationDetail.international_phone_number = international_phone_number
@@ -233,9 +245,7 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
             
             if UIApplication.shared.canOpenURL(url! as URL) == true {
                 UIApplication.shared.open(url! as URL)
-                
             }
-            
         }
 
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
@@ -247,7 +257,6 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.present(alertController, animated: true, completion: nil)
 
-        
     }
     
 

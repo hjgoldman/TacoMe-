@@ -146,35 +146,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="powered_by_google_on_non_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="XN0-1Z-PuX">
-                                <rect key="frame" x="16" y="649" width="144" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="NRM-XO-rqt"/>
-                                    <constraint firstAttribute="width" constant="144" id="pk6-ok-o8d"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urN-1U-3qe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urN-1U-3qe">
                                 <rect key="frame" x="16" y="64" width="343" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="yvx-BQ-Ien"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKe-Qg-ndF">
-                                <rect key="frame" x="148" y="172" width="121" height="25"/>
+                                <rect key="frame" x="116" y="172" width="121" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="rating" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSV-sv-LKE">
-                                <rect key="frame" x="106" y="172" width="42" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSV-sv-LKE">
+                                <rect key="frame" x="245" y="172" width="42" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hours" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcJ-rq-NG3">
-                                <rect key="frame" x="16" y="334" width="343" height="190"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hours" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcJ-rq-NG3">
+                                <rect key="frame" x="16" y="321" width="343" height="203"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -203,14 +194,18 @@
                                     <action selector="directionsButtonPressed:" destination="cLC-Dg-55n" eventType="touchUpInside" id="V5z-DH-hG9"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="powered_by_google_on_non_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="XN0-1Z-PuX">
+                                <rect key="frame" x="16" y="641" width="144" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="LnW-au-mSw"/>
+                                    <constraint firstAttribute="height" constant="18" id="hIj-GX-jsU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.72155567548020305" green="0.79344240007948508" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="urN-1U-3qe" firstAttribute="leading" secondItem="kXV-fm-Sct" secondAttribute="leadingMargin" id="6zX-KI-jq3"/>
-                            <constraint firstItem="HYw-MX-543" firstAttribute="top" secondItem="XN0-1Z-PuX" secondAttribute="bottom" id="EDG-lI-VLz"/>
-                            <constraint firstItem="XN0-1Z-PuX" firstAttribute="leading" secondItem="kXV-fm-Sct" secondAttribute="leadingMargin" id="MTx-hz-O0O"/>
-                            <constraint firstItem="urN-1U-3qe" firstAttribute="trailing" secondItem="kXV-fm-Sct" secondAttribute="trailingMargin" id="Wty-Wg-KYa"/>
-                            <constraint firstItem="urN-1U-3qe" firstAttribute="top" secondItem="T8c-aU-Tu2" secondAttribute="bottom" id="YNF-7U-01P"/>
+                            <constraint firstItem="XN0-1Z-PuX" firstAttribute="leading" secondItem="kXV-fm-Sct" secondAttribute="leadingMargin" id="941-qI-ung"/>
+                            <constraint firstItem="HYw-MX-543" firstAttribute="top" secondItem="XN0-1Z-PuX" secondAttribute="bottom" constant="8" id="gwK-Vg-aI4"/>
                         </constraints>
                     </view>
                     <connections>
@@ -337,7 +332,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fgf-dY-LTW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dmE-TT-Hkl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dmE-TT-Hkl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

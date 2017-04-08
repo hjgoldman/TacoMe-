@@ -47,14 +47,14 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         
         
         // Create the alert controller
-        let alertController = UIAlertController(title: "Taco Found! 🌮", message:  "\(closestTaco.name!): \(distanceInMiles) miles away", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Tacos Found!  🌮", message:  "\(closestTaco.name!): \(distanceInMiles) miles away", preferredStyle: .alert)
         
         // Create the actions
         let getTacoAction = UIAlertAction(title: "Get Directions", style: UIAlertActionStyle.default) {
             UIAlertAction in
             
             let url  = NSURL(string: "http://maps.apple.com/?q=\(String(describing: closestTaco.locationLat)),\(String(describing: closestTaco.locationLng))")
-            
+
             if UIApplication.shared.canOpenURL(url! as URL) == true {
                 UIApplication.shared.open(url! as URL)
                 

@@ -15,5 +15,4 @@ class Review {
     var text :String?
     var author_name :String?
     
-    
 }
