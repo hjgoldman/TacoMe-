@@ -43,8 +43,15 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
             
             marker.position = CLLocationCoordinate2D(latitude: lat!, longitude: lng!)
             marker.title = location.name
-            marker.snippet = location.vicinity
             
+            if location.open_now == false {
+                marker.snippet = "\(location.vicinity!)\nClosed"
+            } else if location.open_now == true {
+                marker.snippet = "\(location.vicinity!)\nOpen"
+            } else {
+                
+            }
+//            marker.snippet = location.vicinity
             marker.userData = location
             
             marker.icon = UIImage(named: "taco_marker.png")
@@ -67,8 +74,7 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
         
         customWindow.nameLabel.text = marker.title
         customWindow.addressLabel.text = marker.snippet
-//        customWindow.moreInfoButton.addTarget(self, action: #selector(moreInfoButtonPressed(_:)), for: .touchUpInside)
-        
+
         return customWindow
     }
 

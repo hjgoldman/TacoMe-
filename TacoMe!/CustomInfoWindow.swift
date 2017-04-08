@@ -12,8 +12,7 @@ class CustomInfoWindow: UIView {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var moreInfoButton: UIButton!
-    @IBOutlet weak var directionsButton: UIButton!
+    @IBOutlet weak var isOpenLabel: UILabel!
 
     
 

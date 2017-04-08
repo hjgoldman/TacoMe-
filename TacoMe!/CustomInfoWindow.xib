@@ -12,21 +12,21 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomInfoWindow" customModule="TacoMe_" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="190" height="83"/>
+            <rect key="frame" x="0.0" y="0.0" width="192" height="97"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_marker_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="TwQ-od-6ER">
-                    <rect key="frame" x="0.0" y="0.0" width="190" height="83"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="TwQ-od-6ER">
+                    <rect key="frame" x="0.0" y="0.0" width="192" height="97"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvv-TH-DaN">
-                    <rect key="frame" x="14" y="38" width="163" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvv-TH-DaN">
+                    <rect key="frame" x="16" y="45" width="165" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="10"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnj-zB-N2a">
-                    <rect key="frame" x="16" y="11" width="163" height="26"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnj-zB-N2a">
+                    <rect key="frame" x="16" y="8" width="165" height="38"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="13"/>
                     <nil key="textColor"/>
@@ -46,10 +46,10 @@
                 <outlet property="addressLabel" destination="uvv-TH-DaN" id="lDS-iZ-e8d"/>
                 <outlet property="nameLabel" destination="Qnj-zB-N2a" id="AEp-2X-Uaw"/>
             </connections>
-            <point key="canvasLocation" x="299" y="314.5"/>
+            <point key="canvasLocation" x="334" y="321.5"/>
         </view>
     </objects>
     <resources>
-        <image name="test_marker_background.png" width="258" height="158"/>
+        <image name="marker_background.png" width="256" height="125"/>
     </resources>
 </document>
