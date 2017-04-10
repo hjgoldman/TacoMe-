@@ -12,6 +12,7 @@ import RandomColorSwift
 
 class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate {
     
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     var locationManager = CLLocationManager()
     var tacoLocations = [TacoLocation]()
     var fadeTransition = FadeTransition()
@@ -26,58 +27,135 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         self.locationManager.startUpdatingLocation()
         
         self.view.backgroundColor = randomColor(hue: .random, luminosity: .light)
-        self.getGoogleData()
+ //       self.getGoogleData()
         
         //
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+        
+        
+        self.indicatorView.isHidden = true
+    }
+    
+    
+    func findAllTheTacos() {
+        
+        
+        self.indicatorView.isHidden = false
+        self.indicatorView.startAnimating()
+        
+        // background lane for time consuming tasks
+        DispatchQueue.global().async {
+            
+            self.getGoogleData()
+            sleep(2)
+            // switch to the main thread to run UI specific tasks
+            DispatchQueue.main.async {
+                self.indicatorView.stopAnimating()
+                self.indicatorView.isHidden = true
+                
+                if self.tacoLocations.count == 0 {
+                    
+                    
+                    
+                    // Create the alert controller
+                    let alertController = UIAlertController(title: "No Taco Found", message:  "☹️", preferredStyle: .alert)
+                    
+                    // Create the actions
+
+                    let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) {
+                        UIAlertAction in
+                        
+                    }
+                    
+                    // Add the actions
+                    alertController.addAction(cancelAction)
+                    
+                    // Present the controller
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                } else {
+                    
+                    
+                    let closestTaco = self.tacoLocations[0]
+                    
+                    guard let distance = closestTaco.distanceFromUser else {
+                        return
+                    }
+                    
+                    let distanceInMiles = String(format: "%.2f", distance / 1609.34)
+                    
+                    
+                    // Create the alert controller
+                    let alertController = UIAlertController(title: "Taco Found!", message:  "Closest Taco: \n \(closestTaco.name!) \n \(distanceInMiles) miles away", preferredStyle: .alert)
+                    
+                    // Create the actions
+                    let moreTacoAction = UIAlertAction(title: "🌮", style: UIAlertActionStyle.default) {
+                        UIAlertAction in
+                        
+                        self.performSegue(withIdentifier: "GoogleMapsSegue", sender: self)
+                        
+                    }
+                    let cancelAction = UIAlertAction(title: "🚫", style: UIAlertActionStyle.cancel) {
+                        UIAlertAction in
+                        
+                    }
+                    
+                    // Add the actions
+                    alertController.addAction(moreTacoAction)
+                    alertController.addAction(cancelAction)
+                    
+                    // Present the controller
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                    
+                    
+                    
+                }
+                
+                
+               
+        
+            }
+        }
     }
     
     
     @IBAction func getTacoButtonPressed(_ sender: Any) {
+        
 
-        let closestTaco = self.tacoLocations[0] 
-        
-        guard let distance = closestTaco.distanceFromUser else {
-            return
-        }
-        
-        let distanceInMiles = String(format: "%.2f", distance / 1609.34)
-        
-        
-        // Create the alert controller
-        let alertController = UIAlertController(title: "Tacos Found!  🌮", message:  "\(closestTaco.name!): \(distanceInMiles) miles away", preferredStyle: .alert)
-        
-        // Create the actions
-        let getTacoAction = UIAlertAction(title: "Get Directions", style: UIAlertActionStyle.default) {
-            UIAlertAction in
-            
-            let url  = NSURL(string: "http://maps.apple.com/?q=\(String(describing: closestTaco.locationLat)),\(String(describing: closestTaco.locationLng))")
-
-            if UIApplication.shared.canOpenURL(url! as URL) == true {
-                UIApplication.shared.open(url! as URL)
-                
-            }
-        }
-        let moreTacoAction = UIAlertAction(title: "More Tacos", style: UIAlertActionStyle.default) {
-            UIAlertAction in
-            
-            self.performSegue(withIdentifier: "GoogleMapsSegue", sender: self)
-            
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
-            UIAlertAction in
-            
-        }
-        
-        // Add the actions
-        alertController.addAction(getTacoAction)
-        alertController.addAction(moreTacoAction)
-        alertController.addAction(cancelAction)
-        
-        // Present the controller
-        self.present(alertController, animated: true, completion: nil)
+        self.findAllTheTacos()
+//        let closestTaco = self.tacoLocations[0] 
+//        
+//        guard let distance = closestTaco.distanceFromUser else {
+//            return
+//        }
+//        
+//        let distanceInMiles = String(format: "%.2f", distance / 1609.34)
+//        
+//        
+//        // Create the alert controller
+//        let alertController = UIAlertController(title: "Tacos Found!", message:  "Closest Taco: \n \(closestTaco.name!) \n \(distanceInMiles) miles away", preferredStyle: .alert)
+//        
+//        // Create the actions
+//        let moreTacoAction = UIAlertAction(title: "🌮", style: UIAlertActionStyle.default) {
+//            UIAlertAction in
+//            
+//            self.performSegue(withIdentifier: "GoogleMapsSegue", sender: self)
+//            
+//        }
+//        let cancelAction = UIAlertAction(title: "🚫", style: UIAlertActionStyle.cancel) {
+//            UIAlertAction in
+//            
+//        }
+//        
+//        // Add the actions
+//        alertController.addAction(moreTacoAction)
+//        alertController.addAction(cancelAction)
+//        
+//        // Present the controller
+//        self.present(alertController, animated: true, completion: nil)
         
 
  

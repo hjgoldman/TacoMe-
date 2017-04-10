@@ -223,5 +223,13 @@ class MoreInfoViewController: UIViewController {
 
     }
     
+    //MARK: View is only supported as portrait
+    
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        get {
+            return .portrait
+        }
+    }
+    
 
 }

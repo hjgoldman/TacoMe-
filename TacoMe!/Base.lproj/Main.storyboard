@@ -33,21 +33,32 @@
                                     <action selector="getTacoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tuZ-9a-Tru"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="uN7-XN-Q3y">
+                                <rect key="frame" x="169" y="243" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="4Pm-Gx-SXb"/>
+                                    <constraint firstAttribute="width" constant="37" id="VoZ-9V-G6T"/>
+                                </constraints>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.96047013998031616" green="0.89431089162826538" blue="0.97426563501358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="33p-Mh-Sr3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zs3-vf-h5u"/>
+                            <constraint firstItem="uN7-XN-Q3y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bm4-ju-IKT"/>
                             <constraint firstItem="33p-Mh-Sr3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rh4-GB-AX9"/>
+                            <constraint firstItem="33p-Mh-Sr3" firstAttribute="top" secondItem="uN7-XN-Q3y" secondAttribute="bottom" id="s3G-bF-vOD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="a45-xC-g8A"/>
                     <connections>
+                        <outlet property="indicatorView" destination="uN7-XN-Q3y" id="FuR-yj-Asg"/>
                         <segue destination="fgf-dY-LTW" kind="show" identifier="GoogleMapsSegue" id="Xy1-7P-vkz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954.4000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="4832.8000000000002" y="137.18140929535232"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="Q5O-l2-NqU">
@@ -97,7 +108,7 @@
             </objects>
             <point key="canvasLocation" x="1556" y="-725"/>
         </scene>
-        <!--Google Maps View Controller-->
+        <!--TacoMe!-->
         <scene sceneID="udo-Ow-S0q">
             <objects>
                 <viewController id="hy2-gI-JtL" customClass="GoogleMapsViewController" customModule="TacoMe_" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,8 +121,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YJo-am-o2y">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="TacoMe!" id="P8s-Ze-tI7">
+                        <barButtonItem key="leftBarButtonItem" tag="-2" title="&lt;" id="b0M-q5-ZRi">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="b56-XW-Pc8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="Rhr-yC-3MG" kind="show" identifier="MoreInfoSegue" id="bxs-ze-zea"/>
@@ -119,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybU-Nb-3g2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5101.6000000000004" y="136.28185907046478"/>
+            <point key="canvasLocation" x="6980" y="136.28185907046478"/>
         </scene>
         <!--Info-->
         <scene sceneID="jz0-UI-A8U">
@@ -133,7 +148,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMH-I7-BFF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMH-I7-BFF">
                                 <rect key="frame" x="67" y="204" width="240" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WGZ-bP-5B9"/>
@@ -143,7 +158,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urN-1U-3qe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urN-1U-3qe">
                                 <rect key="frame" x="16" y="64" width="343" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="yVC-jE-uDV"/>
@@ -159,7 +174,7 @@
                                     <constraint firstAttribute="width" constant="121" id="VP5-Tv-cyO"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSV-sv-LKE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSV-sv-LKE">
                                 <rect key="frame" x="248" y="149" width="42" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="PGM-aq-DDa"/>
@@ -169,7 +184,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hours" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcJ-rq-NG3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcJ-rq-NG3">
                                 <rect key="frame" x="16" y="279" width="343" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="w90-qP-Eu1"/>
@@ -192,7 +207,7 @@
                                     <constraint firstAttribute="height" constant="25" id="dSq-LG-22H"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                <state key="normal" title="phone">
+                                <state key="normal">
                                     <color key="titleColor" red="0.25008968925021929" green="0.23326331022389651" blue="0.79600253807106602" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -214,7 +229,7 @@
                                     <action selector="directionsButtonPressed:" destination="cLC-Dg-55n" eventType="touchUpInside" id="V5z-DH-hG9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open/closed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av0-4e-IC5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av0-4e-IC5">
                                 <rect key="frame" x="67" y="174" width="240" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="RkS-W5-k3E"/>
@@ -249,7 +264,7 @@
                             <constraint firstItem="GMH-I7-BFF" firstAttribute="top" secondItem="av0-4e-IC5" secondAttribute="bottom" id="vK3-hP-QCp"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Info" id="gOK-ar-Nzp"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="info.png" id="gOK-ar-Nzp"/>
                     <connections>
                         <outlet property="addressLabel" destination="GMH-I7-BFF" id="jkh-pS-heE"/>
                         <outlet property="hoursLabel" destination="zcJ-rq-NG3" id="2n2-ry-xyb"/>
@@ -262,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLZ-FB-8zL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7272.8000000000002" y="-283.80809595202402"/>
+            <point key="canvasLocation" x="9151.2000000000007" y="-283.80809595202402"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ci8-xW-AVT">
@@ -280,7 +295,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fH7-4V-bGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6092" y="136.28185907046478"/>
+            <point key="canvasLocation" x="7970.3999999999996" y="136.28185907046478"/>
         </scene>
         <!--Reviews-->
         <scene sceneID="dcP-Aw-OSp">
@@ -307,41 +322,42 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author_name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVb-Uy-rZK">
-                                                    <rect key="frame" x="8" y="8" width="158" height="20.5"/>
-                                                    <color key="backgroundColor" red="0.98595607280731201" green="1" blue="0.74116647243499756" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <rect key="frame" x="8" y="8" width="158" height="24.5"/>
+                                                    <color key="backgroundColor" red="0.98595607279999997" green="1" blue="0.7411664724" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="158" id="h92-AP-wyJ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8e-lS-VI7">
-                                                    <rect key="frame" x="242" y="8" width="125" height="20.5"/>
-                                                    <color key="backgroundColor" red="0.98595607280731201" green="1" blue="0.74116647243499756" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <rect key="frame" x="242" y="8" width="125" height="24.5"/>
+                                                    <color key="backgroundColor" red="0.98595607279999997" green="1" blue="0.7411664724" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="125" id="FXZ-Jd-inP"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J8-ud-Zcl">
-                                                    <rect key="frame" x="8" y="28.5" width="359" height="138.5"/>
+                                                    <rect key="frame" x="8" y="32.5" width="359" height="134.5"/>
                                                     <color key="backgroundColor" red="0.72131967544555664" green="0.79161423444747925" blue="0.98434138298034668" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfp-7B-DQ8">
-                                                    <rect key="frame" x="166" y="8" width="76" height="20.5"/>
-                                                    <color key="backgroundColor" red="0.98595607280731201" green="1" blue="0.74116647243499756" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="166" y="8" width="76" height="24.5"/>
+                                                    <color key="backgroundColor" red="0.98595607279999997" green="1" blue="0.7411664724" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.98595607279999997" green="1" blue="0.7411664724" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="5J8-ud-Zcl" firstAttribute="trailing" secondItem="3uC-Js-Fq2" secondAttribute="trailingMargin" id="6Zc-J3-mma"/>
                                                 <constraint firstItem="5J8-ud-Zcl" firstAttribute="top" secondItem="vfp-7B-DQ8" secondAttribute="bottom" id="Aqs-Nm-o1o"/>
@@ -380,7 +396,7 @@
                                     <constraint firstAttribute="height" constant="18" id="KkO-CF-9Ws"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-K1-uj4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-K1-uj4">
                                 <rect key="frame" x="16" y="64" width="343" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="KuB-Yb-PuJ"/>
@@ -396,7 +412,7 @@
                                     <constraint firstAttribute="width" constant="121" id="k6S-T9-eVe"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4j-m4-j8Z">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4j-m4-j8Z">
                                 <rect key="frame" x="248" y="149" width="42" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="HNb-lZ-0Ai"/>
@@ -425,7 +441,7 @@
                             <constraint firstItem="MRd-ZJ-dpf" firstAttribute="leading" secondItem="NQa-5t-Xnv" secondAttribute="leadingMargin" id="xeI-Nf-Ge4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Reviews" id="CaM-uS-goz"/>
+                    <tabBarItem key="tabBarItem" title="Reviews" image="thumb-up.png" id="CaM-uS-goz"/>
                     <connections>
                         <outlet property="imageView" destination="wR2-1A-B03" id="8O9-gY-UWO"/>
                         <outlet property="nameLabel" destination="7N9-K1-uj4" id="ESd-BH-FyA"/>
@@ -435,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QkV-1s-Yut" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7272.8000000000002" y="427.73613193403304"/>
+            <point key="canvasLocation" x="9151.2000000000007" y="427.73613193403304"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rfl-P2-smu">
@@ -453,11 +469,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dsy-ys-KoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4162.3999999999996" y="136.28185907046478"/>
+            <point key="canvasLocation" x="5854" y="137"/>
         </scene>
     </scenes>
     <resources>
+        <image name="info.png" width="30" height="30"/>
         <image name="powered_by_google_on_non_white.png" width="144" height="18"/>
         <image name="taco_me.png" width="408" height="269"/>
+        <image name="thumb-up.png" width="30" height="30"/>
     </resources>
 </document>
