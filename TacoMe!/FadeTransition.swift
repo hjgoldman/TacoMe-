@@ -11,7 +11,7 @@ import UIKit
 
 class FadeTransition :NSObject, UIViewControllerAnimatedTransitioning {
     
-    let durantion = 1.0
+    let durantion = 1.5
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return durantion
