@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource   {
+class MoreInfoViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -28,7 +28,6 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
         print(self.tacoLocationPlace_id)
         self.getLocationDetails()
         
-        //MARK: Table View stuff
         
     }
 
@@ -177,47 +176,12 @@ class MoreInfoViewController: UIViewController, UITableViewDelegate, UITableView
             
             DispatchQueue.main.async {
                 self.populateView()
-//                self.reviewTableView.reloadData()
             }
         })
         dataTask.resume()
         
     }
     
-    //MARK: TableView
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return self.reviews.count
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewTableViewCell
-        
-        let review = reviews[indexPath.row]
-        
-        cell.nameLabel?.text = review.author_name
-        
-        if review.rating == 1 {
-            cell.ratingLabel?.text = "\(review.rating!) star"
-            cell.reviewTextLabel?.text = review.text
-            cell.reviewTextLabel?.sizeToFit()
-            cell.timeLabel?.text = review.relative_time_description
-        } else {
-            cell.ratingLabel?.text = "\(review.rating!) stars"
-            cell.reviewTextLabel?.text = review.text
-            cell.reviewTextLabel?.sizeToFit()
-            cell.timeLabel?.text = review.relative_time_description
-        }
-        
-        return cell
-    }
     
     //MARK: Buttons
     

@@ -91,8 +91,13 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
         
         if segue.identifier == "MoreInfoSegue" {
             
-            let moreInfoVC = segue.destination as! MoreInfoViewController
+            
+            let tabVC = segue.destination as! UITabBarController
+            let moreInfoVC = tabVC.viewControllers?[0] as! MoreInfoViewController
+            let reviewVC = tabVC.viewControllers?[1] as! ReviewViewController
+            
             moreInfoVC.tacoLocationPlace_id = self.tacoLocationPlace_id
+            reviewVC.tacoLocationPlace_id = self.tacoLocationPlace_id
             
         }
         
