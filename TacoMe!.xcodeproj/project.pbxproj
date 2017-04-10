@@ -46,6 +46,8 @@
 		C6FE32101E9BED2E00833C1D /* taco_me_text.png in Resources */ = {isa = PBXBuildFile; fileRef = C6FE320F1E9BED2E00833C1D /* taco_me_text.png */; };
 		C6FE32141E9C16F900833C1D /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = C6FE32131E9C16F900833C1D /* info.png */; };
 		C6FE32161E9C172400833C1D /* thumb-up.png in Resources */ = {isa = PBXBuildFile; fileRef = C6FE32151E9C172400833C1D /* thumb-up.png */; };
+		C6FE32181E9C1C1100833C1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6FE32171E9C1C1100833C1D /* GoogleService-Info.plist */; };
+		C6FE321A1E9C1E4A00833C1D /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FE32191E9C1E4A00833C1D /* AddReviewViewController.swift */; };
 		F0DCF3A89B1204CB25CC8F05 /* Pods_TacoMe_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDD39B0CCE270A6209DDE72 /* Pods_TacoMe_.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,8 @@
 		C6FE320F1E9BED2E00833C1D /* taco_me_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taco_me_text.png; sourceTree = "<group>"; };
 		C6FE32131E9C16F900833C1D /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		C6FE32151E9C172400833C1D /* thumb-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb-up.png"; sourceTree = "<group>"; };
+		C6FE32171E9C1C1100833C1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C6FE32191E9C1E4A00833C1D /* AddReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		E06BEC2D0EC97E7145529F3B /* Pods-TacoMe!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TacoMe!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TacoMe!/Pods-TacoMe!.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +161,7 @@
 				C62060FD1E80820600102C1E /* Assets.xcassets */,
 				C62060FF1E80820600102C1E /* LaunchScreen.storyboard */,
 				C62061021E80820600102C1E /* Info.plist */,
+				C6FE32171E9C1C1100833C1D /* GoogleService-Info.plist */,
 				C68BE0761E84326400C3E643 /* FadeTransition.swift */,
 			);
 			path = "TacoMe!";
@@ -199,6 +204,7 @@
 				C6C05BF21E955598006D7141 /* GoogleMapsViewController.swift */,
 				C6C05C021E9591E5006D7141 /* MoreInfoViewController.swift */,
 				C6FE32021E9BD50A00833C1D /* ReviewViewController.swift */,
+				C6FE32191E9C1E4A00833C1D /* AddReviewViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 				C6C05C121E96F326006D7141 /* 3_stars.png in Resources */,
 				C6FE32141E9C16F900833C1D /* info.png in Resources */,
 				C6C05C101E96F326006D7141 /* 1_stars.png in Resources */,
+				C6FE32181E9C1C1100833C1D /* GoogleService-Info.plist in Resources */,
 				C6C05C261E980E19006D7141 /* powered_by_google_on_non_white.png in Resources */,
 				C6C05C1B1E96F8F9006D7141 /* 0_5_stars.png in Resources */,
 				C6C05C131E96F326006D7141 /* 5_stars.png in Resources */,
@@ -393,6 +400,7 @@
 				C6C05BF31E955598006D7141 /* GoogleMapsViewController.swift in Sources */,
 				C6C05C011E957ED1006D7141 /* CustomInfoWindow.swift in Sources */,
 				C6C05C1F1E97DBCC006D7141 /* Review.swift in Sources */,
+				C6FE321A1E9C1E4A00833C1D /* AddReviewViewController.swift in Sources */,
 				C6C05C231E97F996006D7141 /* ReviewTableViewCell.swift in Sources */,
 				C62061131E8082F900102C1E /* TacoLocation.swift in Sources */,
 				C6C05C031E9591E5006D7141 /* MoreInfoViewController.swift in Sources */,

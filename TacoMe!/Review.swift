@@ -15,4 +15,10 @@ class Review {
     var text :String?
     var author_name :String?
     
+    
+    func toDictionary() -> [String:Any] {
+        
+        return ["rating":self.rating!,"relative_time_description":self.relative_time_description!,"text":self.text!,"author_name":self.author_name!]
+    }
+    
 }
