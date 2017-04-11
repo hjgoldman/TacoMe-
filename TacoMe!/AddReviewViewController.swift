@@ -47,11 +47,11 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
         }
         
         if self.nameTextField.text == "" {
-            let alertController = UIAlertController(title: "Opps!", message:  "Please enter your name.", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) {
+            let alertController = UIAlertController(title: "Oops!", message: "Enter your name.", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) {
                 UIAlertAction in
             }
-            alertController.addAction(cancelAction)
+            alertController.addAction(dismissAction)
             self.present(alertController, animated: true, completion: nil)
         }
  
@@ -63,7 +63,6 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
             }
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
-            
         }
         
         self.saveReviewToFireBase()

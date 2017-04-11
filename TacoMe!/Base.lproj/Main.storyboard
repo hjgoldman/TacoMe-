@@ -279,10 +279,10 @@
             </objects>
             <point key="canvasLocation" x="9151.2000000000007" y="-283.80809595202402"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Location Detail Tab Bar Controller-->
         <scene sceneID="Ci8-xW-AVT">
             <objects>
-                <tabBarController id="Rhr-yC-3MG" sceneMemberID="viewController">
+                <tabBarController id="Rhr-yC-3MG" customClass="LocationDetailTabBarController" customModule="TacoMe_" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Nmm-fT-Pi0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -297,7 +297,7 @@
             </objects>
             <point key="canvasLocation" x="7970.3999999999996" y="136.28185907046478"/>
         </scene>
-        <!--Item-->
+        <!--Reviews-->
         <scene sceneID="dcP-Aw-OSp">
             <objects>
                 <viewController id="er8-bQ-mMJ" customClass="ReviewViewController" customModule="TacoMe_" customModuleProvider="target" sceneMemberID="viewController">
@@ -396,7 +396,7 @@
                                     <constraint firstAttribute="width" constant="144" id="oFf-Tn-s5F"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-K1-uj4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-K1-uj4">
                                 <rect key="frame" x="16" y="64" width="343" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="SPE-8G-zVq"/>
@@ -412,7 +412,7 @@
                                     <constraint firstAttribute="width" constant="121" id="5AK-uB-wWf"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4j-m4-j8Z">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4j-m4-j8Z">
                                 <rect key="frame" x="248" y="149" width="42" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="PNz-nv-9mC"/>
@@ -458,7 +458,7 @@
                             <constraint firstItem="MRd-ZJ-dpf" firstAttribute="top" secondItem="jjM-h7-lqJ" secondAttribute="bottom" constant="8" id="xUw-dW-Stg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="IDX-el-e4Z"/>
+                    <tabBarItem key="tabBarItem" title="Reviews" image="thumb-up.png" id="IDX-el-e4Z"/>
                     <navigationItem key="navigationItem" id="cap-yh-fFu"/>
                     <connections>
                         <outlet property="imageView" destination="wR2-1A-B03" id="8O9-gY-UWO"/>
@@ -484,9 +484,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixz-Uz-bcf">
-                                <rect key="frame" x="136" y="576" width="102" height="30"/>
+                                <rect key="frame" x="136" y="576" width="102" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
+                                <color key="backgroundColor" red="0.98595607280731201" green="1" blue="0.74116647243499756" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.46515300869941711" green="0.51090437173843384" blue="0.63536030054092407" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="zFR-o5-5OA" eventType="touchUpInside" id="SfN-Wg-5qk"/>
                                 </connections>
@@ -516,10 +520,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AEf-3W-dIm">
-                                <rect key="frame" x="0.0" y="316" width="375" height="165"/>
+                                <rect key="frame" x="0.0" y="316" width="375" height="230"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
@@ -563,5 +567,6 @@
         <image name="info.png" width="30" height="30"/>
         <image name="powered_by_google_on_non_white.png" width="144" height="18"/>
         <image name="taco_me.png" width="408" height="269"/>
+        <image name="thumb-up.png" width="30" height="30"/>
     </resources>
 </document>

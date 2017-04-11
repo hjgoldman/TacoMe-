@@ -48,6 +48,7 @@
 		C6FE32161E9C172400833C1D /* thumb-up.png in Resources */ = {isa = PBXBuildFile; fileRef = C6FE32151E9C172400833C1D /* thumb-up.png */; };
 		C6FE32181E9C1C1100833C1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6FE32171E9C1C1100833C1D /* GoogleService-Info.plist */; };
 		C6FE321A1E9C1E4A00833C1D /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FE32191E9C1E4A00833C1D /* AddReviewViewController.swift */; };
+		C6FE321E1E9D7A8300833C1D /* LocationDetailTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FE321D1E9D7A8300833C1D /* LocationDetailTabBarController.swift */; };
 		F0DCF3A89B1204CB25CC8F05 /* Pods_TacoMe_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDD39B0CCE270A6209DDE72 /* Pods_TacoMe_.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		C6FE32151E9C172400833C1D /* thumb-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb-up.png"; sourceTree = "<group>"; };
 		C6FE32171E9C1C1100833C1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C6FE32191E9C1E4A00833C1D /* AddReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
+		C6FE321D1E9D7A8300833C1D /* LocationDetailTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailTabBarController.swift; sourceTree = "<group>"; };
 		E06BEC2D0EC97E7145529F3B /* Pods-TacoMe!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TacoMe!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TacoMe!/Pods-TacoMe!.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,6 +207,7 @@
 				C6C05C021E9591E5006D7141 /* MoreInfoViewController.swift */,
 				C6FE32021E9BD50A00833C1D /* ReviewViewController.swift */,
 				C6FE32191E9C1E4A00833C1D /* AddReviewViewController.swift */,
+				C6FE321D1E9D7A8300833C1D /* LocationDetailTabBarController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				C6C05C031E9591E5006D7141 /* MoreInfoViewController.swift in Sources */,
 				C62061111E8082DF00102C1E /* MapViewController.swift in Sources */,
 				C620610F1E8082B700102C1E /* TacoMeViewController.swift in Sources */,
+				C6FE321E1E9D7A8300833C1D /* LocationDetailTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

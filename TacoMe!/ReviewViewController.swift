@@ -32,7 +32,6 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 175
         
-        self.getLocationDetails()
         self.getFireBaseReviews()
     }
     //MARK: Delegate to add new review to current table
@@ -76,9 +75,8 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     self.reviews.insert(review, at: 0)
                     
                 }
+
                 DispatchQueue.main.async {
-                    print(self.accumulatedFireBaseRatings)
-                    print(self.numberOfFirebaseRatings)
                     self.tableView.reloadData()
                     self.newRating = (Double(self.accumulatedFireBaseRatings) + self.tacoLocationDetail.rating!) / Double(self.numberOfFirebaseRatings + 1)
                     self.populateView()
@@ -89,6 +87,7 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     self.tableView.reloadData()
                     self.populateView()
                 }
+                
             }
         }
     }
@@ -127,7 +126,6 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
             }
         } else {
-            print(self.newRating)
             
             let ratingString = String(format: "%.1f", self.newRating!)
             
@@ -196,56 +194,6 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    //MARK: API GET request 
-    
-    func getLocationDetails() {
-        
-        let headers = [
-            "cache-control": "no-cache",
-            ]
-        
-        let request = NSMutableURLRequest(url: NSURL(string: "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(self.tacoLocationPlace_id!)&key=AIzaSyA3RhbSXz2Enph92mEeehvXogH8cDg5VGQ")! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            
-            let json = try! JSONSerialization.jsonObject(with: data!, options: []) as! [String:Any]
-            
-            let result = json["result"] as! [String:Any]
-            let name = result["name"] as? String
-            let rating = result["rating"] as? Double
-            
-            self.tacoLocationDetail.name = name
-            self.tacoLocationDetail.rating = rating
-
-            // Save the rewivew into my review object
-            
-            let reviews = result["reviews"] as! [[String:Any]]
-            for item in reviews {
-                
-                let author_name = item["author_name"] as! String
-                let rating = item["rating"] as! Int
-                let relative_time_description = item["relative_time_description"] as! String
-                let text = item["text"] as! String
-                
-                let review = Review()
-                review.author_name = author_name
-                review.rating = rating
-                review.relative_time_description = relative_time_description
-                review.text = text
-                review.isTacoMeReview = false
-                
-                self.reviews.append(review)
-                
-            }
-        })
-        dataTask.resume()
-        
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddReviewSegue" {
