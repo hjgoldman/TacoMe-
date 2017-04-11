@@ -44,7 +44,6 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
         review.text = text
         review.relative_time_description = relative_time_description
         
-        reviews.insert(review, at: 0)
         self.tableView.reloadData()
     }
     
