@@ -117,7 +117,21 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
         review.rating = self.selectedRowIndex!
         review.text = self.reviewTextTextView.text!
         review.isTacoMeReview = true
-        review.relative_time_description = String(describing: Date())
+        
+        let uglyDate = String(describing: Date())
+        
+        let startIndex = uglyDate.index(uglyDate.startIndex, offsetBy: 0)
+        let endIndex = uglyDate.index(uglyDate.startIndex, offsetBy: 9)
+        let date = uglyDate[startIndex...endIndex]
+        let yearStartIndex = date.index(date.startIndex, offsetBy: 0)
+        let yearEndIndex = date.index(date.startIndex, offsetBy: 3)
+        let year = date[yearStartIndex...yearEndIndex]
+        let dayAndMonthStartIndex = date.index(date.startIndex, offsetBy: 5)
+        let dayAndMonthEndIndex = date.index(date.startIndex, offsetBy: 9)
+        let dayAndMonth = date[dayAndMonthStartIndex...dayAndMonthEndIndex]
+        let formattedDate = "\(dayAndMonth)-\(year)"
+        
+        review.relative_time_description = formattedDate
         self.delegate.addNewReviewToTable(author_name: review.author_name!, isTacoReview: review.isTacoMeReview!, rating: review.rating!, text: review.text!, relative_time_description: review.relative_time_description!)
         self.reviews.append(review.toDictionary())
         reviewRef.setValue(self.reviews)
