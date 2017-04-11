@@ -129,7 +129,9 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             print(self.newRating)
             
-            self.ratingLabel.text = String(describing: self.newRating!)
+            let ratingString = String(format: "%.1f", self.newRating!)
+            
+            self.ratingLabel.text = ratingString
             
             if self.newRating! >= 0.0 && self.newRating! < 0.5 {
                 self.imageView.image = UIImage(named: "0_stars.png")
@@ -156,13 +158,8 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
             } else if self.newRating == nil {
                 
             }
-            
-            
         }
-        
-        
 
-        
     }
     //MARK: TableView
     
