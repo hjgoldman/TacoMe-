@@ -201,6 +201,7 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let addReviewVC = segue.destination as! AddReviewViewController
 
             addReviewVC.tacoLocationPlace_id = self.tacoLocationPlace_id
+            addReviewVC.tacoLocationDetail = self.tacoLocationDetail
             addReviewVC.delegate = self
             
         }
