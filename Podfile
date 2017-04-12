@@ -10,6 +10,8 @@ target 'TacoMe!' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
 
 end

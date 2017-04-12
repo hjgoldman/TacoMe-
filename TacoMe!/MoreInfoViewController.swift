@@ -25,10 +25,8 @@ class MoreInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(self.tacoLocationPlace_id)
         self.getLocationDetails()
-        
-        
+
     }
 
     
@@ -104,9 +102,7 @@ class MoreInfoViewController: UIViewController {
             let json = try! JSONSerialization.jsonObject(with: data!, options: []) as! [String:Any]
             
             let result = json["result"] as! [String:Any]
-            
-            print(result)
-            
+        
             let geometry = result["geometry"] as! [String:Any]
             let location = geometry["location"] as! [String:Any]
             //let opening_hours = result["opening_hours"] as! [String:Any]
@@ -119,8 +115,6 @@ class MoreInfoViewController: UIViewController {
                 if let open_now = opening_hours["open_now"] {
                     self.tacoLocationDetail.open_now = open_now as? Bool
                 }
-                
-                
             }
             
             guard let formatted_address = result["formatted_address"] as? String,
@@ -220,16 +214,9 @@ class MoreInfoViewController: UIViewController {
         alertController.addAction(cancelAction)
         
         self.present(alertController, animated: true, completion: nil)
-
     }
     
-    //MARK: View is only supported as portrait
     
-    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
-        get {
-            return .portrait
-        }
-    }
     
 
 }
