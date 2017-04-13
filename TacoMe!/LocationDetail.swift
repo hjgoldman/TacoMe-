@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TacoLocationDetail {
+class LocationDetail {
     
     
     var formatted_address :String?

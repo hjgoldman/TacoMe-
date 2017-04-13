@@ -13,15 +13,15 @@ import MapKit
 
 class LocationAnnotation :ARAnnotation {
     
-    var tacoLocation :TacoLocation!
+    var itemLocation :Location!
     
-    init(tacoLocation :TacoLocation) {
+    init(location :Location) {
         
         super.init()
         
-        self.title = tacoLocation.name
-        self.location = CLLocation(latitude: tacoLocation.locationLat!, longitude: tacoLocation.locationLng!)
-        self.tacoLocation = tacoLocation
+        self.title = location.name
+        self.location = CLLocation(latitude: location.locationLat!, longitude: location.locationLng!)
+        self.itemLocation = location
     }
     
     

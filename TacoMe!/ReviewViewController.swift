@@ -18,8 +18,8 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var imageView: UIImageView!
 
     var reviews = [Review]()
-    var tacoLocationDetail = TacoLocationDetail()
-    var tacoLocationPlace_id :String!
+    var locationDetail = LocationDetail()
+    var locationPlace_id :String!
     var accumulatedFireBaseRatings = 0
     var numberOfFirebaseRatings = 0
     var newRating :Double!
@@ -52,7 +52,7 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let ref = FIRDatabase.database().reference(withPath: "reviews")
         ref.observe(.value) { (snapshot :FIRDataSnapshot) in
             
-            let locationInDB = snapshot.childSnapshot(forPath: self.tacoLocationPlace_id!)
+            let locationInDB = snapshot.childSnapshot(forPath: self.locationPlace_id!)
             
             
             if locationInDB.exists() == true {
@@ -78,7 +78,7 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                    self.newRating = (Double(self.accumulatedFireBaseRatings) + self.tacoLocationDetail.rating!) / Double(self.numberOfFirebaseRatings + 1)
+                    self.newRating = (Double(self.accumulatedFireBaseRatings) + self.locationDetail.rating!) / Double(self.numberOfFirebaseRatings + 1)
                     self.populateView()
                 }
             } else {
@@ -95,34 +95,34 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func populateView() {
         
-        self.nameLabel.text = self.tacoLocationDetail.name
+        self.nameLabel.text = self.locationDetail.name
         
         if self.numberOfFirebaseRatings == 0 {
-            self.ratingLabel.text = String(describing: self.tacoLocationDetail.rating!)
+            self.ratingLabel.text = String(describing: self.locationDetail.rating!)
 
-            if self.tacoLocationDetail.rating! >= 0.0 && self.tacoLocationDetail.rating! < 0.5 {
+            if self.locationDetail.rating! >= 0.0 && self.locationDetail.rating! < 0.5 {
                 self.imageView.image = UIImage(named: "0_stars.png")
-            } else if self.tacoLocationDetail.rating! >= 0.5 && self.tacoLocationDetail.rating! < 1.0 {
+            } else if self.locationDetail.rating! >= 0.5 && self.locationDetail.rating! < 1.0 {
                 self.imageView.image = UIImage(named: "0_5_stars.png")
-            } else if self.tacoLocationDetail.rating! >= 1.0 && self.tacoLocationDetail.rating! < 1.5 {
+            } else if self.locationDetail.rating! >= 1.0 && self.locationDetail.rating! < 1.5 {
                 self.imageView.image = UIImage(named: "1_stars.png")
-            } else if self.tacoLocationDetail.rating! >= 1.5 && self.tacoLocationDetail.rating! < 2.0 {
+            } else if self.locationDetail.rating! >= 1.5 && self.locationDetail.rating! < 2.0 {
                 self.imageView.image = UIImage(named: "1_5_stars.png")
-            } else if self.tacoLocationDetail.rating! >= 2.0 && self.tacoLocationDetail.rating! < 2.5 {
+            } else if self.locationDetail.rating! >= 2.0 && self.locationDetail.rating! < 2.5 {
                 self.imageView.image = UIImage(named: "2_stars.png")
-            } else if self.tacoLocationDetail.rating! >= 2.5 && self.tacoLocationDetail.rating! < 3.0 {
+            } else if self.locationDetail.rating! >= 2.5 && self.locationDetail.rating! < 3.0 {
                 self.imageView.image = UIImage(named: "2_5_stars.png")
-            } else if self.tacoLocationDetail.rating! >= 3.0 && self.tacoLocationDetail.rating! < 3.5 {
+            } else if self.locationDetail.rating! >= 3.0 && self.locationDetail.rating! < 3.5 {
                 self.imageView.image = UIImage(named: "3_stars.png")
-            } else if self.tacoLocationDetail.rating! >= 3.5 && self.tacoLocationDetail.rating! < 4.0 {
+            } else if self.locationDetail.rating! >= 3.5 && self.locationDetail.rating! < 4.0 {
                 self.imageView.image = UIImage(named: "3_5_stars.png")
-            } else if self.tacoLocationDetail.rating! >= 4.0 && self.tacoLocationDetail.rating! < 4.5 {
+            } else if self.locationDetail.rating! >= 4.0 && self.locationDetail.rating! < 4.5 {
                 self.imageView.image = UIImage(named: "4_stars.png")
-            } else if self.tacoLocationDetail.rating! >= 4.5 && self.tacoLocationDetail.rating! < 5.0 {
+            } else if self.locationDetail.rating! >= 4.5 && self.locationDetail.rating! < 5.0 {
                 self.imageView.image = UIImage(named: "4_5_stars.png")
-            } else if self.tacoLocationDetail.rating! == 5.0 {
+            } else if self.locationDetail.rating! == 5.0 {
                 self.imageView.image = UIImage(named: "5_stars.png")
-            } else if self.tacoLocationDetail.rating == nil {
+            } else if self.locationDetail.rating == nil {
                 
             }
         } else {
@@ -200,8 +200,8 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             let addReviewVC = segue.destination as! AddReviewViewController
 
-            addReviewVC.tacoLocationPlace_id = self.tacoLocationPlace_id
-            addReviewVC.tacoLocationDetail = self.tacoLocationDetail
+            addReviewVC.tacoLocationPlace_id = self.locationPlace_id
+            addReviewVC.tacoLocationDetail = self.locationDetail
             addReviewVC.delegate = self
             
         }

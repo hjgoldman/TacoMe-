@@ -25,12 +25,6 @@ class LocationAnnotaionView :ARAnnotationView, CLLocationManagerDelegate {
     var userLatitude :Double = Double()
     var userLongitude :Double = Double()
     
-//    //trying to use delegate to get userLocation from ARViewController
-//    func userLocation(lat :Double, lng :Double) {
-//        self.userLatitude = lat
-//        self.userLongitude = lng
-//    }
-    
     
     init(annotation :ARAnnotation) {
         super.init()
@@ -51,16 +45,13 @@ class LocationAnnotaionView :ARAnnotationView, CLLocationManagerDelegate {
         
         
         let userLocation = CLLocation(latitude: userLat!, longitude: userLng!)
-        let location = CLLocation(latitude: locationAnnotation.tacoLocation.locationLat!, longitude: locationAnnotation.tacoLocation.locationLng!)
+        let location = CLLocation(latitude: locationAnnotation.itemLocation.locationLat!, longitude: locationAnnotation.itemLocation.locationLng!)
         
         //
         
-        let name = locationAnnotation.tacoLocation.name
+        let name = locationAnnotation.itemLocation.name
         
-        let address = "\(locationAnnotation.tacoLocation.vicinity!)"
-        
-        //        let userLocation = CLLocation(latitude: self.userLatitude, longitude: self.userLongitude)
-        //        let categoryLocation = CLLocation(latitude: categoryAnnotation.categoryRequest.coordinate.latitude, longitude: categoryAnnotation.categoryRequest.coordinate.longitude)
+        let address = "\(locationAnnotation.itemLocation.vicinity!)"
         
         
         let distanceInMeters = userLocation.distance(from: location)

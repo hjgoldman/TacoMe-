@@ -13,7 +13,7 @@ import HDAugmentedReality
 
 class LocationARViewController: ARViewController, ARDataSource, CLLocationManagerDelegate{
 
-    var tacoLocations = [TacoLocation]()
+    var locations = [Location]()
     var locationManager = CLLocationManager()
     var locationARAnnotations = [ARAnnotation]()
 
@@ -37,18 +37,14 @@ class LocationARViewController: ARViewController, ARDataSource, CLLocationManage
     
     func popluateAnnotations() {
         
-        for location in tacoLocations {
+        for location in locations {
             
-            let annotation = LocationAnnotation(tacoLocation: location)
+            let annotation = LocationAnnotation(location: location)
             
             self.locationARAnnotations.append(annotation)
             
             self.setAnnotations(self.locationARAnnotations)
-            
-            
         }
-        
-        
     }
     
     

@@ -28,7 +28,7 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
     var tacoLocationPlace_id :String!
     var reviews = [Any]()
     var delegate: AddNewReviewToTableDelegate!
-    var tacoLocationDetail = TacoLocationDetail()
+    var tacoLocationDetail = LocationDetail()
 
     
     override func viewDidLoad() {

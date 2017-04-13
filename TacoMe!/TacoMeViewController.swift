@@ -14,7 +14,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
     
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     var locationManager = CLLocationManager()
-    var tacoLocations = [TacoLocation]()
+    var locations = [Location]()
     var fadeTransition = FadeTransition()
     
     override func viewDidLoad() {
@@ -52,7 +52,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 self.indicatorView.stopAnimating()
                 self.indicatorView.isHidden = true
                 
-                if self.tacoLocations.count == 0 {
+                if self.locations.count == 0 {
 
                     
                     // Create the alert controller
@@ -74,7 +74,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 } else {
                     
                     
-                    let closestTaco = self.tacoLocations[0]
+                    let closestTaco = self.locations[0]
                     
                     guard let distance = closestTaco.distanceFromUser else {
                         return
@@ -132,7 +132,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
             
             let navController = segue.destination as! UINavigationController
             let mapVC = navController.topViewController as! GoogleMapsViewController
-            mapVC.tacoLocations = self.tacoLocations
+            mapVC.locations = self.locations
             
             navController.transitioningDelegate = self
             
@@ -189,28 +189,28 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 let rating = item["rating"] as? Double
                 let vicinity = item["vicinity"] as? String
                 
-                let tacoLocation = TacoLocation()
+                let itemLocation = Location()
                 
                 if let opening_hours = item["opening_hours"] {
                     let openingHours = opening_hours as! [String:Any]
                     if let open_now = openingHours["open_now"] {
-                        tacoLocation.open_now = open_now as? Bool
+                        itemLocation.open_now = open_now as? Bool
                     }
                 }
                 
-                tacoLocation.locationLat = locationLat
-                tacoLocation.locationLng = locationLng
-                tacoLocation.name = name
-                tacoLocation.place_id = place_id
-                tacoLocation.price_level = price_level
-                tacoLocation.rating = rating
-                tacoLocation.vicinity = vicinity
+                itemLocation.locationLat = locationLat
+                itemLocation.locationLng = locationLng
+                itemLocation.name = name
+                itemLocation.place_id = place_id
+                itemLocation.price_level = price_level
+                itemLocation.rating = rating
+                itemLocation.vicinity = vicinity
                 
-                self.tacoLocations.append(tacoLocation)
+                self.locations.append(itemLocation)
                 
             }
             
-            print(self.tacoLocations.count)
+            print(self.locations.count)
             self.findClosestTaco()
         })
         
@@ -222,12 +222,12 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         
         var distances = [Double]()
         //looping to get all the location distance from user
-        for location in self.tacoLocations {
+        for location in self.locations {
             let distance = self.locationManager.location?.distance(from: CLLocation(latitude: CLLocationDegrees(location.locationLat!), longitude: CLLocationDegrees(location.locationLng!)))
             location.distanceFromUser = distance as Double!
             distances.append(distance!)
         }
-        self.tacoLocations.sort(by: {$0.distanceFromUser! < $1.distanceFromUser!})
+        self.locations.sort(by: {$0.distanceFromUser! < $1.distanceFromUser!})
     }
 
     

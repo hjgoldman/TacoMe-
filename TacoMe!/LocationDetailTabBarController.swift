@@ -19,7 +19,7 @@ class LocationDetailTabBarController: UITabBarController, UITabBarControllerDele
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         let infoVC = self.viewControllers![0] as! MoreInfoViewController
         let reviewVC = self.viewControllers![1] as! ReviewViewController
-        reviewVC.tacoLocationDetail = infoVC.tacoLocationDetail
+        reviewVC.locationDetail = infoVC.locationDetail
         reviewVC.reviews = infoVC.reviews
     }
     

@@ -18,14 +18,14 @@
 		C620610D1E80824000102C1E /* taco_annotation.png in Resources */ = {isa = PBXBuildFile; fileRef = C620610B1E80824000102C1E /* taco_annotation.png */; };
 		C620610F1E8082B700102C1E /* TacoMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C620610E1E8082B700102C1E /* TacoMeViewController.swift */; };
 		C62061111E8082DF00102C1E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62061101E8082DF00102C1E /* MapViewController.swift */; };
-		C62061131E8082F900102C1E /* TacoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62061121E8082F900102C1E /* TacoLocation.swift */; };
+		C62061131E8082F900102C1E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62061121E8082F900102C1E /* Location.swift */; };
 		C68BE0771E84326400C3E643 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BE0761E84326400C3E643 /* FadeTransition.swift */; };
 		C6C05BF31E955598006D7141 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C05BF21E955598006D7141 /* GoogleMapsViewController.swift */; };
 		C6C05BF71E955C35006D7141 /* taco_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05BF61E955C35006D7141 /* taco_marker.png */; };
 		C6C05BFF1E957D2A006D7141 /* CustomInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6C05BFE1E957D2A006D7141 /* CustomInfoWindow.xib */; };
 		C6C05C011E957ED1006D7141 /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C05C001E957ED1006D7141 /* CustomInfoWindow.swift */; };
 		C6C05C031E9591E5006D7141 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C05C021E9591E5006D7141 /* MoreInfoViewController.swift */; };
-		C6C05C051E95968D006D7141 /* TacoLocationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C05C041E95968D006D7141 /* TacoLocationDetail.swift */; };
+		C6C05C051E95968D006D7141 /* LocationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C05C041E95968D006D7141 /* LocationDetail.swift */; };
 		C6C05C071E96E491006D7141 /* test_marker_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05C061E96E491006D7141 /* test_marker_background.png */; };
 		C6C05C0E1E96F326006D7141 /* 0_stars.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05C081E96F326006D7141 /* 0_stars.png */; };
 		C6C05C0F1E96F326006D7141 /* 4_stars.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05C091E96F326006D7141 /* 4_stars.png */; };
@@ -71,14 +71,14 @@
 		C620610B1E80824000102C1E /* taco_annotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taco_annotation.png; sourceTree = "<group>"; };
 		C620610E1E8082B700102C1E /* TacoMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TacoMeViewController.swift; sourceTree = "<group>"; };
 		C62061101E8082DF00102C1E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		C62061121E8082F900102C1E /* TacoLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TacoLocation.swift; sourceTree = "<group>"; };
+		C62061121E8082F900102C1E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C68BE0761E84326400C3E643 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		C6C05BF21E955598006D7141 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		C6C05BF61E955C35006D7141 /* taco_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taco_marker.png; sourceTree = "<group>"; };
 		C6C05BFE1E957D2A006D7141 /* CustomInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInfoWindow.xib; sourceTree = "<group>"; };
 		C6C05C001E957ED1006D7141 /* CustomInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
 		C6C05C021E9591E5006D7141 /* MoreInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
-		C6C05C041E95968D006D7141 /* TacoLocationDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TacoLocationDetail.swift; sourceTree = "<group>"; };
+		C6C05C041E95968D006D7141 /* LocationDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetail.swift; sourceTree = "<group>"; };
 		C6C05C061E96E491006D7141 /* test_marker_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_marker_background.png; sourceTree = "<group>"; };
 		C6C05C081E96F326006D7141 /* 0_stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_stars.png; sourceTree = "<group>"; };
 		C6C05C091E96F326006D7141 /* 4_stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_stars.png; sourceTree = "<group>"; };
@@ -232,8 +232,8 @@
 		C6C05C201E97DBDA006D7141 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				C6C05C041E95968D006D7141 /* TacoLocationDetail.swift */,
-				C62061121E8082F900102C1E /* TacoLocation.swift */,
+				C6C05C041E95968D006D7141 /* LocationDetail.swift */,
+				C62061121E8082F900102C1E /* Location.swift */,
 				C6C05C1E1E97DBCC006D7141 /* Review.swift */,
 			);
 			name = Objects;
@@ -413,7 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6C05C051E95968D006D7141 /* TacoLocationDetail.swift in Sources */,
+				C6C05C051E95968D006D7141 /* LocationDetail.swift in Sources */,
 				C62060F71E80820600102C1E /* AppDelegate.swift in Sources */,
 				C6FE32031E9BD50A00833C1D /* ReviewViewController.swift in Sources */,
 				C68BE0771E84326400C3E643 /* FadeTransition.swift in Sources */,
@@ -423,7 +423,7 @@
 				C6FE321A1E9C1E4A00833C1D /* AddReviewViewController.swift in Sources */,
 				C6C05C231E97F996006D7141 /* ReviewTableViewCell.swift in Sources */,
 				C61D3AE51E9FCA51007DBC58 /* LocationARViewController.swift in Sources */,
-				C62061131E8082F900102C1E /* TacoLocation.swift in Sources */,
+				C62061131E8082F900102C1E /* Location.swift in Sources */,
 				C6C05C031E9591E5006D7141 /* MoreInfoViewController.swift in Sources */,
 				C62061111E8082DF00102C1E /* MapViewController.swift in Sources */,
 				C620610F1E8082B700102C1E /* TacoMeViewController.swift in Sources */,

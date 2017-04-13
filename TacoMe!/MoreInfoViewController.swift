@@ -18,8 +18,8 @@ class MoreInfoViewController: UIViewController {
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var phoneButtonOutlet: UIButton!
     
-    var tacoLocationDetail = TacoLocationDetail()
-    var tacoLocationPlace_id :String!
+    var locationDetail = LocationDetail()
+    var locationPlace_id :String!
     var reviews = [Review]()
 
     override func viewDidLoad() {
@@ -32,54 +32,54 @@ class MoreInfoViewController: UIViewController {
     
     func populateView() {
         
-        self.nameLabel.text = self.tacoLocationDetail.name
-        self.addressLabel.text = self.tacoLocationDetail.formatted_address
-        self.phoneButtonOutlet.setTitle(self.tacoLocationDetail.formatted_phone_number, for: .normal)
-        self.ratingLabel.text = String(describing: self.tacoLocationDetail.rating!)
+        self.nameLabel.text = self.locationDetail.name
+        self.addressLabel.text = self.locationDetail.formatted_address
+        self.phoneButtonOutlet.setTitle(self.locationDetail.formatted_phone_number, for: .normal)
+        self.ratingLabel.text = String(describing: self.locationDetail.rating!)
         
-        if self.tacoLocationDetail.weekday_text == nil {
+        if self.locationDetail.weekday_text == nil {
             self.hoursLabel.text = "Opening Hours Not Provided"
         } else {
             
-            let hours = self.tacoLocationDetail.weekday_text?.joined(separator: "\n")
+            let hours = self.locationDetail.weekday_text?.joined(separator: "\n")
             self.hoursLabel.text = hours!
 
         }
         
         
-        if self.tacoLocationDetail.open_now == true {
+        if self.locationDetail.open_now == true {
             self.isOpenLabel.text = "Open"
             self.isOpenLabel.textColor = UIColor.green
-        } else if self.tacoLocationDetail.open_now == false {
+        } else if self.locationDetail.open_now == false {
             self.isOpenLabel.text = "Closed"
             self.isOpenLabel.textColor = UIColor.red
         } else {
             self.isOpenLabel.text = ""
         }
         
-        if self.tacoLocationDetail.rating! >= 0.0 && self.tacoLocationDetail.rating! < 0.5 {
+        if self.locationDetail.rating! >= 0.0 && self.locationDetail.rating! < 0.5 {
             self.imageView.image = UIImage(named: "0_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 0.5 && self.tacoLocationDetail.rating! < 1.0 {
+        } else if self.locationDetail.rating! >= 0.5 && self.locationDetail.rating! < 1.0 {
             self.imageView.image = UIImage(named: "0_5_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 1.0 && self.tacoLocationDetail.rating! < 1.5 {
+        } else if self.locationDetail.rating! >= 1.0 && self.locationDetail.rating! < 1.5 {
             self.imageView.image = UIImage(named: "1_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 1.5 && self.tacoLocationDetail.rating! < 2.0 {
+        } else if self.locationDetail.rating! >= 1.5 && self.locationDetail.rating! < 2.0 {
             self.imageView.image = UIImage(named: "1_5_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 2.0 && self.tacoLocationDetail.rating! < 2.5 {
+        } else if self.locationDetail.rating! >= 2.0 && self.locationDetail.rating! < 2.5 {
             self.imageView.image = UIImage(named: "2_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 2.5 && self.tacoLocationDetail.rating! < 3.0 {
+        } else if self.locationDetail.rating! >= 2.5 && self.locationDetail.rating! < 3.0 {
             self.imageView.image = UIImage(named: "2_5_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 3.0 && self.tacoLocationDetail.rating! < 3.5 {
+        } else if self.locationDetail.rating! >= 3.0 && self.locationDetail.rating! < 3.5 {
             self.imageView.image = UIImage(named: "3_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 3.5 && self.tacoLocationDetail.rating! < 4.0 {
+        } else if self.locationDetail.rating! >= 3.5 && self.locationDetail.rating! < 4.0 {
             self.imageView.image = UIImage(named: "3_5_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 4.0 && self.tacoLocationDetail.rating! < 4.5 {
+        } else if self.locationDetail.rating! >= 4.0 && self.locationDetail.rating! < 4.5 {
             self.imageView.image = UIImage(named: "4_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 4.5 && self.tacoLocationDetail.rating! < 5.0 {
+        } else if self.locationDetail.rating! >= 4.5 && self.locationDetail.rating! < 5.0 {
             self.imageView.image = UIImage(named: "4_5_stars.png")
-        } else if self.tacoLocationDetail.rating! == 5.0 {
+        } else if self.locationDetail.rating! == 5.0 {
             self.imageView.image = UIImage(named: "5_stars.png")
-        } else if self.tacoLocationDetail.rating == nil {
+        } else if self.locationDetail.rating == nil {
             
         }
     }
@@ -90,7 +90,7 @@ class MoreInfoViewController: UIViewController {
             "cache-control": "no-cache",
         ]
         
-        let request = NSMutableURLRequest(url: NSURL(string: "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(self.tacoLocationPlace_id!)&key=AIzaSyA3RhbSXz2Enph92mEeehvXogH8cDg5VGQ")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(self.locationPlace_id!)&key=AIzaSyA3RhbSXz2Enph92mEeehvXogH8cDg5VGQ")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -110,10 +110,10 @@ class MoreInfoViewController: UIViewController {
             if let opening_hours = result["opening_hours"] as? [String:Any] {
                 
                 let weekday_text = opening_hours["weekday_text"] as? [String]
-                self.tacoLocationDetail.weekday_text = weekday_text
+                self.locationDetail.weekday_text = weekday_text
 
                 if let open_now = opening_hours["open_now"] {
-                    self.tacoLocationDetail.open_now = open_now as? Bool
+                    self.locationDetail.open_now = open_now as? Bool
                 }
             }
             
@@ -132,21 +132,21 @@ class MoreInfoViewController: UIViewController {
            
             
             if let website = result["website"] {
-                self.tacoLocationDetail.website = website as? String
+                self.locationDetail.website = website as? String
             }
             
             if let price_level = result["price_level"] {
-                self.tacoLocationDetail.price_level = price_level as? Double
+                self.locationDetail.price_level = price_level as? Double
             }
             
-            self.tacoLocationDetail.formatted_address = formatted_address
-            self.tacoLocationDetail.formatted_phone_number = formatted_phone_number
-            self.tacoLocationDetail.lat = lat
-            self.tacoLocationDetail.lng = lng
-            self.tacoLocationDetail.name = name
-            self.tacoLocationDetail.rating = rating
-            self.tacoLocationDetail.url = url
-            self.tacoLocationDetail.international_phone_number = international_phone_number
+            self.locationDetail.formatted_address = formatted_address
+            self.locationDetail.formatted_phone_number = formatted_phone_number
+            self.locationDetail.lat = lat
+            self.locationDetail.lng = lng
+            self.locationDetail.name = name
+            self.locationDetail.rating = rating
+            self.locationDetail.url = url
+            self.locationDetail.international_phone_number = international_phone_number
             
             // Save the rewivew into my review object
             
@@ -181,7 +181,7 @@ class MoreInfoViewController: UIViewController {
     
     @IBAction func phoneButtonPressed(_ sender: Any) {
         
-        let formattedPhoneNumber = self.tacoLocationDetail.international_phone_number?.replacingOccurrences(of: " ", with: "")
+        let formattedPhoneNumber = self.locationDetail.international_phone_number?.replacingOccurrences(of: " ", with: "")
         
         if let phoneCallURL = URL(string: "tel://\(String(describing: formattedPhoneNumber!))") {
             
@@ -194,12 +194,12 @@ class MoreInfoViewController: UIViewController {
     
     @IBAction func directionsButtonPressed(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "Directions", message:  "\(self.tacoLocationDetail.name!)", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Directions", message:  "\(self.locationDetail.name!)", preferredStyle: .alert)
         
         let directionsAction = UIAlertAction(title: "Lets do it", style: UIAlertActionStyle.default) {
             UIAlertAction in
             
-            let url  = NSURL(string: "\(self.tacoLocationDetail.url!)")
+            let url  = NSURL(string: "\(self.locationDetail.url!)")
             
             if UIApplication.shared.canOpenURL(url! as URL) == true {
                 UIApplication.shared.open(url! as URL)
