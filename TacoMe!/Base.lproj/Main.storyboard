@@ -127,6 +127,11 @@
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="b56-XW-Pc8"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="NAy-cU-uCd">
+                            <connections>
+                                <segue destination="MN2-v1-OpT" kind="presentation" identifier="ARSegue" id="P7x-vI-x4v"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="Rhr-yC-3MG" kind="show" identifier="MoreInfoSegue" id="bxs-ze-zea"/>
@@ -278,6 +283,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLZ-FB-8zL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9151.2000000000007" y="-283.80809595202402"/>
+        </scene>
+        <!--LocationAR View Controller-->
+        <scene sceneID="jsO-hj-u1C">
+            <objects>
+                <viewController id="MN2-v1-OpT" customClass="LocationARViewController" customModule="TacoMe_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rSh-cK-bBY"/>
+                        <viewControllerLayoutGuide type="bottom" id="wUQ-Ie-oxY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PLx-IT-xjG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KCU-6B-sgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7970" y="-558"/>
         </scene>
         <!--Location Detail Tab Bar Controller-->
         <scene sceneID="Ci8-xW-AVT">
@@ -790,7 +813,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fgf-dY-LTW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dmE-TT-Hkl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dmE-TT-Hkl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

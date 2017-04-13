@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HDAugmentedReality.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TacoMe!.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98D1BBF3A3CE1763B81CF8454CF90902</key>
+		<key>25BA7D597CBBC52E7F72BEBFD1493CC3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA5F1001EC3ACE3BDFB8E239D1DCFE9A</key>
+		<key>2BE7EA19BAE28C6EC084544AB9201E5F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA9D70AC0E76232BDB54B0E672F74202</key>
 		<dict>
 			<key>primary</key>
 			<true/>

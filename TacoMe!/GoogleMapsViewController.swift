@@ -99,8 +99,12 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
             moreInfoVC.tacoLocationPlace_id = self.tacoLocationPlace_id
             reviewVC.tacoLocationPlace_id = self.tacoLocationPlace_id
             
+        } else if segue.identifier == "ARSegue" {
+            
+            let arVC = segue.destination as! LocationARViewController
+            arVC.tacoLocations = self.tacoLocations
+            
         }
-        
     }
     
 

@@ -27,13 +27,10 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         self.locationManager.startUpdatingLocation()
         
         self.view.backgroundColor = randomColor(hue: .random, luminosity: .light)
- //       self.getGoogleData()
-        
-        //
+
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        
         
         self.indicatorView.isHidden = true
     }
@@ -56,8 +53,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 self.indicatorView.isHidden = true
                 
                 if self.tacoLocations.count == 0 {
-                    
-                    
+
                     
                     // Create the alert controller
                     let alertController = UIAlertController(title: "No Taco Found", message:  "☹️", preferredStyle: .alert)
@@ -108,59 +104,16 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                     
                     // Present the controller
                     self.present(alertController, animated: true, completion: nil)
-                    
-                    
-                    
-                    
+ 
                 }
-                
-                
-               
-        
             }
         }
     }
     
     
     @IBAction func getTacoButtonPressed(_ sender: Any) {
-        
-
         self.findAllTheTacos()
-//        let closestTaco = self.tacoLocations[0] 
-//        
-//        guard let distance = closestTaco.distanceFromUser else {
-//            return
-//        }
-//        
-//        let distanceInMiles = String(format: "%.2f", distance / 1609.34)
-//        
-//        
-//        // Create the alert controller
-//        let alertController = UIAlertController(title: "Tacos Found!", message:  "Closest Taco: \n \(closestTaco.name!) \n \(distanceInMiles) miles away", preferredStyle: .alert)
-//        
-//        // Create the actions
-//        let moreTacoAction = UIAlertAction(title: "🌮", style: UIAlertActionStyle.default) {
-//            UIAlertAction in
-//            
-//            self.performSegue(withIdentifier: "GoogleMapsSegue", sender: self)
-//            
-//        }
-//        let cancelAction = UIAlertAction(title: "🚫", style: UIAlertActionStyle.cancel) {
-//            UIAlertAction in
-//            
-//        }
-//        
-//        // Add the actions
-//        alertController.addAction(moreTacoAction)
-//        alertController.addAction(cancelAction)
-//        
-//        // Present the controller
-//        self.present(alertController, animated: true, completion: nil)
-        
-
- 
     }
-
     
     //MARK: Custom segue 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -172,7 +125,6 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         
         return self.fadeTransition
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -228,7 +180,6 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 
                 let geometry = item["geometry"] as! [String:Any]
                 let location = geometry["location"] as! [String:Any]
- //               let opening_hours = item["opening_hours"] as! [String:Any]
                 
                 let name = item["name"] as? String
                 let locationLat = location["lat"] as? Double
@@ -246,10 +197,6 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                         tacoLocation.open_now = open_now as? Bool
                     }
                 }
-
-//                if let open_now = opening_hours["open_now"] {
-//                    tacoLocation.open_now = open_now as? Bool
-//                }
                 
                 tacoLocation.locationLat = locationLat
                 tacoLocation.locationLng = locationLng

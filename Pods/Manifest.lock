@@ -27,6 +27,7 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - HDAugmentedReality (1.1.2)
   - RandomColorSwift (1.0.0)
 
 DEPENDENCIES:
@@ -35,7 +36,17 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - HDAugmentedReality (from `https://github.com/DanijelHuis/HDAugmentedReality.git`)
   - RandomColorSwift
+
+EXTERNAL SOURCES:
+  HDAugmentedReality:
+    :git: https://github.com/DanijelHuis/HDAugmentedReality.git
+
+CHECKOUT OPTIONS:
+  HDAugmentedReality:
+    :commit: 5edbdb0e4102bfa084371922f0d645c1b6afa7a5
+    :git: https://github.com/DanijelHuis/HDAugmentedReality.git
 
 SPEC CHECKSUMS:
   Firebase: 85a581fb04e44f63ae9f4fbc8d6dabf4a4c18653
@@ -47,8 +58,9 @@ SPEC CHECKSUMS:
   GooglePlacePicker: 345b1aabd42c9d6d9bf2369c1bae1234d903e764
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  HDAugmentedReality: 7e44eba603d3ff71bd3d7698bcf1bd7e66b98a1d
   RandomColorSwift: 9f85058b721665d52d239ca166a913e083506444
 
-PODFILE CHECKSUM: 1812cdbbbf95861144c7e016384350b24cebe362
+PODFILE CHECKSUM: 58c64157d27f82cd6f3dd7973aac750643ba04d0
 
 COCOAPODS: 1.2.0

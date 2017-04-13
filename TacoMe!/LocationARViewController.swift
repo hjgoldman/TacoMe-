@@ -1,0 +1,62 @@
+//
+//  ARViewController.swift
+//  TacoMe!
+//
+//  Created by Hayden Goldman on 4/13/17.
+//  Copyright © 2017 Hayden Goldman. All rights reserved.
+//
+
+import UIKit
+import MapKit
+import HDAugmentedReality
+
+
+class LocationARViewController: ARViewController, ARDataSource, CLLocationManagerDelegate{
+
+    var tacoLocations = [TacoLocation]()
+    var locationManager = CLLocationManager()
+    var locationARAnnotations = [ARAnnotation]()
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.locationManager = CLLocationManager()
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.distanceFilter = kCLDistanceFilterNone
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        
+        self.dataSource = self
+        self.headingSmoothingFactor = 0.05
+        self.maxVisibleAnnotations = 30
+        
+        self.popluateAnnotations()
+    }
+    
+    func popluateAnnotations() {
+        
+        for location in tacoLocations {
+            
+            let annotation = LocationAnnotation(tacoLocation: location)
+            
+            self.locationARAnnotations.append(annotation)
+            
+            self.setAnnotations(self.locationARAnnotations)
+            
+            
+        }
+        
+        
+    }
+    
+    
+    func ar(_ arViewController: ARViewController, viewForAnnotation: ARAnnotation) -> ARAnnotationView {
+        let annotationView = LocationAnnotaionView(annotation: viewForAnnotation)
+        
+        return annotationView
+    }
+
+}
+    

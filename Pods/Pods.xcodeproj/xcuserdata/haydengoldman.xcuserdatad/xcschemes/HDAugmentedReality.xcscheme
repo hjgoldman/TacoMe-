@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2BE7EA19BAE28C6EC084544AB9201E5F'
-               BlueprintName = 'RandomColorSwift'
+               BlueprintIdentifier = '25BA7D597CBBC52E7F72BEBFD1493CC3'
+               BlueprintName = 'HDAugmentedReality'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'RandomColorSwift.framework'>
+               BuildableName = 'HDAugmentedReality.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
