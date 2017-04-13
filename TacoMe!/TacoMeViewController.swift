@@ -156,7 +156,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
             "cache-control": "no-cache",
             ]
         
-        let request = NSMutableURLRequest(url: NSURL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat)%2C\(lng)%0A&radius=3218.69&keyword=mexican&pagetoken&key=AIzaSyBbvw_RKKdzBigdZGjXTJZjgC3IMJVV6rU")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat)%2C\(lng)%0A&radius=2000&type=resturant&keyword=taco&pagetoken&key=AIzaSyBbvw_RKKdzBigdZGjXTJZjgC3IMJVV6rU")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
         request.httpMethod = "GET"
