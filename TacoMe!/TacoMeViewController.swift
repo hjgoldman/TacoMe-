@@ -63,6 +63,8 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                     let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) {
                         UIAlertAction in
                         
+                        self.locations.removeAll()
+                        
                     }
                     
                     // Add the actions
@@ -95,6 +97,8 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                     }
                     let cancelAction = UIAlertAction(title: "🚫", style: UIAlertActionStyle.cancel) {
                         UIAlertAction in
+                        
+                        self.locations.removeAll()
                         
                     }
                     

@@ -53,6 +53,10 @@ class LocationARViewController: ARViewController, ARDataSource, CLLocationManage
         
         return annotationView
     }
+    
+    func didTouch(annotationView: LocationAnnotaionView) {
+        print("Tapped view")
+    }
 
 }
     
