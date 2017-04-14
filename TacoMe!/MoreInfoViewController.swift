@@ -128,8 +128,7 @@ class MoreInfoViewController: UIViewController {
                 else {
                     return
             }
-            
-           
+
             
             if let website = result["website"] {
                 self.locationDetail.website = website as? String
@@ -167,24 +166,18 @@ class MoreInfoViewController: UIViewController {
                 self.reviews.append(review)
                 
             }
-            
             DispatchQueue.main.async {
                 self.populateView()
             }
         })
         dataTask.resume()
-        
     }
-    
     
     //MARK: Buttons
     
     @IBAction func phoneButtonPressed(_ sender: Any) {
-        
         let formattedPhoneNumber = self.locationDetail.international_phone_number?.replacingOccurrences(of: " ", with: "")
-        
         if let phoneCallURL = URL(string: "tel://\(String(describing: formattedPhoneNumber!))") {
-            
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
                 application.open(phoneCallURL, options: [:], completionHandler: nil)
@@ -193,30 +186,14 @@ class MoreInfoViewController: UIViewController {
     }
     
     @IBAction func directionsButtonPressed(_ sender: Any) {
-        
-        let alertController = UIAlertController(title: "Directions", message:  "\(self.locationDetail.name!)", preferredStyle: .alert)
-        
-        let directionsAction = UIAlertAction(title: "Lets do it", style: UIAlertActionStyle.default) {
-            UIAlertAction in
-            
-            let url  = NSURL(string: "\(self.locationDetail.url!)")
-            
-            if UIApplication.shared.canOpenURL(url! as URL) == true {
-                UIApplication.shared.open(url! as URL)
-            }
+        let noSpacesString = self.locationDetail.formatted_address?.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
+        let noSpacesAndNoCommaString = noSpacesString?.replacingOccurrences(of: ",", with: "%2C", options: .literal, range: nil)
+        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
+            let url = URL(string: "comgooglemaps-x-callback://?daddr=\(noSpacesAndNoCommaString!)&directionsmode=driving&x-success=OpenInGoogleMapsSample%3A%2F%2F&x-source=OpenInGoogleMapsSample")
+            UIApplication.shared.open(url!)
+        } else {
+            let url = URL(string: "https://maps.apple.com/?daddr=\(noSpacesAndNoCommaString!)&dirflg=d")
+            UIApplication.shared.open(url!)
         }
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
-            UIAlertAction in
-        }
-        
-        alertController.addAction(directionsAction)
-        alertController.addAction(cancelAction)
-        
-        self.present(alertController, animated: true, completion: nil)
     }
-    
-    
-    
-
 }
