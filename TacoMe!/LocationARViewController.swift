@@ -31,32 +31,23 @@ class LocationARViewController: ARViewController, ARDataSource, CLLocationManage
         self.dataSource = self
         self.headingSmoothingFactor = 0.05
         self.maxVisibleAnnotations = 30
+        self.maxDistance = 1610
         
         self.popluateAnnotations()
     }
     
     func popluateAnnotations() {
-        
         for location in locations {
-            
             let annotation = LocationAnnotation(location: location)
-            
             self.locationARAnnotations.append(annotation)
-            
             self.setAnnotations(self.locationARAnnotations)
         }
     }
     
-    
     func ar(_ arViewController: ARViewController, viewForAnnotation: ARAnnotation) -> ARAnnotationView {
         let annotationView = LocationAnnotaionView(annotation: viewForAnnotation)
-        
         return annotationView
     }
     
-    func didTouch(annotationView: LocationAnnotaionView) {
-        print("Tapped view")
-    }
-
 }
     
