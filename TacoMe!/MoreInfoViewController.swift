@@ -186,8 +186,8 @@ class MoreInfoViewController: UIViewController {
     }
     
     @IBAction func directionsButtonPressed(_ sender: Any) {
-        let noSpacesString = self.locationDetail.formatted_address?.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
-        let noSpacesAndNoCommaString = noSpacesString?.replacingOccurrences(of: ",", with: "%2C", options: .literal, range: nil)
+        let noSpacesString = self.locationDetail.formatted_address?.replacingOccurrences(of: " ", with: "%20")
+        let noSpacesAndNoCommaString = noSpacesString?.replacingOccurrences(of: ",", with: "%2C")
         if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
             let url = URL(string: "comgooglemaps-x-callback://?daddr=\(noSpacesAndNoCommaString!)&directionsmode=driving&x-success=OpenInGoogleMapsSample%3A%2F%2F&x-source=OpenInGoogleMapsSample")
             UIApplication.shared.open(url!)
