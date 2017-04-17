@@ -21,7 +21,6 @@ class ReviewViewController: UIViewController{
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var addReviewButton: UIButton!
 
-    var reviews = [Review]()
     var locationDetail = LocationDetail()
     var locationPlace_id :String!
     var accumulatedFireBaseRatings = 0

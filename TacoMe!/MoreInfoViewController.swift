@@ -20,7 +20,6 @@ class MoreInfoViewController: UIViewController {
     
     var locationDetail = LocationDetail()
     var locationPlace_id :String!
-    var reviews = [Review]()
     var reviewsRx :Variable<[Review]> = Variable([])
 
 
@@ -140,7 +139,6 @@ class MoreInfoViewController: UIViewController {
                 review.text = text
                 review.isTacoMeReview = false
                 
-                self.reviews.append(review)
                 self.reviewsRx.value.append(review)
                 
             }
