@@ -20,8 +20,6 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ratingPickerView: UIPickerView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var ratingLabel: UILabel!
     
     var imageArray: [UIImage] = [UIImage(named: "0_stars.png")!,UIImage(named: "1_stars.png")!, UIImage(named: "2_stars.png")!,UIImage(named: "3_stars.png")!,UIImage(named: "4_stars.png")!,UIImage(named: "5_stars.png")!]
     var selectedRowIndex :Int!
@@ -49,34 +47,7 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
         
         self.nameLabel.text = self.tacoLocationDetail.name
         
-        self.ratingLabel.text = String(describing: self.tacoLocationDetail.rating!)
-        
-        if self.tacoLocationDetail.rating! >= 0.0 && self.tacoLocationDetail.rating! < 0.5 {
-            self.imageView.image = UIImage(named: "0_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 0.5 && self.tacoLocationDetail.rating! < 1.0 {
-            self.imageView.image = UIImage(named: "0_5_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 1.0 && self.tacoLocationDetail.rating! < 1.5 {
-            self.imageView.image = UIImage(named: "1_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 1.5 && self.tacoLocationDetail.rating! < 2.0 {
-            self.imageView.image = UIImage(named: "1_5_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 2.0 && self.tacoLocationDetail.rating! < 2.5 {
-            self.imageView.image = UIImage(named: "2_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 2.5 && self.tacoLocationDetail.rating! < 3.0 {
-            self.imageView.image = UIImage(named: "2_5_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 3.0 && self.tacoLocationDetail.rating! < 3.5 {
-            self.imageView.image = UIImage(named: "3_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 3.5 && self.tacoLocationDetail.rating! < 4.0 {
-            self.imageView.image = UIImage(named: "3_5_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 4.0 && self.tacoLocationDetail.rating! < 4.5 {
-            self.imageView.image = UIImage(named: "4_stars.png")
-        } else if self.tacoLocationDetail.rating! >= 4.5 && self.tacoLocationDetail.rating! < 5.0 {
-            self.imageView.image = UIImage(named: "4_5_stars.png")
-        } else if self.tacoLocationDetail.rating! == 5.0 {
-            self.imageView.image = UIImage(named: "5_stars.png")
-        } else if self.tacoLocationDetail.rating == nil {
-            
         }
-    }
 
 
     @IBAction func submitButtonPressed(_ sender: Any) {

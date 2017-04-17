@@ -10,11 +10,9 @@ import UIKit
 
 class MoreInfoViewController: UIViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var isOpenLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var phoneButtonOutlet: UIButton!
     
@@ -35,7 +33,6 @@ class MoreInfoViewController: UIViewController {
         self.nameLabel.text = self.locationDetail.name
         self.addressLabel.text = self.locationDetail.formatted_address
         self.phoneButtonOutlet.setTitle(self.locationDetail.formatted_phone_number, for: .normal)
-        self.ratingLabel.text = String(describing: self.locationDetail.rating!)
         
         if self.locationDetail.weekday_text == nil {
             self.hoursLabel.text = "Opening Hours Not Provided"
@@ -57,31 +54,7 @@ class MoreInfoViewController: UIViewController {
             self.isOpenLabel.text = ""
         }
         
-        if self.locationDetail.rating! >= 0.0 && self.locationDetail.rating! < 0.5 {
-            self.imageView.image = UIImage(named: "0_stars.png")
-        } else if self.locationDetail.rating! >= 0.5 && self.locationDetail.rating! < 1.0 {
-            self.imageView.image = UIImage(named: "0_5_stars.png")
-        } else if self.locationDetail.rating! >= 1.0 && self.locationDetail.rating! < 1.5 {
-            self.imageView.image = UIImage(named: "1_stars.png")
-        } else if self.locationDetail.rating! >= 1.5 && self.locationDetail.rating! < 2.0 {
-            self.imageView.image = UIImage(named: "1_5_stars.png")
-        } else if self.locationDetail.rating! >= 2.0 && self.locationDetail.rating! < 2.5 {
-            self.imageView.image = UIImage(named: "2_stars.png")
-        } else if self.locationDetail.rating! >= 2.5 && self.locationDetail.rating! < 3.0 {
-            self.imageView.image = UIImage(named: "2_5_stars.png")
-        } else if self.locationDetail.rating! >= 3.0 && self.locationDetail.rating! < 3.5 {
-            self.imageView.image = UIImage(named: "3_stars.png")
-        } else if self.locationDetail.rating! >= 3.5 && self.locationDetail.rating! < 4.0 {
-            self.imageView.image = UIImage(named: "3_5_stars.png")
-        } else if self.locationDetail.rating! >= 4.0 && self.locationDetail.rating! < 4.5 {
-            self.imageView.image = UIImage(named: "4_stars.png")
-        } else if self.locationDetail.rating! >= 4.5 && self.locationDetail.rating! < 5.0 {
-            self.imageView.image = UIImage(named: "4_5_stars.png")
-        } else if self.locationDetail.rating! == 5.0 {
-            self.imageView.image = UIImage(named: "5_stars.png")
-        } else if self.locationDetail.rating == nil {
-            
-        }
+               
     }
 
     func getLocationDetails() {
