@@ -12,8 +12,8 @@ import GoogleMaps
 class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     var locationManager = CLLocationManager()
-    var tacoLocations = [TacoLocation]()
-    var tacoLocationPlace_id :String!
+    var locations = [Location]()
+    var locationPlace_id :String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         view = mapView
         
-        for location in self.tacoLocations {
+        for location in self.locations {
             
             let marker = GMSMarker()
             
@@ -81,8 +81,8 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         
-        let tacoLocation = marker.userData as! TacoLocation
-        self.tacoLocationPlace_id = tacoLocation.place_id
+        let location = marker.userData as! Location
+        self.locationPlace_id = location.place_id
         self.performSegue(withIdentifier: "MoreInfoSegue", sender: self)
         
     }
@@ -96,11 +96,15 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
             let moreInfoVC = tabVC.viewControllers?[0] as! MoreInfoViewController
             let reviewVC = tabVC.viewControllers?[1] as! ReviewViewController
             
-            moreInfoVC.tacoLocationPlace_id = self.tacoLocationPlace_id
-            reviewVC.tacoLocationPlace_id = self.tacoLocationPlace_id
+            moreInfoVC.locationPlace_id = self.locationPlace_id
+            reviewVC.locationPlace_id = self.locationPlace_id
+            
+        } else if segue.identifier == "ARSegue" {
+            
+            let arVC = segue.destination as! LocationARViewController
+            arVC.locations = self.locations
             
         }
-        
     }
     
 

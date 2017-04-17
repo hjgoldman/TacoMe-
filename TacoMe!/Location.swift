@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class TacoLocation {
+class Location {
     
     var locationLat :Double?
     var locationLng :Double?

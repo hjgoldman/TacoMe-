@@ -14,7 +14,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
     
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     var locationManager = CLLocationManager()
-    var tacoLocations = [TacoLocation]()
+    var locations = [Location]()
     var fadeTransition = FadeTransition()
     
     override func viewDidLoad() {
@@ -27,13 +27,10 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         self.locationManager.startUpdatingLocation()
         
         self.view.backgroundColor = randomColor(hue: .random, luminosity: .light)
- //       self.getGoogleData()
-        
-        //
+
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        
         
         self.indicatorView.isHidden = true
     }
@@ -55,9 +52,8 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 self.indicatorView.stopAnimating()
                 self.indicatorView.isHidden = true
                 
-                if self.tacoLocations.count == 0 {
-                    
-                    
+                if self.locations.count == 0 {
+
                     
                     // Create the alert controller
                     let alertController = UIAlertController(title: "No Taco Found", message:  "☹️", preferredStyle: .alert)
@@ -66,6 +62,8 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
 
                     let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) {
                         UIAlertAction in
+                        
+                        self.locations.removeAll()
                         
                     }
                     
@@ -78,7 +76,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 } else {
                     
                     
-                    let closestTaco = self.tacoLocations[0]
+                    let closestTaco = self.locations[0]
                     
                     guard let distance = closestTaco.distanceFromUser else {
                         return
@@ -100,6 +98,8 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                     let cancelAction = UIAlertAction(title: "🚫", style: UIAlertActionStyle.cancel) {
                         UIAlertAction in
                         
+                        self.locations.removeAll()
+                        
                     }
                     
                     // Add the actions
@@ -108,59 +108,16 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                     
                     // Present the controller
                     self.present(alertController, animated: true, completion: nil)
-                    
-                    
-                    
-                    
+ 
                 }
-                
-                
-               
-        
             }
         }
     }
     
     
     @IBAction func getTacoButtonPressed(_ sender: Any) {
-        
-
         self.findAllTheTacos()
-//        let closestTaco = self.tacoLocations[0] 
-//        
-//        guard let distance = closestTaco.distanceFromUser else {
-//            return
-//        }
-//        
-//        let distanceInMiles = String(format: "%.2f", distance / 1609.34)
-//        
-//        
-//        // Create the alert controller
-//        let alertController = UIAlertController(title: "Tacos Found!", message:  "Closest Taco: \n \(closestTaco.name!) \n \(distanceInMiles) miles away", preferredStyle: .alert)
-//        
-//        // Create the actions
-//        let moreTacoAction = UIAlertAction(title: "🌮", style: UIAlertActionStyle.default) {
-//            UIAlertAction in
-//            
-//            self.performSegue(withIdentifier: "GoogleMapsSegue", sender: self)
-//            
-//        }
-//        let cancelAction = UIAlertAction(title: "🚫", style: UIAlertActionStyle.cancel) {
-//            UIAlertAction in
-//            
-//        }
-//        
-//        // Add the actions
-//        alertController.addAction(moreTacoAction)
-//        alertController.addAction(cancelAction)
-//        
-//        // Present the controller
-//        self.present(alertController, animated: true, completion: nil)
-        
-
- 
     }
-
     
     //MARK: Custom segue 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -173,14 +130,13 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         return self.fadeTransition
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "GoogleMapsSegue" {
             
             let navController = segue.destination as! UINavigationController
             let mapVC = navController.topViewController as! GoogleMapsViewController
-            mapVC.tacoLocations = self.tacoLocations
+            mapVC.locations = self.locations
             
             navController.transitioningDelegate = self
             
@@ -204,7 +160,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
             "cache-control": "no-cache",
             ]
         
-        let request = NSMutableURLRequest(url: NSURL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat)%2C\(lng)%0A&radius=3218.69&keyword=mexican&pagetoken&key=AIzaSyBbvw_RKKdzBigdZGjXTJZjgC3IMJVV6rU")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat)%2C\(lng)%0A&radius=2000&type=resturant&keyword=taco&pagetoken&key=AIzaSyBbvw_RKKdzBigdZGjXTJZjgC3IMJVV6rU")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -228,7 +184,6 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 
                 let geometry = item["geometry"] as! [String:Any]
                 let location = geometry["location"] as! [String:Any]
- //               let opening_hours = item["opening_hours"] as! [String:Any]
                 
                 let name = item["name"] as? String
                 let locationLat = location["lat"] as? Double
@@ -238,32 +193,28 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 let rating = item["rating"] as? Double
                 let vicinity = item["vicinity"] as? String
                 
-                let tacoLocation = TacoLocation()
+                let itemLocation = Location()
                 
                 if let opening_hours = item["opening_hours"] {
                     let openingHours = opening_hours as! [String:Any]
                     if let open_now = openingHours["open_now"] {
-                        tacoLocation.open_now = open_now as? Bool
+                        itemLocation.open_now = open_now as? Bool
                     }
                 }
-
-//                if let open_now = opening_hours["open_now"] {
-//                    tacoLocation.open_now = open_now as? Bool
-//                }
                 
-                tacoLocation.locationLat = locationLat
-                tacoLocation.locationLng = locationLng
-                tacoLocation.name = name
-                tacoLocation.place_id = place_id
-                tacoLocation.price_level = price_level
-                tacoLocation.rating = rating
-                tacoLocation.vicinity = vicinity
+                itemLocation.locationLat = locationLat
+                itemLocation.locationLng = locationLng
+                itemLocation.name = name
+                itemLocation.place_id = place_id
+                itemLocation.price_level = price_level
+                itemLocation.rating = rating
+                itemLocation.vicinity = vicinity
                 
-                self.tacoLocations.append(tacoLocation)
+                self.locations.append(itemLocation)
                 
             }
             
-            print(self.tacoLocations.count)
+            print(self.locations.count)
             self.findClosestTaco()
         })
         
@@ -275,12 +226,12 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         
         var distances = [Double]()
         //looping to get all the location distance from user
-        for location in self.tacoLocations {
+        for location in self.locations {
             let distance = self.locationManager.location?.distance(from: CLLocation(latitude: CLLocationDegrees(location.locationLat!), longitude: CLLocationDegrees(location.locationLng!)))
             location.distanceFromUser = distance as Double!
             distances.append(distance!)
         }
-        self.tacoLocations.sort(by: {$0.distanceFromUser! < $1.distanceFromUser!})
+        self.locations.sort(by: {$0.distanceFromUser! < $1.distanceFromUser!})
     }
 
     

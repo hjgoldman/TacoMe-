@@ -12,6 +12,7 @@ target 'TacoMe!' do
   pod 'GooglePlacePicker'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'HDAugmentedReality', :git => 'https://github.com/DanijelHuis/HDAugmentedReality.git'
 
 
 end

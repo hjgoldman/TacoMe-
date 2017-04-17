@@ -13,7 +13,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
-    var tacoLocations = [TacoLocation]()
+    var tacoLocations = [Location]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

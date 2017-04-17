@@ -19,31 +19,52 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet weak var reviewTextTextView: UITextView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ratingPickerView: UIPickerView!
+    @IBOutlet weak var nameLabel: UILabel!
     
-    var imageArray: [UIImage] = [UIImage(named: "0_stars.png")!,UIImage(named: "1_stars.png")!, UIImage(named: "2_stars.png")!,UIImage(named: "3_stars.png")!,UIImage(named: "4_stars.png")!,UIImage(named: "5_stars.png")!]
+    var imageArray: [UIImage] = [UIImage(named: "1_stars.png")!, UIImage(named: "2_stars.png")!,UIImage(named: "3_stars.png")!,UIImage(named: "4_stars.png")!,UIImage(named: "5_stars.png")!]
     var selectedRowIndex :Int!
+    var selectedRating :Int!
     var tacoLocationPlace_id :String!
     var reviews = [Any]()
     var delegate: AddNewReviewToTableDelegate!
+    var tacoLocationDetail = LocationDetail()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Input data into the Array:
         self.reviewTextTextView.delegate = self
         self.nameTextField.delegate = self
         self.ratingPickerView.delegate = self
         self.ratingPickerView.dataSource = self
-        
+        // Input data into the Array:
+
         self.getFireBaseReviews()
+        self.populateView()
     }
+    
+    
+    func populateView() {
+        
+        self.nameLabel.text = self.tacoLocationDetail.name
+        
+        }
 
 
     @IBAction func submitButtonPressed(_ sender: Any) {
         
         if self.selectedRowIndex == nil {
-            self.selectedRowIndex = 0
+            self.selectedRating = 1
+        } else if self.selectedRowIndex == 0 {
+            self.selectedRating = 1
+        } else if self.selectedRowIndex == 1 {
+            self.selectedRating = 2
+        } else if self.selectedRowIndex == 2 {
+            self.selectedRating = 3
+        } else if self.selectedRowIndex == 3 {
+            self.selectedRating = 4
+        } else if self.selectedRowIndex == 4 {
+            self.selectedRating = 5
         }
         
         if self.nameTextField.text == "" {
@@ -53,20 +74,22 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
             }
             alertController.addAction(dismissAction)
             self.present(alertController, animated: true, completion: nil)
-        }
- 
-        if self.reviewTextTextView.text == "" {
+        } else {
             
-            let alertController = UIAlertController(title: "Opps!", message:  "Please enter a review.", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) {
-                UIAlertAction in
+            if self.reviewTextTextView.text == "" {
+                
+                let alertController = UIAlertController(title: "Opps!", message:  "Please enter a review.", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) {
+                    UIAlertAction in
+                }
+                alertController.addAction(cancelAction)
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                
+                self.saveReviewToFireBase()
+                self.dismiss(animated: true, completion: nil)
             }
-            alertController.addAction(cancelAction)
-            self.present(alertController, animated: true, completion: nil)
         }
-        
-        self.saveReviewToFireBase()
-        self.dismiss(animated: true, completion: nil)
     }
     
     //MARK: Post and Get FireBase Data
@@ -77,7 +100,6 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
         ref.observe(.value) { (snapshot :FIRDataSnapshot) in
             
             let locationInDB = snapshot.childSnapshot(forPath: self.tacoLocationPlace_id!)
-            
             
             if locationInDB.exists() == true {
                 
@@ -114,12 +136,12 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
         let review = Review()
         
         review.author_name = self.nameTextField.text!
-        review.rating = self.selectedRowIndex!
+        review.rating = self.selectedRating!
         review.text = self.reviewTextTextView.text!
         review.isTacoMeReview = true
         
         let uglyDate = String(describing: Date())
-        
+        //formatting the date
         let startIndex = uglyDate.index(uglyDate.startIndex, offsetBy: 0)
         let endIndex = uglyDate.index(uglyDate.startIndex, offsetBy: 9)
         let date = uglyDate[startIndex...endIndex]
@@ -165,8 +187,6 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
             myImageView.image = self.imageArray[3]
         case 4:
             myImageView.image = self.imageArray[4]
-        case 5:
-            myImageView.image = self.imageArray[5]
         default:
             myImageView.image = nil
         }
