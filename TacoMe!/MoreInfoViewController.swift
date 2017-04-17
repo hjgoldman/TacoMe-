@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MoreInfoViewController: UIViewController {
     
@@ -18,7 +20,8 @@ class MoreInfoViewController: UIViewController {
     
     var locationDetail = LocationDetail()
     var locationPlace_id :String!
-    var reviews = [Review]()
+    var reviewsRx :Variable<[Review]> = Variable([])
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,8 +137,9 @@ class MoreInfoViewController: UIViewController {
                 review.rating = rating
                 review.relative_time_description = relative_time_description
                 review.text = text
+                review.isTacoMeReview = false
                 
-                self.reviews.append(review)
+                self.reviewsRx.value.append(review)
                 
             }
             DispatchQueue.main.async {

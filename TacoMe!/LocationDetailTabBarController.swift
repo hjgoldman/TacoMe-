@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class LocationDetailTabBarController: UITabBarController, UITabBarControllerDelegate {
 
@@ -20,7 +22,7 @@ class LocationDetailTabBarController: UITabBarController, UITabBarControllerDele
         let infoVC = self.viewControllers![0] as! MoreInfoViewController
         let reviewVC = self.viewControllers![1] as! ReviewViewController
         reviewVC.locationDetail = infoVC.locationDetail
-        reviewVC.reviews = infoVC.reviews
+        reviewVC.reviewsRx.value = infoVC.reviewsRx.value
     }
     
     override func awakeFromNib() {
@@ -28,3 +30,5 @@ class LocationDetailTabBarController: UITabBarController, UITabBarControllerDele
     }
 
 }
+
+    

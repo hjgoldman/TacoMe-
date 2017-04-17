@@ -29,6 +29,9 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - HDAugmentedReality (1.1.2)
   - RandomColorSwift (1.0.0)
+  - RxCocoa (3.2.0):
+    - RxSwift (~> 3.1)
+  - RxSwift (3.2.0)
 
 DEPENDENCIES:
   - Firebase/Core
@@ -38,6 +41,8 @@ DEPENDENCIES:
   - GooglePlaces
   - HDAugmentedReality (from `https://github.com/DanijelHuis/HDAugmentedReality.git`)
   - RandomColorSwift
+  - RxCocoa (~> 3.0)
+  - RxSwift (~> 3.0)
 
 EXTERNAL SOURCES:
   HDAugmentedReality:
@@ -60,7 +65,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   HDAugmentedReality: 7e44eba603d3ff71bd3d7698bcf1bd7e66b98a1d
   RandomColorSwift: 9f85058b721665d52d239ca166a913e083506444
+  RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
+  RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
 
-PODFILE CHECKSUM: 58c64157d27f82cd6f3dd7973aac750643ba04d0
+PODFILE CHECKSUM: 9129696a15e7c0d03ad9a2bfdbea26c90cfd3d05
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1
