@@ -13,6 +13,8 @@ target 'TacoMe!' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'HDAugmentedReality', :git => 'https://github.com/DanijelHuis/HDAugmentedReality.git'
+  pod 'RxSwift',    '~> 3.0'
+  pod 'RxCocoa',    '~> 3.0'
 
 
 end
