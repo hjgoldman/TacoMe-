@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddNewReviewToTableDelegate{
+class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -34,17 +34,7 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.getFireBaseReviews()
     }
-    //MARK: Delegate to add new review to current table
-    func addNewReviewToTable(author_name :String,isTacoReview :Bool,rating :Int, text:String, relative_time_description:String) {
-        let review = Review()
-        review.author_name = author_name
-        review.isTacoMeReview = isTacoReview
-        review.rating = rating
-        review.text = text
-        review.relative_time_description = relative_time_description
-        
-        self.tableView.reloadData()
-    }
+
     
     //MARK: Get FireBase Data and add it to the Google reviews
     private func getFireBaseReviews() {
@@ -216,11 +206,7 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
             addReviewVC.tacoLocationPlace_id = self.locationPlace_id
             addReviewVC.tacoLocationDetail = self.locationDetail
-            addReviewVC.delegate = self
-            
         }
-
     }
-
 
 }

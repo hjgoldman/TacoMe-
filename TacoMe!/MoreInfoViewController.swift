@@ -26,7 +26,6 @@ class MoreInfoViewController: UIViewController {
         self.getLocationDetails()
 
     }
-
     
     func populateView() {
         

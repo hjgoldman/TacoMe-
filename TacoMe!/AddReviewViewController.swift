@@ -10,9 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-protocol AddNewReviewToTableDelegate {
-    func addNewReviewToTable(author_name :String,isTacoReview :Bool,rating :Int,text :String,relative_time_description :String)
-}
+
 
 class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource  {
 
@@ -26,7 +24,6 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
     var selectedRating :Int!
     var tacoLocationPlace_id :String!
     var reviews = [Any]()
-    var delegate: AddNewReviewToTableDelegate!
     var tacoLocationDetail = LocationDetail()
 
     
@@ -154,7 +151,6 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
         let formattedDate = "\(dayAndMonth)-\(year)"
         
         review.relative_time_description = formattedDate
-        self.delegate.addNewReviewToTable(author_name: review.author_name!, isTacoReview: review.isTacoMeReview!, rating: review.rating!, text: review.text!, relative_time_description: review.relative_time_description!)
         self.reviews.append(review.toDictionary())
         reviewRef.setValue(self.reviews)
         
