@@ -434,7 +434,6 @@
                                 </state>
                                 <connections>
                                     <action selector="directionsButtonPressed:" destination="cLC-Dg-55n" eventType="touchUpInside" id="CK8-xk-iIo"/>
-                                    <segue destination="zFR-o5-5OA" kind="presentation" identifier="AddReviewSegue" id="4W5-0R-bnt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -461,6 +460,7 @@
                     <tabBarItem key="tabBarItem" title="Reviews" image="thumb-up.png" id="IDX-el-e4Z"/>
                     <navigationItem key="navigationItem" id="cap-yh-fFu"/>
                     <connections>
+                        <outlet property="addReviewButton" destination="61V-MO-no1" id="0TM-0b-ArE"/>
                         <outlet property="imageView" destination="wR2-1A-B03" id="8O9-gY-UWO"/>
                         <outlet property="nameLabel" destination="7N9-K1-uj4" id="ESd-BH-FyA"/>
                         <outlet property="ratingLabel" destination="n4j-m4-j8Z" id="dmO-VR-ThN"/>
@@ -474,7 +474,7 @@
         <!--Add Review View Controller-->
         <scene sceneID="bkl-1N-gbK">
             <objects>
-                <viewController id="zFR-o5-5OA" customClass="AddReviewViewController" customModule="TacoMe_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddReviewViewController" id="zFR-o5-5OA" customClass="AddReviewViewController" customModule="TacoMe_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3b-Oa-Ie7"/>
                         <viewControllerLayoutGuide type="bottom" id="yOC-Jt-ATF"/>

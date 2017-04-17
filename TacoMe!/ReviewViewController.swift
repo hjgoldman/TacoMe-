@@ -9,13 +9,17 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import RxSwift
+import RxCocoa
 
-class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+
+class ReviewViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var addReviewButton: UIButton!
 
     var reviews = [Review]()
     var locationDetail = LocationDetail()
@@ -23,6 +27,10 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var accumulatedFireBaseRatings = 0
     var numberOfFirebaseRatings = 0
     var newRating :Double!
+    var reviewsRx :Variable<[Review]> = Variable([])
+    
+    private let disposeBag = DisposeBag()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +40,11 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 175
         
+        self.tableView.delegate = nil
+        self.tableView.dataSource = nil
+        
         self.getFireBaseReviews()
+        self.bindUI()
     }
 
     
@@ -55,8 +67,9 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let duplicateName = snapshotDictionary["author_name"] as? String
                     let duplicateTime = snapshotDictionary["relative_time_description"] as? String
 
+
                     
-                    if self.reviews.contains ( where: {$0.text == duplicateReview} ) && self.reviews.contains ( where: {$0.author_name == duplicateName} ) && self.reviews.contains ( where: {$0.relative_time_description == duplicateTime} ) {
+                    if self.reviewsRx.value.contains ( where: {$0.text == duplicateReview} ) && self.reviewsRx.value.contains ( where: {$0.author_name == duplicateName} ) && self.reviewsRx.value.contains ( where: {$0.relative_time_description == duplicateTime} ) {
                         //Do not add to array of reviews
                     } else {
                         
@@ -71,9 +84,10 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         review.text = snapshotDictionary["text"] as? String
                         review.relative_time_description = snapshotDictionary["relative_time_description"] as? String
                         
-                        self.reviews.insert(review, at: 0)
+                       // self.reviews.insert(review, at: 0)
+                        self.reviewsRx.value.insert(review, at: 0)
                         
-                        
+
                     }
                     
 
@@ -163,50 +177,82 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
 
     }
-    //MARK: TableView
+    //MARK: Rx Bind UI
+    //MARK: Binding UI
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    private func bindUI() {
+        self.bindTableView()
+        self.bindAddReviewButtonTap()
         
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return self.reviews.count
     }
     
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewTableViewCell
+    
+    private func bindTableView() {
         
-        let review = reviews[indexPath.row]
+        reviewsRx.asObservable()
+            .bindTo(self.tableView.rx.items(cellIdentifier: "ReviewCell", cellType: ReviewTableViewCell.self)) { (row, element, cell) in
+                
+                cell.nameLabel?.text = element.author_name
+                
+                if element.rating == 1 {
+                    cell.ratingLabel?.text = "\(element.rating!) star"
+                    cell.reviewTextLabel?.text = element.text
+                    cell.reviewTextLabel?.sizeToFit()
+                    cell.timeLabel?.text = element.relative_time_description
+                } else {
+                    cell.ratingLabel?.text = "\(element.rating!) stars"
+                    cell.reviewTextLabel?.text = element.text
+                    cell.reviewTextLabel?.sizeToFit()
+                    cell.timeLabel?.text = element.relative_time_description
+                }
+                
+            }.disposed(by: disposeBag)
         
-        cell.nameLabel?.text = review.author_name
+        let element = Review()
+        element.author_name = "Hayden"
+        element.text = "This place is terrible!"
+        element.rating = 1
+        element.relative_time_description = "04-17-2017"
         
-        if review.rating == 1 {
-            cell.ratingLabel?.text = "\(review.rating!) star"
-            cell.reviewTextLabel?.text = review.text
-            cell.reviewTextLabel?.sizeToFit()
-            cell.timeLabel?.text = review.relative_time_description
-        } else {
-            cell.ratingLabel?.text = "\(review.rating!) stars"
-            cell.reviewTextLabel?.text = review.text
-            cell.reviewTextLabel?.sizeToFit()
-            cell.timeLabel?.text = review.relative_time_description
-        }
-        
-        return cell
+        self.reviewsRx.value.append(element)
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddReviewSegue" {
-            
-            let addReviewVC = segue.destination as! AddReviewViewController
+    private func bindAddReviewButtonTap() {
+        self.addReviewButton.rx.tap
+            .throttle(0.5, latest: false, scheduler: MainScheduler.instance)
+            .subscribe { [weak self] _ in
+                
+                guard let strongSelf = self else { return }
+                
+                //show the AddReviewViewController
+                
+                guard let addReviewVC = strongSelf.storyboard?.instantiateViewController(withIdentifier: "AddReviewViewController") as? AddReviewViewController else {
+                    
+                    fatalError("Could not find AddReviewViewController")
+                }
+                
+                addReviewVC.tacoLocationPlace_id = self?.locationPlace_id
+                addReviewVC.tacoLocationDetail = (self?.locationDetail)!
+                
+                strongSelf.present(addReviewVC, animated: true, completion: nil)
+                
+            }.addDisposableTo(disposeBag)
+        
+        
+    }
 
-            addReviewVC.tacoLocationPlace_id = self.locationPlace_id
-            addReviewVC.tacoLocationDetail = self.locationDetail
-        }
-    }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "AddReviewSegue" {
+//            
+//            let addReviewVC = segue.destination as! AddReviewViewController
+//
+//            addReviewVC.tacoLocationPlace_id = self.locationPlace_id
+//            addReviewVC.tacoLocationDetail = self.locationDetail
+//        }
+//    }
 
 }
