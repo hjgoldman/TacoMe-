@@ -21,8 +21,9 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet weak var ratingPickerView: UIPickerView!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var imageArray: [UIImage] = [UIImage(named: "0_stars.png")!,UIImage(named: "1_stars.png")!, UIImage(named: "2_stars.png")!,UIImage(named: "3_stars.png")!,UIImage(named: "4_stars.png")!,UIImage(named: "5_stars.png")!]
+    var imageArray: [UIImage] = [UIImage(named: "1_stars.png")!, UIImage(named: "2_stars.png")!,UIImage(named: "3_stars.png")!,UIImage(named: "4_stars.png")!,UIImage(named: "5_stars.png")!]
     var selectedRowIndex :Int!
+    var selectedRating :Int!
     var tacoLocationPlace_id :String!
     var reviews = [Any]()
     var delegate: AddNewReviewToTableDelegate!
@@ -53,7 +54,17 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBAction func submitButtonPressed(_ sender: Any) {
         
         if self.selectedRowIndex == nil {
-            self.selectedRowIndex = 0
+            self.selectedRating = 1
+        } else if self.selectedRowIndex == 0 {
+            self.selectedRating = 1
+        } else if self.selectedRowIndex == 1 {
+            self.selectedRating = 2
+        } else if self.selectedRowIndex == 2 {
+            self.selectedRating = 3
+        } else if self.selectedRowIndex == 3 {
+            self.selectedRating = 4
+        } else if self.selectedRowIndex == 4 {
+            self.selectedRating = 5
         }
         
         if self.nameTextField.text == "" {
@@ -125,7 +136,7 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
         let review = Review()
         
         review.author_name = self.nameTextField.text!
-        review.rating = self.selectedRowIndex!
+        review.rating = self.selectedRating!
         review.text = self.reviewTextTextView.text!
         review.isTacoMeReview = true
         
@@ -176,8 +187,6 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
             myImageView.image = self.imageArray[3]
         case 4:
             myImageView.image = self.imageArray[4]
-        case 5:
-            myImageView.image = self.imageArray[5]
         default:
             myImageView.image = nil
         }

@@ -183,10 +183,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="powered_by_google_on_non_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="XN0-1Z-PuX">
-                                <rect key="frame" x="16" y="592" width="144" height="18"/>
+                                <rect key="frame" x="16" y="608" width="80" height="10"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="144" id="a56-uy-0uE"/>
-                                    <constraint firstAttribute="height" constant="18" id="wfK-vo-ZCm"/>
+                                    <constraint firstAttribute="height" constant="10" id="dJd-AH-uXw"/>
+                                    <constraint firstAttribute="width" constant="80" id="ghD-J7-6lQ"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7L4-Hw-zLh">
@@ -235,7 +235,6 @@
                             <constraint firstItem="GMH-I7-BFF" firstAttribute="centerX" secondItem="kXV-fm-Sct" secondAttribute="centerX" id="Cqv-rM-uGs"/>
                             <constraint firstItem="tt3-Tz-Avw" firstAttribute="top" secondItem="zcJ-rq-NG3" secondAttribute="bottom" id="EcD-CL-2Gz"/>
                             <constraint firstItem="urN-1U-3qe" firstAttribute="trailing" secondItem="kXV-fm-Sct" secondAttribute="trailingMargin" id="FA3-LL-oPJ"/>
-                            <constraint firstItem="HYw-MX-543" firstAttribute="top" secondItem="XN0-1Z-PuX" secondAttribute="bottom" constant="8" id="Fcs-tN-D89"/>
                             <constraint firstItem="urN-1U-3qe" firstAttribute="leading" secondItem="kXV-fm-Sct" secondAttribute="leadingMargin" id="GO5-0C-kbw"/>
                             <constraint firstItem="7L4-Hw-zLh" firstAttribute="top" secondItem="GMH-I7-BFF" secondAttribute="bottom" id="QJO-UD-Hhr"/>
                             <constraint firstItem="av0-4e-IC5" firstAttribute="top" secondItem="urN-1U-3qe" secondAttribute="bottom" id="Ya8-mb-2UH"/>
@@ -246,6 +245,7 @@
                             <constraint firstItem="GMH-I7-BFF" firstAttribute="top" secondItem="av0-4e-IC5" secondAttribute="bottom" id="vDq-O3-dAr"/>
                             <constraint firstItem="zcJ-rq-NG3" firstAttribute="centerX" secondItem="kXV-fm-Sct" secondAttribute="centerX" id="xEE-kE-NaP"/>
                             <constraint firstItem="7L4-Hw-zLh" firstAttribute="centerX" secondItem="kXV-fm-Sct" secondAttribute="centerX" id="xF0-zf-tX2"/>
+                            <constraint firstItem="HYw-MX-543" firstAttribute="top" secondItem="XN0-1Z-PuX" secondAttribute="bottom" id="zqZ-y2-Lsp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="info.png" id="gOK-ar-Nzp"/>
@@ -310,7 +310,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" rowHeight="175" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jjM-h7-lqJ">
-                                <rect key="frame" x="0.0" y="252" width="375" height="332"/>
+                                <rect key="frame" x="0.0" y="252" width="375" height="348"/>
                                 <color key="backgroundColor" red="0.72131967539999997" green="0.79161423440000001" blue="0.98434138299999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.79075527189999995" green="0.80775445700000004" blue="0.98433876040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
@@ -390,10 +390,10 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="powered_by_google_on_non_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="MRd-ZJ-dpf">
-                                <rect key="frame" x="16" y="592" width="144" height="18"/>
+                                <rect key="frame" x="16" y="608" width="80" height="10"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="2Sk-Xk-7Ld"/>
-                                    <constraint firstAttribute="width" constant="144" id="oFf-Tn-s5F"/>
+                                    <constraint firstAttribute="width" constant="80" id="MOW-ut-kcz"/>
+                                    <constraint firstAttribute="height" constant="10" id="Wf6-TS-6zm"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-K1-uj4">
@@ -440,7 +440,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.72131967544555664" green="0.79161423444747925" blue="0.98434138298034668" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="sIz-sR-o4g" firstAttribute="top" secondItem="MRd-ZJ-dpf" secondAttribute="bottom" constant="8" id="5SH-ZB-x8E"/>
+                            <constraint firstItem="sIz-sR-o4g" firstAttribute="top" secondItem="MRd-ZJ-dpf" secondAttribute="bottom" id="0YS-uF-xeh"/>
                             <constraint firstItem="jjM-h7-lqJ" firstAttribute="leading" secondItem="NQa-5t-Xnv" secondAttribute="leading" id="84h-qG-Yfu"/>
                             <constraint firstItem="wR2-1A-B03" firstAttribute="centerX" secondItem="NQa-5t-Xnv" secondAttribute="centerX" id="Chm-UK-WuG"/>
                             <constraint firstItem="7N9-K1-uj4" firstAttribute="top" secondItem="wri-rc-bcZ" secondAttribute="bottom" id="CyV-su-Stv"/>

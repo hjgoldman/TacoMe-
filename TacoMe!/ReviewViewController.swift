@@ -61,18 +61,32 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                     let snapshotDictionary = (item as! FIRDataSnapshot).value as! [String:Any]
                     
-                    let review = Review()
-                    review.author_name = snapshotDictionary["author_name"] as? String
-                    review.isTacoMeReview = snapshotDictionary["isTacoMeReview"] as? Bool
-                    review.rating = snapshotDictionary["rating"] as? Int
+                    let duplicateReview = snapshotDictionary["text"] as? String
+                    let duplicateName = snapshotDictionary["author_name"] as? String
+                    let duplicateTime = snapshotDictionary["relative_time_description"] as? String
+
                     
-                    self.accumulatedFireBaseRatings += review.rating!
-                    self.numberOfFirebaseRatings += 1
+                    if self.reviews.contains ( where: {$0.text == duplicateReview} ) && self.reviews.contains ( where: {$0.author_name == duplicateName} ) && self.reviews.contains ( where: {$0.relative_time_description == duplicateTime} ) {
+                        //Do not add to array of reviews
+                    } else {
+                        
+                        let review = Review()
+                        review.author_name = snapshotDictionary["author_name"] as? String
+                        review.isTacoMeReview = snapshotDictionary["isTacoMeReview"] as? Bool
+                        review.rating = snapshotDictionary["rating"] as? Int
+                        
+                        self.accumulatedFireBaseRatings += review.rating!
+                        self.numberOfFirebaseRatings += 1
+                        
+                        review.text = snapshotDictionary["text"] as? String
+                        review.relative_time_description = snapshotDictionary["relative_time_description"] as? String
+                        
+                        self.reviews.insert(review, at: 0)
+                        
+                        
+                    }
                     
-                    review.text = snapshotDictionary["text"] as? String
-                    review.relative_time_description = snapshotDictionary["relative_time_description"] as? String
-                    
-                    self.reviews.insert(review, at: 0)
+
                     
                 }
 
