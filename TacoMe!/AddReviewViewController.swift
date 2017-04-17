@@ -117,9 +117,6 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
                     self.reviews.append(review.toDictionary())
                     
                 }
-                
-               
-              
             }
         }
     }
@@ -154,7 +151,6 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
         review.relative_time_description = formattedDate
         self.reviews.append(review.toDictionary())
         reviewRef.setValue(self.reviews)
-        
     }
  
     
@@ -200,7 +196,6 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
         return true
     }
     
-    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
             textView.resignFirstResponder()
@@ -208,7 +203,6 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
         }
         return true
     }
-    
     
     @IBAction func cencelButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

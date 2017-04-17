@@ -28,7 +28,6 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
         let lat = self.locationManager.location?.coordinate.latitude
         let lng = self.locationManager.location?.coordinate.longitude
         
-        
         // creates the map and zooms the current user location, at a 6.0 zoom
         let camera = GMSCameraPosition.camera(withLatitude: lat!, longitude: lng!, zoom: 15.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
@@ -51,22 +50,18 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
             } else {
                 
             }
-//            marker.snippet = location.vicinity
             marker.userData = location
             
             marker.icon = UIImage(named: "taco_marker.png")
             marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0.2)
 
             marker.map = mapView
-            
         }
         // enable my location dot
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
-        
     }
 
-    
     //MARK: GMSMapViewDelegate
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
@@ -77,7 +72,6 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
 
         return customWindow
     }
-
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         
@@ -90,7 +84,6 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "MoreInfoSegue" {
-            
             
             let tabVC = segue.destination as! UITabBarController
             let moreInfoVC = tabVC.viewControllers?[0] as! MoreInfoViewController
@@ -107,5 +100,4 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
         }
     }
     
-
 }

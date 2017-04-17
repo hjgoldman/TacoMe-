@@ -35,9 +35,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         self.indicatorView.isHidden = true
     }
     
-    
     func findAllTheTacos() {
-        
         
         self.indicatorView.isHidden = false
         self.indicatorView.startAnimating()
@@ -64,7 +62,6 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                         UIAlertAction in
                         
                         self.locations.removeAll()
-                        
                     }
                     
                     // Add the actions
@@ -93,13 +90,11 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                         UIAlertAction in
                         
                         self.performSegue(withIdentifier: "GoogleMapsSegue", sender: self)
-                        
                     }
                     let cancelAction = UIAlertAction(title: "🚫", style: UIAlertActionStyle.cancel) {
                         UIAlertAction in
                         
                         self.locations.removeAll()
-                        
                     }
                     
                     // Add the actions
@@ -121,7 +116,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
     
     //MARK: Custom segue 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
+    
         return nil
     }
     
@@ -139,9 +134,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
             mapVC.locations = self.locations
             
             navController.transitioningDelegate = self
-            
         }
-        
     }
     
     //Mark: API GET request
@@ -211,13 +204,11 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
                 itemLocation.vicinity = vicinity
                 
                 self.locations.append(itemLocation)
-                
             }
             
             print(self.locations.count)
             self.findClosestTaco()
         })
-        
         dataTask.resume()
     }
     
@@ -233,8 +224,5 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         }
         self.locations.sort(by: {$0.distanceFromUser! < $1.distanceFromUser!})
     }
-
-    
-    
     
 }

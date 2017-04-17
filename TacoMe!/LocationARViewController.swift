@@ -10,14 +10,13 @@ import UIKit
 import MapKit
 import HDAugmentedReality
 
-
 class LocationARViewController: ARViewController, ARDataSource, CLLocationManagerDelegate{
 
     var locations = [Location]()
     var locationManager = CLLocationManager()
     var locationARAnnotations = [ARAnnotation]()
 
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

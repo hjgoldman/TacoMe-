@@ -22,7 +22,6 @@ class MoreInfoViewController: UIViewController {
     var locationPlace_id :String!
     var reviewsRx :Variable<[Review]> = Variable([])
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +43,6 @@ class MoreInfoViewController: UIViewController {
             self.hoursLabel.text = hours!
 
         }
-        
         
         if self.locationDetail.open_now == true {
             self.isOpenLabel.text = "Open"

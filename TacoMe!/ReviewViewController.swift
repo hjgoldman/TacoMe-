@@ -55,7 +55,6 @@ class ReviewViewController: UIViewController{
             
             let locationInDB = snapshot.childSnapshot(forPath: self.locationPlace_id!)
             
-            
             if locationInDB.exists() == true {
                 
                 for item in locationInDB.children {
@@ -66,8 +65,6 @@ class ReviewViewController: UIViewController{
                     let duplicateName = snapshotDictionary["author_name"] as? String
                     let duplicateTime = snapshotDictionary["relative_time_description"] as? String
 
-
-                    
                     if self.reviewsRx.value.contains ( where: {$0.text == duplicateReview} ) && self.reviewsRx.value.contains ( where: {$0.author_name == duplicateName} ) && self.reviewsRx.value.contains ( where: {$0.relative_time_description == duplicateTime} ) {
                         //Do not add to array of reviews
                     } else {
@@ -83,14 +80,8 @@ class ReviewViewController: UIViewController{
                         review.text = snapshotDictionary["text"] as? String
                         review.relative_time_description = snapshotDictionary["relative_time_description"] as? String
                         
-                       // self.reviews.insert(review, at: 0)
                         self.reviewsRx.value.insert(review, at: 0)
-                        
-
                     }
-                    
-
-                    
                 }
 
                 DispatchQueue.main.async {
@@ -104,7 +95,6 @@ class ReviewViewController: UIViewController{
                     self.tableView.reloadData()
                     self.populateView()
                 }
-                
             }
         }
     }
@@ -182,10 +172,7 @@ class ReviewViewController: UIViewController{
     private func bindUI() {
         self.bindTableView()
         self.bindAddReviewButtonTap()
-        
     }
-    
-    
     
     private func bindTableView() {
         
@@ -205,18 +192,8 @@ class ReviewViewController: UIViewController{
                     cell.reviewTextLabel?.sizeToFit()
                     cell.timeLabel?.text = element.relative_time_description
                 }
-                
             }.disposed(by: disposeBag)
-        
-        let element = Review()
-        element.author_name = "Hayden"
-        element.text = "This place is terrible!"
-        element.rating = 1
-        element.relative_time_description = "04-17-2017"
-        
-        self.reviewsRx.value.append(element)
     }
-    
     
     private func bindAddReviewButtonTap() {
         self.addReviewButton.rx.tap
@@ -238,20 +215,6 @@ class ReviewViewController: UIViewController{
                 strongSelf.present(addReviewVC, animated: true, completion: nil)
                 
             }.addDisposableTo(disposeBag)
-        
-        
     }
-
     
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "AddReviewSegue" {
-//            
-//            let addReviewVC = segue.destination as! AddReviewViewController
-//
-//            addReviewVC.tacoLocationPlace_id = self.locationPlace_id
-//            addReviewVC.tacoLocationDetail = self.locationDetail
-//        }
-//    }
-
 }
