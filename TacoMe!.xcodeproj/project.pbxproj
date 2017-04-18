@@ -17,7 +17,6 @@
 		C620610C1E80824000102C1E /* taco_me.png in Resources */ = {isa = PBXBuildFile; fileRef = C620610A1E80824000102C1E /* taco_me.png */; };
 		C620610D1E80824000102C1E /* taco_annotation.png in Resources */ = {isa = PBXBuildFile; fileRef = C620610B1E80824000102C1E /* taco_annotation.png */; };
 		C620610F1E8082B700102C1E /* TacoMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C620610E1E8082B700102C1E /* TacoMeViewController.swift */; };
-		C62061111E8082DF00102C1E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62061101E8082DF00102C1E /* MapViewController.swift */; };
 		C62061131E8082F900102C1E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62061121E8082F900102C1E /* Location.swift */; };
 		C68BE0771E84326400C3E643 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BE0761E84326400C3E643 /* FadeTransition.swift */; };
 		C6C05BF31E955598006D7141 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C05BF21E955598006D7141 /* GoogleMapsViewController.swift */; };
@@ -70,7 +69,6 @@
 		C620610A1E80824000102C1E /* taco_me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taco_me.png; sourceTree = "<group>"; };
 		C620610B1E80824000102C1E /* taco_annotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taco_annotation.png; sourceTree = "<group>"; };
 		C620610E1E8082B700102C1E /* TacoMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TacoMeViewController.swift; sourceTree = "<group>"; };
-		C62061101E8082DF00102C1E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C62061121E8082F900102C1E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C68BE0761E84326400C3E643 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		C6C05BF21E955598006D7141 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
@@ -167,8 +165,8 @@
 		C62060F51E80820600102C1E /* TacoMe! */ = {
 			isa = PBXGroup;
 			children = (
+				C69B0D6E1EA66326003FE233 /* Custom Transition */,
 				C61D3AE61E9FCD89007DBC58 /* AR Custom Annotation */,
-				C6FE32041E9BDC8200833C1D /* OLD ViewControllers */,
 				C6C05C211E97F97A006D7141 /* Custom Cell */,
 				C6C05C201E97DBDA006D7141 /* Objects */,
 				C616D6C91E8C2CC900EECE4B /* Taco Custom Marker */,
@@ -180,7 +178,6 @@
 				C62060FF1E80820600102C1E /* LaunchScreen.storyboard */,
 				C62061021E80820600102C1E /* Info.plist */,
 				C6FE32171E9C1C1100833C1D /* GoogleService-Info.plist */,
-				C68BE0761E84326400C3E643 /* FadeTransition.swift */,
 			);
 			path = "TacoMe!";
 			sourceTree = "<group>";
@@ -229,6 +226,14 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		C69B0D6E1EA66326003FE233 /* Custom Transition */ = {
+			isa = PBXGroup;
+			children = (
+				C68BE0761E84326400C3E643 /* FadeTransition.swift */,
+			);
+			name = "Custom Transition";
+			sourceTree = "<group>";
+		};
 		C6C05C201E97DBDA006D7141 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,14 +250,6 @@
 				C6C05C221E97F996006D7141 /* ReviewTableViewCell.swift */,
 			);
 			name = "Custom Cell";
-			sourceTree = "<group>";
-		};
-		C6FE32041E9BDC8200833C1D /* OLD ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				C62061101E8082DF00102C1E /* MapViewController.swift */,
-			);
-			name = "OLD ViewControllers";
 			sourceTree = "<group>";
 		};
 		DCC2B40F29257506170F5090 /* Pods */ = {
@@ -425,7 +422,6 @@
 				C61D3AE51E9FCA51007DBC58 /* LocationARViewController.swift in Sources */,
 				C62061131E8082F900102C1E /* Location.swift in Sources */,
 				C6C05C031E9591E5006D7141 /* MoreInfoViewController.swift in Sources */,
-				C62061111E8082DF00102C1E /* MapViewController.swift in Sources */,
 				C620610F1E8082B700102C1E /* TacoMeViewController.swift in Sources */,
 				C61D3AEA1E9FD2F3007DBC58 /* LocationAnnotaion.swift in Sources */,
 				C6FE321E1E9D7A8300833C1D /* LocationDetailTabBarController.swift in Sources */,

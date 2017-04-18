@@ -9,8 +9,6 @@
 import Foundation
 
 class LocationDetail {
-    
-    
     var formatted_address :String?
     var formatted_phone_number :String?
     var international_phone_number :String?
@@ -23,6 +21,4 @@ class LocationDetail {
     var rating :Double?
     var website :String?
     var url :String?
-    
-    
 }

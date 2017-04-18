@@ -9,11 +9,7 @@
 import UIKit
 
 class CustomInfoWindow: UIView {
-
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var isOpenLabel: UILabel!
-
-    
-
 }

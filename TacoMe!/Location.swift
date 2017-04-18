@@ -10,7 +10,6 @@ import Foundation
 import MapKit
 
 class Location {
-    
     var locationLat :Double?
     var locationLng :Double?
     var viewportNorthEastLat :Double?
@@ -25,11 +24,5 @@ class Location {
     var price_level :Int?
     var rating :Double?
     var vicinity :String?
-    
-    
-    var distanceFromUser :Double?
-    
-
-
-    
+    var distanceFromUser :Double?   
 }
