@@ -181,6 +181,7 @@
 				C62060FA1E80820600102C1E /* Main.storyboard */,
 				C62060FD1E80820600102C1E /* Assets.xcassets */,
 				C62060FF1E80820600102C1E /* LaunchScreen.storyboard */,
+				C69B0D701EA7B73B003FE233 /* TacoMe!-Bridging-Header.h */,
 				C62061021E80820600102C1E /* Info.plist */,
 				C6FE32171E9C1C1100833C1D /* GoogleService-Info.plist */,
 			);
@@ -244,7 +245,6 @@
 			children = (
 				C69B0D711EA7B73C003FE233 /* UIColor+Additions.h */,
 				C69B0D721EA7B73C003FE233 /* UIColor+Additions.m */,
-				C69B0D701EA7B73B003FE233 /* TacoMe!-Bridging-Header.h */,
 			);
 			name = HexColors;
 			sourceTree = "<group>";
