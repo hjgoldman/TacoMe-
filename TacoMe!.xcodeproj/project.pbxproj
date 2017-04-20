@@ -20,6 +20,7 @@
 		C62061131E8082F900102C1E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62061121E8082F900102C1E /* Location.swift */; };
 		C68BE0771E84326400C3E643 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BE0761E84326400C3E643 /* FadeTransition.swift */; };
 		C69B0D731EA7B73C003FE233 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C69B0D721EA7B73C003FE233 /* UIColor+Additions.m */; };
+		C69B0D751EA92442003FE233 /* marker_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C69B0D741EA92442003FE233 /* marker_background.png */; };
 		C6C05BF31E955598006D7141 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C05BF21E955598006D7141 /* GoogleMapsViewController.swift */; };
 		C6C05BF71E955C35006D7141 /* taco_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05BF61E955C35006D7141 /* taco_marker.png */; };
 		C6C05BFF1E957D2A006D7141 /* CustomInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6C05BFE1E957D2A006D7141 /* CustomInfoWindow.xib */; };
@@ -42,7 +43,6 @@
 		C6C05C231E97F996006D7141 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C05C221E97F996006D7141 /* ReviewTableViewCell.swift */; };
 		C6C05C261E980E19006D7141 /* powered_by_google_on_non_white.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05C241E980E19006D7141 /* powered_by_google_on_non_white.png */; };
 		C6C05C271E980E19006D7141 /* powered_by_google_on_non_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05C251E980E19006D7141 /* powered_by_google_on_non_white@2x.png */; };
-		C6C05C2B1E9966CE006D7141 /* marker_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05C2A1E9966CE006D7141 /* marker_background.png */; };
 		C6FE32031E9BD50A00833C1D /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FE32021E9BD50A00833C1D /* ReviewViewController.swift */; };
 		C6FE320A1E9BE2C600833C1D /* Info_icon_50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = C6FE32091E9BE2C600833C1D /* Info_icon_50x50.png */; };
 		C6FE320C1E9BE4D200833C1D /* review_icon_50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = C6FE320B1E9BE4D200833C1D /* review_icon_50x50.png */; };
@@ -75,6 +75,7 @@
 		C69B0D701EA7B73B003FE233 /* TacoMe!-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TacoMe!-Bridging-Header.h"; sourceTree = "<group>"; };
 		C69B0D711EA7B73C003FE233 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		C69B0D721EA7B73C003FE233 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		C69B0D741EA92442003FE233 /* marker_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker_background.png; sourceTree = "<group>"; };
 		C6C05BF21E955598006D7141 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		C6C05BF61E955C35006D7141 /* taco_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taco_marker.png; sourceTree = "<group>"; };
 		C6C05BFE1E957D2A006D7141 /* CustomInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInfoWindow.xib; sourceTree = "<group>"; };
@@ -97,7 +98,6 @@
 		C6C05C221E97F996006D7141 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		C6C05C241E980E19006D7141 /* powered_by_google_on_non_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powered_by_google_on_non_white.png; sourceTree = "<group>"; };
 		C6C05C251E980E19006D7141 /* powered_by_google_on_non_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powered_by_google_on_non_white@2x.png"; sourceTree = "<group>"; };
-		C6C05C2A1E9966CE006D7141 /* marker_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker_background.png; sourceTree = "<group>"; };
 		C6FE32021E9BD50A00833C1D /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		C6FE32091E9BE2C600833C1D /* Info_icon_50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info_icon_50x50.png; sourceTree = "<group>"; };
 		C6FE320B1E9BE4D200833C1D /* review_icon_50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = review_icon_50x50.png; sourceTree = "<group>"; };
@@ -191,12 +191,12 @@
 		C62061081E80821600102C1E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C69B0D741EA92442003FE233 /* marker_background.png */,
 				C6FE32151E9C172400833C1D /* thumb-up.png */,
 				C6FE32131E9C16F900833C1D /* info.png */,
 				C6FE320F1E9BED2E00833C1D /* taco_me_text.png */,
 				C6FE320B1E9BE4D200833C1D /* review_icon_50x50.png */,
 				C6FE32091E9BE2C600833C1D /* Info_icon_50x50.png */,
-				C6C05C2A1E9966CE006D7141 /* marker_background.png */,
 				C6C05C241E980E19006D7141 /* powered_by_google_on_non_white.png */,
 				C6C05C251E980E19006D7141 /* powered_by_google_on_non_white@2x.png */,
 				C6C05C141E96F8F9006D7141 /* 2_5_stars.png */,
@@ -347,7 +347,6 @@
 				C62061011E80820600102C1E /* LaunchScreen.storyboard in Resources */,
 				C6C05C1D1E96F8F9006D7141 /* 3_5_stars.png in Resources */,
 				C6C05C1A1E96F8F9006D7141 /* 4_5_stars.png in Resources */,
-				C6C05C2B1E9966CE006D7141 /* marker_background.png in Resources */,
 				C62060FE1E80820600102C1E /* Assets.xcassets in Resources */,
 				C6C05C0E1E96F326006D7141 /* 0_stars.png in Resources */,
 				C6C05C121E96F326006D7141 /* 3_stars.png in Resources */,
@@ -362,6 +361,7 @@
 				C6C05C271E980E19006D7141 /* powered_by_google_on_non_white@2x.png in Resources */,
 				C6FE320A1E9BE2C600833C1D /* Info_icon_50x50.png in Resources */,
 				C6FE320C1E9BE4D200833C1D /* review_icon_50x50.png in Resources */,
+				C69B0D751EA92442003FE233 /* marker_background.png in Resources */,
 				C6C05BFF1E957D2A006D7141 /* CustomInfoWindow.xib in Resources */,
 				C6FE32161E9C172400833C1D /* thumb-up.png in Resources */,
 				C6FE32101E9BED2E00833C1D /* taco_me_text.png in Resources */,

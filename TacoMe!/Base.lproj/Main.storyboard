@@ -147,7 +147,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tt3-Tz-Avw">
                                 <rect key="frame" x="16" y="566" width="343" height="40"/>
-                                <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.81176470588235294" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="g2U-mn-fPY"/>
                                 </constraints>
@@ -375,7 +375,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61V-MO-no1">
                                 <rect key="frame" x="16" y="204" width="343" height="40"/>
-                                <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.81176470590000005" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SX9-YC-fJM"/>
                                 </constraints>
@@ -436,7 +436,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixz-Uz-bcf">
                                 <rect key="frame" x="16" y="624" width="343" height="35"/>
-                                <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.81176470590000005" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Q29-d6-TZW"/>
                                 </constraints>
