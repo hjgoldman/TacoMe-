@@ -34,7 +34,7 @@ class TacoMeViewController: UIViewController, CLLocationManagerDelegate, UIViewC
         
         self.indicatorView.isHidden = true
     }
-    
+
     func findAllTheTacos() {
         
         self.indicatorView.isHidden = false
