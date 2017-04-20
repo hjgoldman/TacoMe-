@@ -16,7 +16,6 @@ class LocationARViewController: ARViewController, ARDataSource, CLLocationManage
     var locationManager = CLLocationManager()
     var locationARAnnotations = [ARAnnotation]()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
