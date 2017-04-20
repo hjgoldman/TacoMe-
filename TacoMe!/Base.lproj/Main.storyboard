@@ -111,7 +111,7 @@
                                     <constraint firstAttribute="height" constant="50" id="IVe-Tn-b4O"/>
                                     <constraint firstAttribute="width" constant="240" id="KZX-Z3-Jhf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -120,7 +120,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="dwq-qD-6Ru"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -137,7 +137,7 @@
                                     <constraint firstAttribute="height" constant="25" id="09w-8I-PBr"/>
                                     <constraint firstAttribute="width" constant="240" id="ZdQ-c6-hdm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.25008968925021929" green="0.23326331022389651" blue="0.79600253807106602" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -147,13 +147,13 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tt3-Tz-Avw">
                                 <rect key="frame" x="16" y="566" width="343" height="40"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="g2U-mn-fPY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="Directions">
-                                    <color key="titleColor" red="0.94915878772735596" green="0.51552647352218628" blue="0.43926045298576355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="directionsButtonPressed:" destination="cLC-Dg-55n" eventType="touchUpInside" id="V5z-DH-hG9"/>
@@ -165,18 +165,18 @@
                                     <constraint firstAttribute="height" constant="30" id="Q1z-Fc-tte"/>
                                     <constraint firstAttribute="width" constant="240" id="bF5-Nc-7gt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcJ-rq-NG3">
                                 <rect key="frame" x="16" y="254" width="343" height="312"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.46298870444297791" green="0.64864742755889893" blue="0.89808499813079834" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.84705882352941175" green="0.8901960784313725" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="tt3-Tz-Avw" firstAttribute="top" secondItem="zcJ-rq-NG3" secondAttribute="bottom" id="4QI-7O-l6I"/>
                             <constraint firstItem="av0-4e-IC5" firstAttribute="centerX" secondItem="kXV-fm-Sct" secondAttribute="centerX" id="7KO-rF-49S"/>
@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLZ-FB-8zL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9151.2000000000007" y="-283.80809595202402"/>
+            <point key="canvasLocation" x="8945" y="-228"/>
         </scene>
         <!--LocationAR View Controller-->
         <scene sceneID="jsO-hj-u1C">
@@ -228,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCU-6B-sgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7970" y="-558"/>
+            <point key="canvasLocation" x="7769" y="-615"/>
         </scene>
         <!--Location Detail Tab Bar Controller-->
         <scene sceneID="Ci8-xW-AVT">
@@ -246,7 +246,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fH7-4V-bGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7970.3999999999996" y="136.28185907046478"/>
+            <point key="canvasLocation" x="7769" y="137"/>
         </scene>
         <!--Reviews-->
         <scene sceneID="dcP-Aw-OSp">
@@ -262,8 +262,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" rowHeight="175" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jjM-h7-lqJ">
                                 <rect key="frame" x="0.0" y="252" width="375" height="348"/>
-                                <color key="backgroundColor" red="0.46298870444297791" green="0.64864742755889893" blue="0.89808499813079834" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="sectionIndexBackgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.89019607840000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" red="0.84705882349999995" green="0.89019607840000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="175" id="KJ6-o8-bus" customClass="ReviewTableViewCell" customModule="TacoMe_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="175"/>
@@ -274,41 +274,41 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author_name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVb-Uy-rZK">
                                                     <rect key="frame" x="8" y="8" width="158" height="20"/>
-                                                    <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" red="0.84705882349999995" green="0.89019607840000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="158" id="h92-AP-wyJ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8e-lS-VI7">
                                                     <rect key="frame" x="242" y="8" width="125" height="20"/>
-                                                    <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" red="0.84705882349999995" green="0.89019607840000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="125" id="FXZ-Jd-inP"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J8-ud-Zcl">
                                                     <rect key="frame" x="8" y="28" width="359" height="139"/>
-                                                    <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                    <color key="backgroundColor" red="0.84705882349999995" green="0.89019607840000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfp-7B-DQ8">
                                                     <rect key="frame" x="166" y="8" width="76" height="20"/>
-                                                    <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                    <color key="backgroundColor" red="0.84705882349999995" green="0.89019607840000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" red="0.84705882349999995" green="0.89019607840000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="5J8-ud-Zcl" firstAttribute="trailing" secondItem="3uC-Js-Fq2" secondAttribute="trailingMargin" id="6Zc-J3-mma"/>
                                                 <constraint firstItem="5J8-ud-Zcl" firstAttribute="top" secondItem="vfp-7B-DQ8" secondAttribute="bottom" id="Aqs-Nm-o1o"/>
@@ -325,7 +325,7 @@
                                                 <constraint firstItem="fVb-Uy-rZK" firstAttribute="top" secondItem="3uC-Js-Fq2" secondAttribute="topMargin" id="t6J-Ku-W0U"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.84705882349999995" green="0.89019607840000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="fVb-Uy-rZK" id="m74-eB-kle"/>
                                             <outlet property="ratingLabel" destination="vfp-7B-DQ8" id="OyA-AJ-DnY"/>
@@ -352,7 +352,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="SPE-8G-zVq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -369,26 +369,26 @@
                                     <constraint firstAttribute="height" constant="25" id="PNz-nv-9mC"/>
                                     <constraint firstAttribute="width" constant="42" id="uOM-MK-4A7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61V-MO-no1">
                                 <rect key="frame" x="16" y="204" width="343" height="40"/>
-                                <color key="backgroundColor" red="0.99999058246612549" green="0.99999356269836426" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SX9-YC-fJM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="Add Review">
-                                    <color key="titleColor" red="0.94915878769999995" green="0.51552647350000003" blue="0.439260453" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="directionsButtonPressed:" destination="cLC-Dg-55n" eventType="touchUpInside" id="CK8-xk-iIo"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.84705882349999995" green="0.89019607840000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="sIz-sR-o4g" firstAttribute="top" secondItem="MRd-ZJ-dpf" secondAttribute="bottom" id="0YS-uF-xeh"/>
                             <constraint firstItem="jjM-h7-lqJ" firstAttribute="leading" secondItem="NQa-5t-Xnv" secondAttribute="leading" id="84h-qG-Yfu"/>
@@ -420,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QkV-1s-Yut" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10090.4" y="427.73613193403304"/>
+            <point key="canvasLocation" x="8945" y="520"/>
         </scene>
         <!--Add Review View Controller-->
         <scene sceneID="bkl-1N-gbK">
@@ -436,13 +436,13 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixz-Uz-bcf">
                                 <rect key="frame" x="16" y="624" width="343" height="35"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Q29-d6-TZW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="Submit">
-                                    <color key="titleColor" red="0.94915878769999995" green="0.51552647350000003" blue="0.439260453" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="zFR-o5-5OA" eventType="touchUpInside" id="SfN-Wg-5qk"/>
@@ -467,7 +467,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="zkf-Qz-3wS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nKG-Wy-eIP">
@@ -476,7 +476,7 @@
                                     <constraint firstAttribute="height" constant="30" id="ErC-Vz-GF9"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEf-3W-dIm">
@@ -490,7 +490,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="aYY-Og-3fb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -499,12 +499,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="BIW-s0-Jy0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.46298870440000001" green="0.64864742760000005" blue="0.89808499809999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.84705882349999995" green="0.89019607840000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="NS5-ql-YrG" firstAttribute="leading" secondItem="fdV-fU-U2L" secondAttribute="leading" id="0P7-cK-Pce"/>
                             <constraint firstItem="bZx-BH-lcn" firstAttribute="leading" secondItem="fdV-fU-U2L" secondAttribute="leadingMargin" id="2Ng-bF-XOC"/>
@@ -539,14 +539,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POm-Ax-mTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11360.799999999999" y="393.55322338830587"/>
+            <point key="canvasLocation" x="9916" y="519"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rfl-P2-smu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fgf-dY-LTW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dmE-TT-Hkl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dmE-TT-Hkl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -557,7 +557,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dsy-ys-KoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5854" y="137"/>
+            <point key="canvasLocation" x="5914" y="136"/>
         </scene>
     </scenes>
     <resources>

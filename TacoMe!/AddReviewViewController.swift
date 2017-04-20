@@ -45,7 +45,6 @@ class AddReviewViewController: UIViewController, UITextFieldDelegate, UITextView
     func populateView() {
         
         self.nameLabel.text = self.tacoLocationDetail.name
-        
         }
 
 

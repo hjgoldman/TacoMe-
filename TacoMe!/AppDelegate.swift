@@ -23,8 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey("AIzaSyCYkhwpSB3b_fbjvypA5BH30jbEO-umqls")
         FIRApp.configure()
         
- //       UINavigationBar.appearance().barTintColor = UIColor(fromHexString: "")
-
+        UINavigationBar.appearance().barTintColor = UIColor(fromHexString: "6E90DE")
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        
+        UIToolbar.appearance().barTintColor = UIColor(fromHexString: "6E90DE")
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.white], for: .normal)
+        
         return true
     }
 

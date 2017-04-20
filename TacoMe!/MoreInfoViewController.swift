@@ -41,19 +41,17 @@ class MoreInfoViewController: UIViewController {
             
             let hours = self.locationDetail.weekday_text?.joined(separator: "\n")
             self.hoursLabel.text = hours!
-
         }
         
         if self.locationDetail.open_now == true {
             self.isOpenLabel.text = "Open"
-            self.isOpenLabel.textColor = UIColor.green
+            self.isOpenLabel.textColor = UIColor(fromHexString: "006400")
         } else if self.locationDetail.open_now == false {
             self.isOpenLabel.text = "Closed"
-            self.isOpenLabel.textColor = UIColor.red
+            self.isOpenLabel.textColor = UIColor(fromHexString: "8B0000")
         } else {
             self.isOpenLabel.text = ""
         }
-        
                
     }
 
