@@ -278,7 +278,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="158" id="h92-AP-wyJ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -546,7 +546,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fgf-dY-LTW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dmE-TT-Hkl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dmE-TT-Hkl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
