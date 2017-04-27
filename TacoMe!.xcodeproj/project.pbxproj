@@ -18,6 +18,13 @@
 		C620610D1E80824000102C1E /* taco_annotation.png in Resources */ = {isa = PBXBuildFile; fileRef = C620610B1E80824000102C1E /* taco_annotation.png */; };
 		C620610F1E8082B700102C1E /* TacoMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C620610E1E8082B700102C1E /* TacoMeViewController.swift */; };
 		C62061131E8082F900102C1E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62061121E8082F900102C1E /* Location.swift */; };
+		C63AC7FD1EB2437B00FE2409 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C63AC7FB1EB2437B00FE2409 /* Interface.storyboard */; };
+		C63AC7FF1EB2437B00FE2409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63AC7FE1EB2437B00FE2409 /* Assets.xcassets */; };
+		C63AC8061EB2437B00FE2409 /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C63AC8051EB2437B00FE2409 /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C63AC80B1EB2437B00FE2409 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63AC80A1EB2437B00FE2409 /* InterfaceController.swift */; };
+		C63AC80D1EB2437B00FE2409 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63AC80C1EB2437B00FE2409 /* ExtensionDelegate.swift */; };
+		C63AC80F1EB2437B00FE2409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63AC80E1EB2437B00FE2409 /* Assets.xcassets */; };
+		C63AC8131EB2437B00FE2409 /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C63AC7F91EB2437B00FE2409 /* Watch.app */; };
 		C68BE0771E84326400C3E643 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BE0761E84326400C3E643 /* FadeTransition.swift */; };
 		C69B0D731EA7B73C003FE233 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C69B0D721EA7B73C003FE233 /* UIColor+Additions.m */; };
 		C69B0D751EA92442003FE233 /* marker_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C69B0D741EA92442003FE233 /* marker_background.png */; };
@@ -55,6 +62,48 @@
 		F0DCF3A89B1204CB25CC8F05 /* Pods_TacoMe_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDD39B0CCE270A6209DDE72 /* Pods_TacoMe_.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C63AC8071EB2437B00FE2409 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C62060EB1E80820600102C1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C63AC8041EB2437B00FE2409;
+			remoteInfo = "Watch Extension";
+		};
+		C63AC8111EB2437B00FE2409 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C62060EB1E80820600102C1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C63AC7F81EB2437B00FE2409;
+			remoteInfo = Watch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C63AC8191EB2437B00FE2409 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C63AC8061EB2437B00FE2409 /* Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C63AC81B1EB2437B00FE2409 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C63AC8131EB2437B00FE2409 /* Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1DDD39B0CCE270A6209DDE72 /* Pods_TacoMe_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TacoMe_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43368252F8BD1F7D00FB61F2 /* Pods-TacoMe!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TacoMe!.release.xcconfig"; path = "Pods/Target Support Files/Pods-TacoMe!/Pods-TacoMe!.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +120,15 @@
 		C620610B1E80824000102C1E /* taco_annotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taco_annotation.png; sourceTree = "<group>"; };
 		C620610E1E8082B700102C1E /* TacoMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TacoMeViewController.swift; sourceTree = "<group>"; };
 		C62061121E8082F900102C1E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		C63AC7F91EB2437B00FE2409 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C63AC7FC1EB2437B00FE2409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C63AC7FE1EB2437B00FE2409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C63AC8001EB2437B00FE2409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C63AC8051EB2437B00FE2409 /* Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C63AC80A1EB2437B00FE2409 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C63AC80C1EB2437B00FE2409 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		C63AC80E1EB2437B00FE2409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C63AC8101EB2437B00FE2409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C68BE0761E84326400C3E643 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		C69B0D701EA7B73B003FE233 /* TacoMe!-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TacoMe!-Bridging-Header.h"; sourceTree = "<group>"; };
 		C69B0D711EA7B73C003FE233 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
@@ -111,11 +169,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		05FA2E670FF7758DCEBD49FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C62060F01E80820600102C1E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F0DCF3A89B1204CB25CC8F05 /* Pods_TacoMe_.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C63AC8021EB2437B00FE2409 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				C62060F51E80820600102C1E /* TacoMe! */,
+				C63AC7FA1EB2437B00FE2409 /* Watch */,
+				C63AC8091EB2437B00FE2409 /* Watch Extension */,
 				C62060F41E80820600102C1E /* Products */,
 				DCC2B40F29257506170F5090 /* Pods */,
 				55494E2C6C1066016A323F74 /* Frameworks */,
@@ -162,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				C62060F31E80820600102C1E /* TacoMe!.app */,
+				C63AC7F91EB2437B00FE2409 /* Watch.app */,
+				C63AC8051EB2437B00FE2409 /* Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,6 +308,27 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		C63AC7FA1EB2437B00FE2409 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				C63AC7FB1EB2437B00FE2409 /* Interface.storyboard */,
+				C63AC7FE1EB2437B00FE2409 /* Assets.xcassets */,
+				C63AC8001EB2437B00FE2409 /* Info.plist */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		C63AC8091EB2437B00FE2409 /* Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C63AC80A1EB2437B00FE2409 /* InterfaceController.swift */,
+				C63AC80C1EB2437B00FE2409 /* ExtensionDelegate.swift */,
+				C63AC80E1EB2437B00FE2409 /* Assets.xcassets */,
+				C63AC8101EB2437B00FE2409 /* Info.plist */,
+			);
+			path = "Watch Extension";
+			sourceTree = "<group>";
+		};
 		C69B0D6E1EA66326003FE233 /* Custom Transition */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,15 +386,52 @@
 				C62060F11E80820600102C1E /* Resources */,
 				70C084676FFDA64095C877F4 /* [CP] Embed Pods Frameworks */,
 				AE2A0D38E08C60199F5FE1CE /* [CP] Copy Pods Resources */,
+				C63AC81B1EB2437B00FE2409 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C63AC8121EB2437B00FE2409 /* PBXTargetDependency */,
 			);
 			name = "TacoMe!";
 			productName = "TacoMe!";
 			productReference = C62060F31E80820600102C1E /* TacoMe!.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C63AC7F81EB2437B00FE2409 /* Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C63AC81A1EB2437B00FE2409 /* Build configuration list for PBXNativeTarget "Watch" */;
+			buildPhases = (
+				C63AC7F71EB2437B00FE2409 /* Resources */,
+				C63AC8191EB2437B00FE2409 /* Embed App Extensions */,
+				05FA2E670FF7758DCEBD49FF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C63AC8081EB2437B00FE2409 /* PBXTargetDependency */,
+			);
+			name = Watch;
+			productName = Watch;
+			productReference = C63AC7F91EB2437B00FE2409 /* Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		C63AC8041EB2437B00FE2409 /* Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C63AC8181EB2437B00FE2409 /* Build configuration list for PBXNativeTarget "Watch Extension" */;
+			buildPhases = (
+				C63AC8011EB2437B00FE2409 /* Sources */,
+				C63AC8021EB2437B00FE2409 /* Frameworks */,
+				C63AC8031EB2437B00FE2409 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Watch Extension";
+			productName = "Watch Extension";
+			productReference = C63AC8051EB2437B00FE2409 /* Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -305,7 +439,7 @@
 		C62060EB1E80820600102C1E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Hayden Goldman";
 				TargetAttributes = {
@@ -313,6 +447,16 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5UN8LHXK2J;
 						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					C63AC7F81EB2437B00FE2409 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5UN8LHXK2J;
+						ProvisioningStyle = Automatic;
+					};
+					C63AC8041EB2437B00FE2409 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5UN8LHXK2J;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -331,6 +475,8 @@
 			projectRoot = "";
 			targets = (
 				C62060F21E80820600102C1E /* TacoMe! */,
+				C63AC7F81EB2437B00FE2409 /* Watch */,
+				C63AC8041EB2437B00FE2409 /* Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -368,6 +514,23 @@
 				C6C05C071E96E491006D7141 /* test_marker_background.png in Resources */,
 				C6C05BF71E955C35006D7141 /* taco_marker.png in Resources */,
 				C62060FC1E80820600102C1E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C63AC7F71EB2437B00FE2409 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C63AC7FF1EB2437B00FE2409 /* Assets.xcassets in Resources */,
+				C63AC7FD1EB2437B00FE2409 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C63AC8031EB2437B00FE2409 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C63AC80F1EB2437B00FE2409 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +609,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C63AC8011EB2437B00FE2409 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C63AC80D1EB2437B00FE2409 /* ExtensionDelegate.swift in Sources */,
+				C63AC80B1EB2437B00FE2409 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C63AC8081EB2437B00FE2409 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C63AC8041EB2437B00FE2409 /* Watch Extension */;
+			targetProxy = C63AC8071EB2437B00FE2409 /* PBXContainerItemProxy */;
+		};
+		C63AC8121EB2437B00FE2409 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C63AC7F81EB2437B00FE2409 /* Watch */;
+			targetProxy = C63AC8111EB2437B00FE2409 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C62060FA1E80820600102C1E /* Main.storyboard */ = {
@@ -463,6 +648,14 @@
 				C62061001E80820600102C1E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C63AC7FB1EB2437B00FE2409 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C63AC7FC1EB2437B00FE2409 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -508,7 +701,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -552,7 +745,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -569,7 +762,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 5UN8LHXK2J;
 				INFOPLIST_FILE = "TacoMe!/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haydengoldman.TacoMe-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -588,13 +781,87 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 5UN8LHXK2J;
 				INFOPLIST_FILE = "TacoMe!/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haydengoldman.TacoMe-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TacoMe!/TacoMe!-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C63AC8141EB2437B00FE2409 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 5UN8LHXK2J;
+				IBSC_MODULE = Watch_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haydengoldman.TacoMe-.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		C63AC8151EB2437B00FE2409 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 5UN8LHXK2J;
+				IBSC_MODULE = Watch_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haydengoldman.TacoMe-.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		C63AC8161EB2437B00FE2409 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 5UN8LHXK2J;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haydengoldman.TacoMe-.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		C63AC8171EB2437B00FE2409 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 5UN8LHXK2J;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haydengoldman.TacoMe-.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
@@ -615,6 +882,24 @@
 			buildConfigurations = (
 				C62061061E80820600102C1E /* Debug */,
 				C62061071E80820600102C1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C63AC8181EB2437B00FE2409 /* Build configuration list for PBXNativeTarget "Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C63AC8161EB2437B00FE2409 /* Debug */,
+				C63AC8171EB2437B00FE2409 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C63AC81A1EB2437B00FE2409 /* Build configuration list for PBXNativeTarget "Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C63AC8141EB2437B00FE2409 /* Debug */,
+				C63AC8151EB2437B00FE2409 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
