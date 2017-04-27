@@ -8,16 +8,25 @@
 
 import WatchKit
 import Foundation
+import MapKit
 
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
     @IBOutlet var group: WKInterfaceGroup!
+    var locationManager = CLLocationManager()
+
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        self.locationManager = CLLocationManager()
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.distanceFilter = kCLDistanceFilterNone
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        
         // Configure interface objects here.
-//        self.group.setBackgroundColor(randomColor(hue: .random, luminosity: .light))
     }
     
     override func willActivate() {
@@ -32,6 +41,15 @@ class InterfaceController: WKInterfaceController {
     @IBAction func tacoButton() {
         
         print("taco pressed!")
+
+        let action1 = WKAlertAction(title: "🌮", style: .default) {
+        
+            print("ok")
+        }
+        let cancelAction = WKAlertAction(title: "🚫", style: .cancel) {}
+        
+        presentAlert(withTitle: "Taco Found!", message: "", preferredStyle: .actionSheet, actions: [action1,cancelAction])
+        
     }
 
 }
