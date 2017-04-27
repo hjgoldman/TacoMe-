@@ -12,8 +12,8 @@ import MapKit
 
 
 class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
-    @IBOutlet var group: WKInterfaceGroup!
     var locationManager = CLLocationManager()
+    var locations = [Location]()
 
 
     override func awake(withContext context: Any?) {

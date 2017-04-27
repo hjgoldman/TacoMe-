@@ -50,6 +50,9 @@
 		C6C05C231E97F996006D7141 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C05C221E97F996006D7141 /* ReviewTableViewCell.swift */; };
 		C6C05C261E980E19006D7141 /* powered_by_google_on_non_white.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05C241E980E19006D7141 /* powered_by_google_on_non_white.png */; };
 		C6C05C271E980E19006D7141 /* powered_by_google_on_non_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C05C251E980E19006D7141 /* powered_by_google_on_non_white@2x.png */; };
+		C6E8225A1EB27E240053AA31 /* taco_me.png in Resources */ = {isa = PBXBuildFile; fileRef = C620610A1E80824000102C1E /* taco_me.png */; };
+		C6E8225B1EB27E250053AA31 /* taco_me.png in Resources */ = {isa = PBXBuildFile; fileRef = C620610A1E80824000102C1E /* taco_me.png */; };
+		C6E8225C1EB27F9A0053AA31 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62061121E8082F900102C1E /* Location.swift */; };
 		C6FE32031E9BD50A00833C1D /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FE32021E9BD50A00833C1D /* ReviewViewController.swift */; };
 		C6FE320A1E9BE2C600833C1D /* Info_icon_50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = C6FE32091E9BE2C600833C1D /* Info_icon_50x50.png */; };
 		C6FE320C1E9BE4D200833C1D /* review_icon_50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = C6FE320B1E9BE4D200833C1D /* review_icon_50x50.png */; };
@@ -521,6 +524,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E8225B1EB27E250053AA31 /* taco_me.png in Resources */,
 				C63AC7FF1EB2437B00FE2409 /* Assets.xcassets in Resources */,
 				C63AC7FD1EB2437B00FE2409 /* Interface.storyboard in Resources */,
 			);
@@ -530,6 +534,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E8225A1EB27E240053AA31 /* taco_me.png in Resources */,
 				C63AC80F1EB2437B00FE2409 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C63AC80D1EB2437B00FE2409 /* ExtensionDelegate.swift in Sources */,
+				C6E8225C1EB27F9A0053AA31 /* Location.swift in Sources */,
 				C63AC80B1EB2437B00FE2409 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
