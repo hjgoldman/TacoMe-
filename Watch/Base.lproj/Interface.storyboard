@@ -15,16 +15,20 @@
                     <items>
                         <group width="1" height="1" alignment="center" verticalAlignment="center" id="Ata-2C-mep">
                             <items>
-                                <button width="1" alignment="center" verticalAlignment="center" backgroundImage="taco_me" id="o4L-RC-bFK">
-                                    <connections>
-                                        <action selector="tacoButton" destination="AgC-eL-Hgc" id="aV1-Z6-iDZ"/>
-                                    </connections>
-                                </button>
+                                <imageView alignment="center" verticalAlignment="center" image="frame_1" id="fW7-Xb-ulD">
+                                    <gestureRecognizers>
+                                        <tapGestureRecognizer id="2eN-Hu-kDf">
+                                            <connections>
+                                                <action selector="tacoTap:" destination="AgC-eL-Hgc" id="45R-z6-asg"/>
+                                            </connections>
+                                        </tapGestureRecognizer>
+                                    </gestureRecognizers>
+                                </imageView>
                             </items>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="group" destination="Ata-2C-mep" id="Zt1-ps-FaC"/>
+                        <outlet property="tacoImage" destination="fW7-Xb-ulD" id="R0s-aJ-bui"/>
                     </connections>
                 </controller>
             </objects>
