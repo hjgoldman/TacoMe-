@@ -18,6 +18,7 @@
 		C620610D1E80824000102C1E /* taco_annotation.png in Resources */ = {isa = PBXBuildFile; fileRef = C620610B1E80824000102C1E /* taco_annotation.png */; };
 		C620610F1E8082B700102C1E /* TacoMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C620610E1E8082B700102C1E /* TacoMeViewController.swift */; };
 		C62061131E8082F900102C1E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62061121E8082F900102C1E /* Location.swift */; };
+		C623FB0A1EB3D4FA00099C9D /* MapInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C623FB091EB3D4FA00099C9D /* MapInterfaceController.swift */; };
 		C63AC7FD1EB2437B00FE2409 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C63AC7FB1EB2437B00FE2409 /* Interface.storyboard */; };
 		C63AC7FF1EB2437B00FE2409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63AC7FE1EB2437B00FE2409 /* Assets.xcassets */; };
 		C63AC8061EB2437B00FE2409 /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C63AC8051EB2437B00FE2409 /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -123,6 +124,7 @@
 		C620610B1E80824000102C1E /* taco_annotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taco_annotation.png; sourceTree = "<group>"; };
 		C620610E1E8082B700102C1E /* TacoMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TacoMeViewController.swift; sourceTree = "<group>"; };
 		C62061121E8082F900102C1E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		C623FB091EB3D4FA00099C9D /* MapInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInterfaceController.swift; sourceTree = "<group>"; };
 		C63AC7F91EB2437B00FE2409 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63AC7FC1EB2437B00FE2409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		C63AC7FE1EB2437B00FE2409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				C63AC80A1EB2437B00FE2409 /* InterfaceController.swift */,
+				C623FB091EB3D4FA00099C9D /* MapInterfaceController.swift */,
 				C63AC80C1EB2437B00FE2409 /* ExtensionDelegate.swift */,
 				C63AC80E1EB2437B00FE2409 /* Assets.xcassets */,
 				C63AC8101EB2437B00FE2409 /* Info.plist */,
@@ -620,6 +623,7 @@
 			files = (
 				C63AC80D1EB2437B00FE2409 /* ExtensionDelegate.swift in Sources */,
 				C6E8225C1EB27F9A0053AA31 /* Location.swift in Sources */,
+				C623FB0A1EB3D4FA00099C9D /* MapInterfaceController.swift in Sources */,
 				C63AC80B1EB2437B00FE2409 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,6 +38,10 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        self.locations.removeAll()
+        
+        self.tacoImage.stopAnimating()
+        self.tacoImage.setImageNamed("frame_1")
     }
     
     @IBAction func tacoTap(_ sender: Any) {
@@ -48,59 +52,59 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
     }
     
     func tacoAnimationWithResults() {
-       // self.tacoImage.setImageNamed("tacoImage")
-        self.tacoImage.startAnimating()
-        
+        self.tacoImage.setImageNamed("frame_")
+        self.tacoImage.startAnimatingWithImages(in: NSMakeRange(0, 30), duration: 1, repeatCount: -1)
+        DispatchQueue.global().async {
+            
+            self.getGoogleData()
+            sleep(7)
+            
+            DispatchQueue.main.async {
+                self.tacoImage.stopAnimating()
+                self.presentAlerts()
+                
+                
+            }
+        }
     }
     
-//    @IBAction func tacoButtonPressed() {
+    func presentAlerts() {
         
-        
-        
-        
-//        DispatchQueue.global().async {
-//            
-//            self.getGoogleData()
-//            sleep(7)
-//            // switch to the main thread to run UI specific tasks
-//            DispatchQueue.main.async {
-//                
-//                if self.locations.count == 0 {
-//                    
-//                    let cancelAction = WKAlertAction(title: "Dismiss", style: .default) {
-//                        self.locations.removeAll()
-//                    }
-//                    
-//                    self.presentAlert(withTitle: "No Taco Found", message: "☹️", preferredStyle: .actionSheet, actions: [cancelAction])
-//
-//                } else {
-//                    
-//                    let closestTaco = self.locations[0]
-//                    
-//                    guard let distance = closestTaco.distanceFromUser else {
-//                        return
-//                    }
-//                    
-//                    let distanceInMiles = String(format: "%.2f", distance / 1609.34)
-//
-//                    
-//                    let action1 = WKAlertAction(title: "🌮", style: .default) {
-//                        
-//                        print("ok")
-//                    }
-//                    let cancelAction = WKAlertAction(title: "🚫", style: .cancel) {
-//                    
-//                        self.locations.removeAll()
-//                    }
-//                    
-//                    self.presentAlert(withTitle: "Taco Found!", message: "Closest Taco: \n \(closestTaco.name!) \n \(distanceInMiles) miles away", preferredStyle: .actionSheet, actions: [action1,cancelAction])
-//                    
-//                }
-//            }
-//        }
+        if self.locations.count == 0 {
+            
+            let cancelAction = WKAlertAction(title: "Dismiss", style: .default) {
+            
+                self.locations.removeAll()
+            }
+            
+            self.presentAlert(withTitle: "No Taco Found", message: "☹️", preferredStyle: .actionSheet, actions: [cancelAction])
+            
+        } else {
+            
+            let closestTaco = self.locations[0]
+            
+            guard let distance = closestTaco.distanceFromUser else {
+            
+                return
+            }
+            
+            let distanceInMiles = String(format: "%.2f", distance / 1609.34)
+            
+            let action1 = WKAlertAction(title: "Directions", style: .default) {
+            
+                print("ok")
+            }
+            let cancelAction = WKAlertAction(title: "🚫", style: .cancel) {
+                self.locations.removeAll()
+            }
 
-        
-//    }
+            self.presentAlert(withTitle: "Taco Found!", message: "Closest Taco: \n \(closestTaco.name!) \n \(distanceInMiles) miles away", preferredStyle: .actionSheet, actions: [action1,cancelAction])
+
+        }
+   
+    }
+    
+
     
     func getGoogleData() {
         
