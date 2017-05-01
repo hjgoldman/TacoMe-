@@ -39,11 +39,7 @@ class MapInterfaceController: WKInterfaceController, CLLocationManagerDelegate {
             let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees((self.closestTaco?.locationLat)!), longitude: CLLocationDegrees((self.closestTaco?.locationLng)!))
             map.addAnnotation(coordinate, withImageNamed: "taco_marker_watch.png", centerOffset: CGPoint(x: 0, y: 0))
         }
-        
     }
-    
-    
-    
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
