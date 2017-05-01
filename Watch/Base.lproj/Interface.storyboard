@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7u6-vT-VpN">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -33,10 +33,10 @@
                 </controller>
             </objects>
         </scene>
-        <!--Map Interface Controller-->
+        <!--Map-->
         <scene sceneID="gst-gK-pKk">
             <objects>
-                <controller id="7u6-vT-VpN" customClass="MapInterfaceController" customModule="Watch_Extension">
+                <controller identifier="Map" id="7u6-vT-VpN" customClass="MapInterfaceController" customModule="Watch_Extension">
                     <items>
                         <group width="1" alignment="left" id="Jlr-Sw-Wrc">
                             <items>
@@ -49,7 +49,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="336" y="48"/>
+            <point key="canvasLocation" x="346" y="37"/>
         </scene>
     </scenes>
 </document>

@@ -14,6 +14,7 @@ import MapKit
 class MapInterfaceController: WKInterfaceController, CLLocationManagerDelegate {
     @IBOutlet var map: WKInterfaceMap!
     var locationManager = CLLocationManager()
+    var closestTaco: Location?
 
 
     override func awake(withContext context: Any?) {
@@ -31,11 +32,18 @@ class MapInterfaceController: WKInterfaceController, CLLocationManagerDelegate {
         let coordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let coordinateRegion = MKCoordinateRegion(center: (self.locationManager.location?.coordinate)!, span: coordinateSpan)
         
-//        map.addAnnotation((self.locationManager.location?.coordinate)!, with: WKInterfaceMapPinColor.green)
         map.setRegion(coordinateRegion)
         
+        if let closestTaco = context as? Location {
+            self.closestTaco = closestTaco
+            let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees((self.closestTaco?.locationLat)!), longitude: CLLocationDegrees((self.closestTaco?.locationLng)!))
+            map.addAnnotation(coordinate, withImageNamed: "taco_marker_watch.png", centerOffset: CGPoint(x: 0, y: 0))
+        }
         
     }
+    
+    
+    
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user

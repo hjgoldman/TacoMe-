@@ -57,7 +57,7 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
         DispatchQueue.global().async {
             
             self.getGoogleData()
-            sleep(7)
+            sleep(4)
             
             DispatchQueue.main.async {
                 self.tacoImage.stopAnimating()
@@ -90,9 +90,12 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
             
             let distanceInMiles = String(format: "%.2f", distance / 1609.34)
             
-            let action1 = WKAlertAction(title: "Directions", style: .default) {
+            let action1 = WKAlertAction(title: "Map", style: .default) {
             
                 print("ok")
+                
+                self.presentController(withName: "Map", context: closestTaco)
+
             }
             let cancelAction = WKAlertAction(title: "🚫", style: .cancel) {
                 self.locations.removeAll()
@@ -181,7 +184,7 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
         dataTask.resume()
     }
     
-    //Finding the location that is closest to the user
+    //Mark: Finding the location that is closest to the user
     func findClosestTaco() {
         
         var distances = [Double]()
@@ -193,6 +196,8 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
         }
         self.locations.sort(by: {$0.distanceFromUser! < $1.distanceFromUser!})
     }
+    
+
 
 
 }
