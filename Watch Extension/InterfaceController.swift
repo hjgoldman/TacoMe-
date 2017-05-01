@@ -63,7 +63,6 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
                 self.tacoImage.stopAnimating()
                 self.presentAlerts()
                 
-                
             }
         }
     }
@@ -102,12 +101,8 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
             }
 
             self.presentAlert(withTitle: "Taco Found!", message: "Closest Taco: \n \(closestTaco.name!) \n \(distanceInMiles) miles away", preferredStyle: .actionSheet, actions: [action1,cancelAction])
-
         }
-   
     }
-    
-
     
     func getGoogleData() {
         
@@ -196,8 +191,4 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
         }
         self.locations.sort(by: {$0.distanceFromUser! < $1.distanceFromUser!})
     }
-    
-
-
-
 }
