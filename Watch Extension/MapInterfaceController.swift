@@ -28,16 +28,17 @@ class MapInterfaceController: WKInterfaceController, CLLocationManagerDelegate {
         self.locationManager.distanceFilter = kCLDistanceFilterNone
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
-        
-        let coordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-        let coordinateRegion = MKCoordinateRegion(center: (self.locationManager.location?.coordinate)!, span: coordinateSpan)
-        
-        map.setRegion(coordinateRegion)
+
         
         if let closestTaco = context as? Location {
             self.closestTaco = closestTaco
             let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees((self.closestTaco?.locationLat)!), longitude: CLLocationDegrees((self.closestTaco?.locationLng)!))
-            map.addAnnotation(coordinate, withImageNamed: "taco_marker_watch.png", centerOffset: CGPoint(x: 0, y: 0))
+            
+            let coordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+            let coordinateRegion = MKCoordinateRegion(center: coordinate, span: coordinateSpan)
+            
+            map.setRegion(coordinateRegion)
+            map.addAnnotation(coordinate, withImageNamed: "taco_marker.png", centerOffset: CGPoint(x: 0, y: 0))
         }
     }
 
