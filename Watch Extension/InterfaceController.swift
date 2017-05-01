@@ -148,27 +148,12 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
                 let name = item["name"] as? String
                 let locationLat = location["lat"] as? Double
                 let locationLng = location["lng"] as? Double
-                let place_id = item["place_id"] as? String
-                let price_level = item["price_level"] as? Int
-                let rating = item["rating"] as? Double
-                let vicinity = item["vicinity"] as? String
                 
                 let itemLocation = Location()
-                
-                if let opening_hours = item["opening_hours"] {
-                    let openingHours = opening_hours as! [String:Any]
-                    if let open_now = openingHours["open_now"] {
-                        itemLocation.open_now = open_now as? Bool
-                    }
-                }
-                
+
                 itemLocation.locationLat = locationLat
                 itemLocation.locationLng = locationLng
                 itemLocation.name = name
-                itemLocation.place_id = place_id
-                itemLocation.price_level = price_level
-                itemLocation.rating = rating
-                itemLocation.vicinity = vicinity
                 
                 self.locations.append(itemLocation)
             }
